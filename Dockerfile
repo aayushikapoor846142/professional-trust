@@ -34,12 +34,18 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
+# Copy composer files first
+COPY composer.json composer.lock ./
+
+# Install PHP dependencies (without scripts to avoid errors)
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+
 # Copy application files
 COPY . .
 COPY --from=node-builder /app/public/build ./public/build
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+# Run post-install scripts
+RUN composer dump-autoload --optimize
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www \
