@@ -1,0 +1,188 @@
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4F46E5;
+            --primary-light: #EEF2FF;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --border-color: #E5E7EB;
+            --background: #FAFBFC;
+            --card-background: #FFFFFF;
+            --success-color: #10B981;
+            --danger-color: #EF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .CDSDashboardActivity-login-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Styles */
+        .CDSDashboardActivity-login-page-header {
+            margin-bottom: 40px;
+        }
+
+        .CDSDashboardActivity-login-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .CDSDashboardActivity-login-page-subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        /* Login Card Styles */
+        .CDSDashboardActivity-login-login-item {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .CDSDashboardActivity-login-login-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary-color);
+        }
+
+        /* Session ID */
+        .CDSDashboardActivity-login-session-id {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 14px;
+            color: var(--text-light);
+            background: var(--primary-light);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        /* Login Details */
+        .CDSDashboardActivity-login-login-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .CDSDashboardActivity-login-detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .CDSDashboardActivity-login-detail-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CDSDashboardActivity-login-detail-value {
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        /* Action Buttons */
+        .CDSDashboardActivity-login-action-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .CDSDashboardActivity-login-btn {
+            flex: 1;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .CDSDashboardActivity-login-btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .CDSDashboardActivity-login-btn-primary:hover {
+            background: #4338CA;
+            transform: translateY(-1px);
+        }
+
+        .CDSDashboardActivity-login-btn-secondary {
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .CDSDashboardActivity-login-btn-secondary:hover {
+            background: var(--background);
+            border-color: var(--text-light);
+        }
+
+        /* Status Indicator */
+        .CDSDashboardActivity-login-status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .CDSDashboardActivity-login-status-indicator.CDSDashboardActivity-login-active {
+            background: #D1FAE5;
+            color: var(--success-color);
+        }
+
+        .CDSDashboardActivity-login-status-indicator.CDSDashboardActivity-login-suspicious {
+            background: #FEE2E2;
+            color: var(--danger-color);
+        }
+
+        .CDSDashboardActivity-login-status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .CDSDashboardActivity-login-login-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .CDSDashboardActivity-login-action-buttons {
+                flex-direction: column;
+            }
+        }

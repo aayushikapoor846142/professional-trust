@@ -1,0 +1,1070 @@
+/* CDS Document Preview Styles */
+
+/* Reset and Base Styles */
+.CdsDocumentPreview-modal * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Modal Container - Full Screen */
+.CdsDocumentPreview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Main Content Area */
+.CdsDocumentPreview-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+/* File Info Bar */
+.CdsDocumentPreview-fileInfo {
+    padding: 12px 20px;
+    background-color: #f8fafb;
+    border-bottom: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+.CdsDocumentPreview-fileDetails {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.CdsDocumentPreview-fileName {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 16px;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.CdsDocumentPreview-fileMeta {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: #64748b;
+    align-items: center;
+}
+
+.CdsDocumentPreview-fileType {
+    padding: 3px 10px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Action Buttons */
+.CdsDocumentPreview-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.CdsDocumentPreview-actionBtn {
+    padding: 6px 14px;
+    border: 1px solid #e1e8ed;
+    background-color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    color: #2c3e50;
+}
+
+.CdsDocumentPreview-actionBtn:hover {
+    background-color: #f8fafb;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Preview Container */
+.CdsDocumentPreview-previewWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.CdsDocumentPreview-previewContainer {
+    flex: 1;
+    position: relative;
+    background-color: #f1f5f9;
+    overflow: hidden;
+}
+
+.CdsDocumentPreview-previewContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Navigation Arrows */
+.CdsDocumentPreview-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.CdsDocumentPreview-nav:hover:not(:disabled) {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.CdsDocumentPreview-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.CdsDocumentPreview-nav.CdsDocumentPreview-prevBtn {
+    left: 20px;
+}
+
+.CdsDocumentPreview-nav.CdsDocumentPreview-nextBtn {
+    right: 20px;
+}
+
+.CdsDocumentPreview-nav svg {
+    width: 20px;
+    height: 20px;
+    stroke: #2c3e50;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Loading Spinner */
+.CdsDocumentPreview-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.CdsDocumentPreview-loading.CdsDocumentPreview-show {
+    display: block;
+}
+
+.CdsDocumentPreview-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f4f6;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: CdsDocumentPreview-spin 0.8s linear infinite;
+}
+
+@keyframes CdsDocumentPreview-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Preview Types */
+.CdsDocumentPreview-imagePreview {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.CdsDocumentPreview-documentPreview {
+    width: 90%;
+    height: 90%;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.CdsDocumentPreview-errorPreview {
+    text-align: center;
+    padding: 40px;
+}
+
+.CdsDocumentPreview-errorIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: #f3f4f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CdsDocumentPreview-errorIcon svg {
+    width: 40px;
+    height: 40px;
+    stroke: #94a3b8;
+}
+
+.CdsDocumentPreview-errorText {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Thumbnail Container */
+.CdsDocumentPreview-thumbnailSection {
+    background-color: #1a2332;
+    padding: 15px;
+    position: relative;
+    border-top: 1px solid #334155;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.CdsDocumentPreview-thumbnailSection.CdsDocumentPreview-hidden {
+    height: 0;
+    padding: 0;
+    border: none;
+}
+
+.CdsDocumentPreview-thumbnailWrapper {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.CdsDocumentPreview-thumbnailWrapper::-webkit-scrollbar {
+    height: 5px;
+}
+
+.CdsDocumentPreview-thumbnailWrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.CdsDocumentPreview-thumbnailWrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.CdsDocumentPreview-thumbnailWrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.CdsDocumentPreview-thumbnailTrack {
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.CdsDocumentPreview-thumbnail {
+    flex: 0 0 100px;
+    height: 70px;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background-color: #2d3748;
+    transition: all 0.3s ease;
+}
+
+.CdsDocumentPreview-thumbnail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.CdsDocumentPreview-thumbnail.CdsDocumentPreview-active {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.CdsDocumentPreview-thumbnailImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.CdsDocumentPreview-thumbnailIcon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+    color: #ffffff;
+}
+
+.CdsDocumentPreview-thumbnailIcon svg {
+    width: 28px;
+    height: 28px;
+    stroke: #ffffff;
+}
+
+.CdsDocumentPreview-thumbnailLabel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3px 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Thumbnail Navigation */
+.CdsDocumentPreview-thumbNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.CdsDocumentPreview-thumbNav:hover {
+    background-color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.CdsDocumentPreview-thumbNav.CdsDocumentPreview-thumbPrev {
+    left: 5px;
+}
+
+.CdsDocumentPreview-thumbNav.CdsDocumentPreview-thumbNext {
+    right: 5px;
+}
+
+.CdsDocumentPreview-thumbNav svg {
+    width: 14px;
+    height: 14px;
+    stroke: #2c3e50;
+}
+
+/* Comments Panel - Enhanced UI */
+.CdsDocumentPreview-commentsBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.CdsDocumentPreview-commentsBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.CdsDocumentPreview-commentsBtn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+}
+
+.CdsDocumentPreview-commentsPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+    max-width: 90vw;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+}
+
+.CdsDocumentPreview-commentsPanel.CdsDocumentPreview-show {
+    transform: translateX(0);
+}
+
+.CdsDocumentPreview-commentsHeader {
+    padding: 20px;
+    border-bottom: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8fafb;
+}
+
+.CdsDocumentPreview-commentsTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.CdsDocumentPreview-commentsClose {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.CdsDocumentPreview-commentsClose:hover {
+    background-color: #e5e7eb;
+}
+
+.CdsDocumentPreview-commentsClose svg {
+    width: 14px;
+    height: 14px;
+    stroke: #64748b;
+}
+
+.CdsDocumentPreview-commentsBody {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #fafbfc;
+}
+
+/* Comment Item with Avatar */
+.CdsDocumentPreview-comment {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.CdsDocumentPreview-commentAvatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.CdsDocumentPreview-commentAvatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.CdsDocumentPreview-commentContent {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.CdsDocumentPreview-commentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.CdsDocumentPreview-commentAuthor {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.CdsDocumentPreview-commentDate {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.CdsDocumentPreview-commentText {
+    color: #475569;
+    line-height: 1.5;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+/* Comment Attachment */
+.CdsDocumentPreview-commentAttachment {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.CdsDocumentPreview-commentAttachment:hover {
+    background-color: #e5e7eb;
+}
+
+.CdsDocumentPreview-commentAttachment svg {
+    width: 20px;
+    height: 20px;
+    stroke: #64748b;
+}
+
+.CdsDocumentPreview-attachmentInfo {
+    flex: 1;
+}
+
+.CdsDocumentPreview-attachmentFileName {
+    font-size: 13px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.CdsDocumentPreview-attachmentSize {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* Comment Form */
+.CdsDocumentPreview-commentForm {
+    padding: 20px;
+    border-top: 1px solid #e1e8ed;
+    background-color: #ffffff;
+}
+
+.CdsDocumentPreview-commentInputWrapper {
+    margin-bottom: 12px;
+}
+
+.CdsDocumentPreview-commentTextarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+.CdsDocumentPreview-commentTextarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Attachment Preview */
+.CdsDocumentPreview-attachmentPreview {
+    margin-top: 10px;
+}
+
+.CdsDocumentPreview-attachmentItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.CdsDocumentPreview-attachmentItem svg {
+    width: 16px;
+    height: 16px;
+    stroke: #64748b;
+}
+
+.CdsDocumentPreview-attachmentName {
+    flex: 1;
+    color: #2c3e50;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.CdsDocumentPreview-attachmentRemove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.CdsDocumentPreview-attachmentRemove:hover {
+    opacity: 0.7;
+}
+
+.CdsDocumentPreview-attachmentRemove svg {
+    width: 14px;
+    height: 14px;
+    stroke: #ef4444;
+}
+
+/* Comment Actions */
+.CdsDocumentPreview-commentActions {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.CdsDocumentPreview-attachBtn {
+    padding: 8px 16px;
+    background-color: #f3f4f6;
+    color: #64748b;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.CdsDocumentPreview-attachBtn:hover {
+    background-color: #e5e7eb;
+    color: #475569;
+}
+
+.CdsDocumentPreview-attachBtn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.CdsDocumentPreview-commentSubmit {
+    padding: 8px 20px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.CdsDocumentPreview-commentSubmit:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.CdsDocumentPreview-commentSubmit svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Empty State */
+.CdsDocumentPreview-commentsEmpty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #94a3b8;
+}
+
+.CdsDocumentPreview-commentsEmpty svg {
+    width: 48px;
+    height: 48px;
+    stroke: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+.CdsDocumentPreview-commentsEmpty p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Bottom Controls */
+.CdsDocumentPreview-bottomControls {
+    padding: 10px 20px;
+    background-color: #f8fafb;
+    border-top: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.CdsDocumentPreview-toggleThumb {
+    padding: 6px 14px;
+    border: 1px solid #e1e8ed;
+    background-color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    color: #2c3e50;
+}
+
+.CdsDocumentPreview-toggleThumb:hover {
+    background-color: #f1f5f9;
+}
+
+.CdsDocumentPreview-toggleThumb svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.CdsDocumentPreview-toggleThumb.CdsDocumentPreview-active svg {
+    transform: rotate(180deg);
+}
+
+.CdsDocumentPreview-close {
+    padding: 8px 20px;
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.CdsDocumentPreview-close:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* Toast Notification */
+.CdsDocumentPreview-toast {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    padding: 14px 20px;
+    background-color: #10b981;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.CdsDocumentPreview-toast.CdsDocumentPreview-show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+/* Dropdown Styles */
+.CDSDocument-dropdown {
+    position: relative;
+}
+
+.CDSDocument-dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.CDSDocument-dropdown-toggle:hover {
+    background: #f3f4f6;
+}
+
+.CDSDocument-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 10;
+    margin-top: 0.5rem;
+}
+
+.CDSDocument-dropdown-menu.show {
+    display: block;
+}
+
+.CDSDocument-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding:0.5rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.CDSDocument-dropdown-item:hover {
+    background: #f9fafb;
+}
+
+.CDSDocument-dropdown-item i {
+    width: 16px;
+}
+
+.CDSDocument-text-danger {
+    color: #dc2626 !important;
+}
+
+.CDSDocument-dropdown-disabled .CDSDocument-dropdown-item {
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .CdsDocumentPreview-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .CdsDocumentPreview-nav svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .CdsDocumentPreview-thumbnail {
+        flex: 0 0 85px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .CdsDocumentPreview-fileInfo {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .CdsDocumentPreview-fileDetails {
+        width: 100%;
+    }
+
+    .CdsDocumentPreview-fileName {
+        font-size: 14px;
+        max-width: 60vw;
+    }
+
+    .CdsDocumentPreview-actions {
+        width: 100%;
+    }
+
+    .CdsDocumentPreview-actionBtn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .CdsDocumentPreview-nav {
+        width: 35px;
+        height: 35px;
+    }
+
+    .CdsDocumentPreview-nav.CdsDocumentPreview-prevBtn {
+        left: 10px;
+    }
+
+    .CdsDocumentPreview-nav.CdsDocumentPreview-nextBtn {
+        right: 10px;
+    }
+
+    .CdsDocumentPreview-nav svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .CdsDocumentPreview-thumbnail {
+        flex: 0 0 70px;
+        height: 50px;
+    }
+
+    .CdsDocumentPreview-thumbnailIcon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .CdsDocumentPreview-commentsPanel {
+        width: 100%;
+    }
+    
+    .CdsDocumentPreview-commentAvatar {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    
+    .CdsDocumentPreview-commentContent {
+        padding: 10px 14px;
+    }
+    
+    .CdsDocumentPreview-commentActions {
+        flex-direction: column;
+    }
+    
+    .CdsDocumentPreview-attachBtn,
+    .CdsDocumentPreview-commentSubmit {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .CdsDocumentPreview-commentsBtn {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .CdsDocumentPreview-bottomControls {
+        padding: 8px 15px;
+    }
+
+    .CdsDocumentPreview-toggleThumb {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .CdsDocumentPreview-close {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .CdsDocumentPreview-fileName {
+        font-size: 13px;
+        max-width: 50vw;
+    }
+
+    .CdsDocumentPreview-actionBtn span {
+        display: none;
+    }
+
+    .CdsDocumentPreview-thumbnail {
+        flex: 0 0 60px;
+        height: 45px;
+    }
+
+    .CdsDocumentPreview-thumbnailLabel {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+
+    .CdsDocumentPreview-imagePreview,
+    .CdsDocumentPreview-documentPreview {
+        width: 95%;
+        height: 85%;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .CdsDocumentPreview-fileInfo {
+        min-height: 50px;
+        padding: 8px 15px;
+    }
+
+    .CdsDocumentPreview-thumbnailSection {
+        padding: 10px;
+    }
+
+    .CdsDocumentPreview-thumbnail {
+        flex: 0 0 60px;
+        height: 40px;
+    }
+
+    .CdsDocumentPreview-bottomControls {
+        padding: 6px 15px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .CdsDocumentPreview-modal {
+        display: none;
+    }
+}

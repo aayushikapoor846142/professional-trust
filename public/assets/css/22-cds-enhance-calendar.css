@@ -1,0 +1,698 @@
+* {
+    box-sizing: border-box;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-app-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #2d3748;
+    line-height: 1.6;
+    position: relative;
+    background: #f5f7fa;
+    min-height: 100%;
+}
+
+/* Header */
+.CDSDashboardAppointmentEnhancedCalender-app-header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-app-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-view-toggle {
+    display: flex;
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-view-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-view-btn.CDSDashboardAppointmentEnhancedCalender-active {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.CDSDashboardAppointmentEnhancedCalender-today-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.CDSDashboardAppointmentEnhancedCalender-today-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Calendar Container */
+.CDSDashboardAppointmentEnhancedCalender-calendar-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-wrapper {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-month-year {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a202c;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-month-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-nav-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: white;
+    color: #64748b;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.CDSDashboardAppointmentEnhancedCalender-nav-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+/* Calendar Grid */
+.CDSDashboardAppointmentEnhancedCalender-calendar-body {
+    padding: 30px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-weekday {
+    text-align: center;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day:hover {
+    background: #e0e7ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day.CDSDashboardAppointmentEnhancedCalender-today {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day.CDSDashboardAppointmentEnhancedCalender-selected {
+    border-color: #667eea;
+    background: #e0e7ff;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day.CDSDashboardAppointmentEnhancedCalender-other-month {
+    opacity: 0.3;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day.CDSDashboardAppointmentEnhancedCalender-has-events::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 6px;
+    height: 6px;
+    background: #f56565;
+    border-radius: 50%;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-calendar-day.CDSDashboardAppointmentEnhancedCalender-today.CDSDashboardAppointmentEnhancedCalender-has-events::after {
+    background: white;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-day-number {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-event-count {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+/* Overlay */
+.CDSDashboardAppointmentEnhancedCalender-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 49;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-overlay.CDSDashboardAppointmentEnhancedCalender-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Floating Agenda Panel */
+.CDSDashboardAppointmentEnhancedCalender-agenda-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-agenda-panel.CDSDashboardAppointmentEnhancedCalender-active {
+    right: 0;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-agenda-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-agenda-date {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-agenda-day {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-close-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 1.5rem;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Agenda Content */
+.CDSDashboardAppointmentEnhancedCalender-agenda-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 25px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-agenda-empty {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px 20px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-time-slot {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-time-slot:hover {
+    background: #e0e7ff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.CDSDashboardAppointmentEnhancedCalender-event-time {
+    font-size: 0.875rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-event-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 5px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-event-description {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-event-attendees {
+    display: flex;
+    gap: -10px;
+    margin-top: 10px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-attendee {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e0e7ff;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Quick Add Button */
+.CDSDashboardAppointmentEnhancedCalender-quick-add-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-quick-add-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .CDSDashboardAppointmentEnhancedCalender-app-title {
+        font-size: 1.25rem;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-view-toggle {
+        display: none;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-calendar-container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-calendar-header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-month-year {
+        font-size: 1.5rem;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-calendar-body {
+        padding: 20px 15px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-calendar-grid {
+        gap: 5px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-calendar-day {
+        border-radius: 8px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-day-number {
+        font-size: 0.875rem;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-agenda-panel {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-agenda-panel.CDSDashboardAppointmentEnhancedCalender-active {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .CDSDashboardAppointmentEnhancedCalender-header-content {
+        padding: 0 15px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-today-btn {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-nav-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-weekday {
+        font-size: 0.75rem;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-calendar-day.CDSDashboardAppointmentEnhancedCalender-has-events::after {
+        width: 4px;
+        height: 4px;
+        bottom: 4px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-agenda-header {
+        padding: 20px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-agenda-date {
+        font-size: 1.25rem;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-time-slot {
+        padding: 15px;
+    }
+    
+    .CDSDashboardAppointmentEnhancedCalender-event-title {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes CDSDashboardAppointmentEnhancedCalender-slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes CDSDashboardAppointmentEnhancedCalender-fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.CDSDashboardAppointmentEnhancedCalender-time-slot {
+    animation: CDSDashboardAppointmentEnhancedCalender-fadeIn 0.3s ease forwards;
+    opacity: 0;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-time-slot:nth-child(1) { animation-delay: 0.1s; }
+.CDSDashboardAppointmentEnhancedCalender-time-slot:nth-child(2) { animation-delay: 0.2s; }
+.CDSDashboardAppointmentEnhancedCalender-time-slot:nth-child(3) { animation-delay: 0.3s; }
+.CDSDashboardAppointmentEnhancedCalender-time-slot:nth-child(4) { animation-delay: 0.4s; }
+.CDSDashboardAppointmentEnhancedCalender-time-slot:nth-child(5) { animation-delay: 0.5s; }
+
+/* Loading State */
+.CDSDashboardAppointmentEnhancedCalender-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.CDSDashboardAppointmentEnhancedCalender-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: CDSDashboardAppointmentEnhancedCalender-spin 1s linear infinite;
+}
+
+@keyframes CDSDashboardAppointmentEnhancedCalender-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f0f2f5;
+        }
+        
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .demo-title {
+            font-size: 2.5rem;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        
+        .demo-subtitle {
+            color: #64748b;
+            font-size: 1.125rem;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: auto;
+            display: grid;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .calendar-wrapper {
+            /* height: 700px; */
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            /* overflow: hidden; */
+            /* margin: 20px 0; */
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: #64748b;
+        }
+        
+        .btn-secondary:hover {
+            background: #475569;
+        }
+        
+        .output {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            color: #64748b;
+            font-size: 0.875rem;
+        }

@@ -1,0 +1,571 @@
+
+/* Header */
+.CdsTYDashboardCaselist-expanded-list-header {
+    background: white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.CdsTYDashboardCaselist-expanded-list-header-content {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CdsTYDashboardCaselist-expanded-list-logo {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.CdsTYDashboardCaselist-expanded-list-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-search-box {
+    position: relative;
+}
+
+.CdsTYDashboardCaselist-expanded-list-search-input {
+    width: 320px;
+    padding: 12px 20px 12px 48px;
+    background: #f8fafc;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.CdsTYDashboardCaselist-expanded-list-search-input:focus {
+    outline: none;
+    background: white;
+    border-color: #e0e7ff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.CdsTYDashboardCaselist-expanded-list-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+}
+
+.CdsTYDashboardCaselist-expanded-list-create-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.CdsTYDashboardCaselist-expanded-list-create-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Container */
+.CdsTYDashboardCaselist-expanded-list-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* Filter Pills */
+.CdsTYDashboardCaselist-expanded-list-filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-filter-pills {
+    display: flex;
+    gap: 12px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-filter-pill {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid #f1f5f9;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.CdsTYDashboardCaselist-expanded-list-filter-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.CdsTYDashboardCaselist-expanded-list-filter-pill:hover {
+    border-color: #e0e7ff;
+}
+
+.CdsTYDashboardCaselist-expanded-list-filter-pill.CdsTYDashboardCaselist-expanded-list-active {
+    color: white;
+    border-color: transparent;
+}
+
+.CdsTYDashboardCaselist-expanded-list-filter-pill.CdsTYDashboardCaselist-expanded-list-active::before {
+    width: 100%;
+}
+
+.CdsTYDashboardCaselist-expanded-list-stats-summary {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.CdsTYDashboardCaselist-expanded-list-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.CdsTYDashboardCaselist-expanded-list-stat-label {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* Case Cards */
+.CdsTYDashboardCaselist-expanded-list-case-card {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-card:hover::before {
+    opacity: 1;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 16px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-main {
+    flex: 1;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #f0f9ff;
+    color: #0369a1;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-service {
+    font-size: 14px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-level {
+    display: flex;
+    gap: 3px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-bar {
+    width: 4px;
+    height: 20px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-indicator.CdsTYDashboardCaselist-expanded-list-high .CdsTYDashboardCaselist-expanded-list-priority-bar:nth-child(-n+3) {
+    background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-indicator.CdsTYDashboardCaselist-expanded-list-medium .CdsTYDashboardCaselist-expanded-list-priority-bar:nth-child(-n+2) {
+    background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-indicator.CdsTYDashboardCaselist-expanded-list-low .CdsTYDashboardCaselist-expanded-list-priority-bar:nth-child(1) {
+    background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-priority-text {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Team Section */
+.CdsTYDashboardCaselist-expanded-list-team-section {
+    padding: 20px 28px;
+    background: #fafbfc;
+}
+
+.CdsTYDashboardCaselist-expanded-list-team-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-team-members {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-team-member {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-member-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    color: white;
+}
+
+.CdsTYDashboardCaselist-expanded-list-member-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.CdsTYDashboardCaselist-expanded-list-member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-member-role {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.CdsTYDashboardCaselist-expanded-list-member-name {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+/* Avatar Colors */
+.CdsTYDashboardCaselist-expanded-list-avatar-purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-avatar-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-avatar-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-avatar-orange {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.CdsTYDashboardCaselist-expanded-list-team-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+}
+
+.CdsTYDashboardCaselist-expanded-list-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-info-label {
+    font-size: 12px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-info-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Progress Section */
+.CdsTYDashboardCaselist-expanded-list-progress-section {
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-progress-content {
+    flex: 1;
+}
+
+.CdsTYDashboardCaselist-expanded-list-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-stage-info {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.CdsTYDashboardCaselist-expanded-list-stage-current {
+    color: #6366f1;
+}
+
+.CdsTYDashboardCaselist-expanded-list-percentage {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.CdsTYDashboardCaselist-expanded-list-progress-bar {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 4px;
+    transition: width 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.CdsTYDashboardCaselist-expanded-list-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.CdsTYDashboardCaselist-expanded-list-stage-name {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.CdsTYDashboardCaselist-expanded-list-case-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-action-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.CdsTYDashboardCaselist-expanded-list-btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px solid #f1f5f9;
+    color: #64748b;
+}
+
+.CdsTYDashboardCaselist-expanded-list-btn-icon:hover {
+    border-color: #e0e7ff;
+    color: #6366f1;
+}
+
+.CdsTYDashboardCaselist-expanded-list-btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    padding: 10px 24px;
+}
+
+.CdsTYDashboardCaselist-expanded-list-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+@media (max-width: 768px) {
+    .CdsTYDashboardCaselist-expanded-list-header-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-header-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-search-input {
+        width: 100%;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-filter-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-filter-pills {
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 8px;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-team-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-team-members {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-team-info {
+        margin-left: 0;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-progress-section {
+        flex-direction: column;
+    }
+    
+    .CdsTYDashboardCaselist-expanded-list-case-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,303 @@
+/* Transaction Overview Styles */
+.CdsTransactionOverview-transaction-stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CdsTransactionOverview-transaction-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.CdsTransactionOverview-transaction-stat-card-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.CdsTransactionOverview-transaction-stat-icon {
+    font-size: 2.5rem;
+}
+
+.CdsTransactionOverview-transaction-stat-details h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
+    color: white;
+}
+
+.CdsTransactionOverview-transaction-stat-label {
+    margin: 0.25rem 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.CdsTransactionOverview-transaction-stat-change {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Custom Chart Styles */
+.CdsTransactionOverview-custom-chart-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.CdsTransactionOverview-custom-chart-container canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.CdsTransactionOverview-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.CdsTransactionOverview-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.CdsTransactionOverview-legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+/* Quick Actions Styles */
+.CdsTransactionOverview-quick-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.CdsTransactionOverview-quick-action-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.CdsTransactionOverview-quick-action-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+    color: #333;
+    text-decoration: none;
+}
+
+.CdsTransactionOverview-quick-action-icon {
+    width: 40px;
+    height: 40px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.CdsTransactionOverview-quick-action-content h5 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.CdsTransactionOverview-quick-action-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.CdsTransactionOverview-quick-action-arrow {
+    margin-left: auto;
+    color: #6c757d;
+}
+
+/* Recent Transactions Styles */
+.CdsTransactionOverview-recent-transactions-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.CdsTransactionOverview-recent-transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+.CdsTransactionOverview-recent-transaction-item:hover {
+    background-color: #f8f9fa;
+}
+
+.CdsTransactionOverview-recent-transaction-item:last-child {
+    border-bottom: none;
+}
+
+.CdsTransactionOverview-transaction-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.CdsTransactionOverview-transaction-details h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.CdsTransactionOverview-transaction-details p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.CdsTransactionOverview-transaction-amount {
+    margin-left: auto;
+    text-align: right;
+}
+
+.CdsTransactionOverview-transaction-amount .amount {
+    font-weight: 600;
+    color: #28a745;
+}
+
+.CdsTransactionOverview-transaction-amount .status {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.CdsTransactionOverview-status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.CdsTransactionOverview-status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.CdsTransactionOverview-status-failed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Status Summary Cards */
+.CdsTransactionOverview-status-summary-card {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.CdsTransactionOverview-status-summary-card:hover {
+    transform: translateY(-2px);
+}
+
+.CdsTransactionOverview-status-summary-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    flex: 0 0 auto;
+}
+
+.CdsTransactionOverview-status-success .CdsTransactionOverview-status-summary-icon {
+    background: #d4edda;
+    color: #155724;
+}
+
+.CdsTransactionOverview-status-pending .CdsTransactionOverview-status-summary-icon {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.CdsTransactionOverview-status-failed .CdsTransactionOverview-status-summary-icon {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.CdsTransactionOverview-status-refunded .CdsTransactionOverview-status-summary-icon {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+.CdsTransactionOverview-status-summary-content h5 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.CdsTransactionOverview-status-summary-content p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+.cds-ty-dashboard-box-title {font-size: 22px;}
+
+/* =============== Responsive Design ================== */
+/* 768 to 991 */
+@media only screen and (min-width: 48em) and (max-width: 61.938em) {
+    .CdsTransactionOverview-status-summary-icon {margin: 0 auto 10px;}
+    .CdsTransactionOverview-status-summary-card {padding: 1rem;text-align: center;display: block;}
+}
+@media (max-width: 768px) {
+    .CdsTransactionOverview-transaction-stat-card-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .CdsTransactionOverview-transaction-stat-icon {
+        font-size: 2rem;
+    }
+    
+    .CdsTransactionOverview-quick-action-item {
+        padding: 0.75rem;
+    }
+    
+    .CdsTransactionOverview-quick-action-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .CdsTransactionOverview-custom-chart-container {
+        height: 250px;
+    }
+}

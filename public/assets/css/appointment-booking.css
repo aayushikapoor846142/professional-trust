@@ -1,0 +1,226 @@
+
+
+.appointment-page-breadcrumb-bx .ch-action {
+    text-align: right;
+}
+.appointment-page-breadcrumb-bx .ch-action {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.cds-oppointment-card {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-inline: 1rem;
+}
+
+.cds-oppointment-image {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+}
+.cds-oppointment-info {
+    flex: 0 0 80%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cds-oppointment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 50px;
+}
+
+.cds-oppointment-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cds-oppointment-price {
+    color: #f9a825;
+    font-size: 14px;
+}
+
+.oppointment-icon i {
+    font-size: 14px;
+    color: #26a9e2;
+}
+
+.cds-oppointment-feature {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cds-oppointment-feature-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cds-oppointment-price strong {
+    color: #1c273d;
+}
+
+.cds-oppointment-feature-bottom-bx {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    background: #f0fdf4;
+    padding: 10px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.oppointment-icon {
+    text-align: center;
+    font-size: 13px;
+    flex: 1 1 70px;
+    padding: 10px;
+}
+
+.cds-oppointment-info .btn-group a:after {
+    display: none;
+}
+
+.cds-oppointment-card {
+    position: relative;
+}
+
+.cds-oppointment-info .btn-group {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.cds-oppointment-info .btn-group a.dropdown-toggle {
+    background-color: #fff;
+    border-color: rgb(33 50 91 / 30%);
+    padding: 0.5rem 0.9rem;
+}
+
+.cds-oppointment-info .btn-group a.dropdown-toggle:hover {
+    background: #074fdf;
+}
+
+.cds-oppointment-info .btn-group a.dropdown-toggle:hover i {
+    color: #fff;
+}
+
+.cds-appointment-booking-list-table .cds-point-earn-col.colspan\= {
+    text-align: center;
+}
+
+
+.oppointment-popup h3 {
+    font-size: 15px !important;
+}
+
+.oppointment-popup .cds-wrap-content ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 5px 0;
+}
+
+.oppointment-popup .cds-wrap-content {
+    margin-bottom: 10px;
+    background: #eaeaea;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.oppointment-popup .cds-wrap-content ul li .cds-label {
+    font-weight: 600;
+}
+
+.oppointment-popup .cds-wrap-content ul li .cds-value {
+    text-align: right;
+}
+.cds-t25n-content-professional-profile-container-top-professional-image .group-icon.img-profile {
+    width: 120px;
+    height: 120px;
+    margin-left: 0;
+    object-fit: cover;
+    border-radius: 100%;
+    object-position: top;
+}
+.cdsShowImg .cdsImg {border-radius: 12px;border: 1px solid #ccc;}
+.cdsShowImg .img-profile {
+    background-color: #3f51b5;
+    font-size: 2em;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    flex: 0 0 100%;
+}
+/* ===============================================================================================================
+    media query start
+===================================================================================================================================== */
+@media (max-width: 991px) {
+    .cds-oppointment-feature-bottom-bx .oppointment-icon {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 767px) {
+    .cds-oppointment-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cds-oppointment-info {
+        padding: 20px 0 0;
+        width: 100%;
+    }
+    .cds-oppointment-header {
+        padding-right: 0px;
+        flex-direction: column;
+    }
+    .cds-oppointment-header div {
+        width: 100%;
+    }    
+    .cds-oppointment-image .cdsImg {width: 200px;}
+    .cdsShowImg .img-profile {width: 150px;height: 150px;}
+    .appointment-page-breadcrumb-bx {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .appointment-page-breadcrumb-bx .breadcrumb {
+        width: 100%;
+    }
+    .appointment-page-breadcrumb-bx .ch-action {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media (max-width: 639px) {
+    .cds-oppointment-feature-bottom-bx {
+        justify-content: center;
+    } 
+    .oppointment-popup .cds-wrap-content ul li {
+        font-size: 13px;
+    }
+    .oppointment-popup-bx .modal-body {
+        padding: 10px;
+    }
+    .cds-oppointment-image .cdsImg {width: 150px;}
+}
+/* ===============================================================================================================
+    # media query end
+===================================================================================================================================== */

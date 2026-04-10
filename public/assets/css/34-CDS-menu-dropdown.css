@@ -1,0 +1,91 @@
+
+        .cdsTYDashboardDropdownsDropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cdsTYDashboardDropdownsDropdownBtn {
+            background: white;
+            color: #333;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cdsTYDashboardDropdownsDropdownBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .cdsTYDashboardDropdownsDropdownBtn.cdsTYDashboardDropdownsActive {
+            background: #667eea;
+            color: white;
+        }
+
+        .cdsTYDashboardDropdownsDropdownBtn::after {
+            content: '▼';
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .cdsTYDashboardDropdownsDropdownBtn.cdsTYDashboardDropdownsActive::after {
+            transform: rotate(180deg);
+        }
+
+        .cdsTYDashboardDropdownsDropdownMenu {
+            position: absolute;
+            background: white;
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            overflow: hidden;
+            top: calc(100% + 8px);
+            left: 0;
+        }
+
+        .cdsTYDashboardDropdownsDropdownMenu.cdsTYDashboardDropdownsShow {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .cdsTYDashboardDropdownsDropdownItem {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cdsTYDashboardDropdownsDropdownItem:last-child {
+            border-bottom: none;
+        }
+
+        .cdsTYDashboardDropdownsDropdownItem:hover {
+            background: #f8f9fa;
+        }
+
+        .cdsTYDashboardDropdownsDropdownItem.cdsTYDashboardDropdownsActive {
+            background: #667eea;
+            color: white;
+        }
+
+        .cdsTYDashboardDropdownsDropdownItemIcon {
+            width: 20px;
+            text-align: center;
+        }

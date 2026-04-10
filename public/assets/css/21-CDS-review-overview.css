@@ -1,0 +1,267 @@
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #8b5cf6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #1f2937;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+.CdsReviewOverview-container {
+    padding: 0 0 30px;
+}
+
+/* Breadcrumb */
+.CdsReviewOverview-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.CdsReviewOverview-breadcrumb a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.CdsReviewOverview-breadcrumb a:hover {
+    color: var(--primary);
+}
+
+/* Header */
+.CdsReviewOverview-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.CdsReviewOverview-page-title {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Stats Grid */
+.CdsReviewOverview-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.CdsReviewOverview-stat-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    /* opacity: 0; */
+    animation: slideIn 0.5s ease forwards;
+}
+
+.CdsReviewOverview-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.CdsReviewOverview-stat-card:nth-child(1)::before { background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); }
+.CdsReviewOverview-stat-card:nth-child(2)::before { background: linear-gradient(90deg, var(--warning) 0%, var(--danger) 100%); }
+.CdsReviewOverview-stat-card:nth-child(3)::before { background: linear-gradient(90deg, var(--success) 0%, #22c55e 100%); }
+
+.CdsReviewOverview-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.CdsReviewOverview-stat-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.CdsReviewOverview-stat-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.CdsReviewOverview-stat-card:nth-child(1) .CdsReviewOverview-stat-icon { 
+    background: rgba(99, 102, 241, 0.1); 
+    color: var(--primary); 
+}
+.CdsReviewOverview-stat-card:nth-child(2) .CdsReviewOverview-stat-icon { 
+    background: rgba(245, 158, 11, 0.1); 
+    color: var(--warning); 
+}
+.CdsReviewOverview-stat-card:nth-child(3) .CdsReviewOverview-stat-icon { 
+    background: rgba(16, 185, 129, 0.1); 
+    color: var(--success); 
+}
+
+.CdsReviewOverview-stat-info {
+    flex: 1;
+}
+
+.CdsReviewOverview-stat-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.CdsReviewOverview-stat-label {
+    font-size: 16px;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+/* Reviews Section */
+.CdsReviewOverview-reviews-section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+}
+
+.CdsReviewOverview-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 24px;
+}
+
+.CdsReviewOverview-reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 24px;
+}
+
+.CdsReviewOverview-review-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--light-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.CdsReviewOverview-review-item:first-child {
+    border-top: 1px solid var(--light-gray);
+}
+
+.CdsReviewOverview-review-item:hover {
+    background: rgba(99, 102, 241, 0.05);
+    padding-left: 28px;
+}
+
+.CdsReviewOverview-review-email {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 15px;
+}
+
+.CdsReviewOverview-review-date {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.CdsReviewOverview-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.CdsReviewOverview-btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.CdsReviewOverview-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.CdsReviewOverview-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.CdsReviewOverview-stat-card:nth-child(2) { animation-delay: 0.2s; }
+.CdsReviewOverview-stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* =========== ================ */
+@media (max-width: 768px) {
+    .CdsReviewOverview-container {
+        padding: 20px;
+    }
+
+    .CdsReviewOverview-page-title {
+        font-size: 24px;
+    }
+
+    .CdsReviewOverview-stats-grid {
+        gap: 16px;
+        grid-template-columns: unset;
+    }
+
+    .CdsReviewOverview-stat-card {
+        padding: 24px;
+    }
+
+    .CdsReviewOverview-stat-value {
+        font-size: 36px;
+    }
+
+    .CdsReviewOverview-reviews-section {
+        padding: 24px;
+    }
+
+    .CdsReviewOverview-review-item {
+        padding: 10px 0;
+    }
+}

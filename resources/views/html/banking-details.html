@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Details Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --CdsBankDetails-primary: #2563eb;
+            --CdsBankDetails-primary-dark: #1d4ed8;
+            --CdsBankDetails-success: #10b981;
+            --CdsBankDetails-danger: #ef4444;
+            --CdsBankDetails-warning: #f59e0b;
+            --CdsBankDetails-bg: #f8fafc;
+            --CdsBankDetails-card-bg: #ffffff;
+            --CdsBankDetails-text: #1e293b;
+            --CdsBankDetails-text-light: #64748b;
+            --CdsBankDetails-border: #e2e8f0;
+            --CdsBankDetails-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --CdsBankDetails-shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+            --CdsBankDetails-radius: 12px;
+            --CdsBankDetails-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--CdsBankDetails-bg);
+            color: var(--CdsBankDetails-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .CdsBankDetails-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .CdsBankDetails-header {
+            background: linear-gradient(135deg, var(--CdsBankDetails-primary) 0%, var(--CdsBankDetails-primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--CdsBankDetails-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--CdsBankDetails-shadow-lg);
+        }
+
+        .CdsBankDetails-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .CdsBankDetails-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .CdsBankDetails-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .CdsBankDetails-add-btn {
+            background: var(--CdsBankDetails-primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--CdsBankDetails-transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .CdsBankDetails-add-btn:hover {
+            background: var(--CdsBankDetails-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--CdsBankDetails-shadow-lg);
+        }
+
+        .CdsBankDetails-search-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .CdsBankDetails-search {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            border: 1px solid var(--CdsBankDetails-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--CdsBankDetails-transition);
+            background: var(--CdsBankDetails-card-bg);
+        }
+
+        .CdsBankDetails-search:focus {
+            outline: none;
+            border-color: var(--CdsBankDetails-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .CdsBankDetails-search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--CdsBankDetails-text-light);
+        }
+
+        .CdsBankDetails-counter {
+            background: var(--CdsBankDetails-card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: var(--CdsBankDetails-text-light);
+            font-weight: 500;
+            box-shadow: var(--CdsBankDetails-shadow);
+        }
+
+        .CdsBankDetails-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .CdsBankDetails-card {
+            background: var(--CdsBankDetails-card-bg);
+            border-radius: var(--CdsBankDetails-radius);
+            padding: 1.5rem;
+            box-shadow: var(--CdsBankDetails-shadow);
+            transition: var(--CdsBankDetails-transition);
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .CdsBankDetails-card.CdsBankDetails-default {
+            border-color: var(--CdsBankDetails-success);
+        }
+
+        .CdsBankDetails-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--CdsBankDetails-shadow-lg);
+        }
+
+        .CdsBankDetails-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--CdsBankDetails-border);
+        }
+
+        .CdsBankDetails-bank-logo {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .CdsBankDetails-bank-info {
+            flex: 1;
+        }
+
+        .CdsBankDetails-bank-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--CdsBankDetails-text);
+        }
+
+        .CdsBankDetails-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--CdsBankDetails-success);
+            color: white;
+        }
+
+        .CdsBankDetails-status.CdsBankDetails-inactive {
+            background: var(--CdsBankDetails-text-light);
+        }
+
+        .CdsBankDetails-details {
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .CdsBankDetails-detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .CdsBankDetails-label {
+            color: var(--CdsBankDetails-text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .CdsBankDetails-value {
+            color: var(--CdsBankDetails-text);
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+        }
+
+        .CdsBankDetails-actions {
+            display: flex;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--CdsBankDetails-border);
+        }
+
+        .CdsBankDetails-action-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--CdsBankDetails-transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        .CdsBankDetails-btn-edit {
+            background: var(--CdsBankDetails-primary);
+            color: white;
+        }
+
+        .CdsBankDetails-btn-edit:hover {
+            background: var(--CdsBankDetails-primary-dark);
+        }
+
+        .CdsBankDetails-btn-delete {
+            background: var(--CdsBankDetails-danger);
+            color: white;
+        }
+
+        .CdsBankDetails-btn-delete:hover {
+            background: #dc2626;
+        }
+
+        .CdsBankDetails-btn-default {
+            background: var(--CdsBankDetails-success);
+            color: white;
+        }
+
+        .CdsBankDetails-btn-default:hover {
+            background: #059669;
+        }
+
+        .CdsBankDetails-btn-default:disabled {
+            background: var(--CdsBankDetails-text-light);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .CdsBankDetails-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .CdsBankDetails-modal.CdsBankDetails-active {
+            display: flex;
+        }
+
+        .CdsBankDetails-modal-content {
+            background: var(--CdsBankDetails-card-bg);
+            border-radius: var(--CdsBankDetails-radius);
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: CdsBankDetails-slideUp 0.3s ease-out;
+        }
+
+        @keyframes CdsBankDetails-slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .CdsBankDetails-modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--CdsBankDetails-border);
+        }
+
+        .CdsBankDetails-modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--CdsBankDetails-text);
+        }
+
+        .CdsBankDetails-modal-body {
+            padding: 1.5rem;
+        }
+
+        .CdsBankDetails-form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .CdsBankDetails-form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--CdsBankDetails-text);
+            font-size: 0.875rem;
+        }
+
+        .CdsBankDetails-form-input,
+        .CdsBankDetails-form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--CdsBankDetails-border);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: var(--CdsBankDetails-transition);
+        }
+
+        .CdsBankDetails-form-input:focus,
+        .CdsBankDetails-form-select:focus {
+            outline: none;
+            border-color: var(--CdsBankDetails-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .CdsBankDetails-modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--CdsBankDetails-border);
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .CdsBankDetails-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--CdsBankDetails-transition);
+        }
+
+        .CdsBankDetails-btn-primary {
+            background: var(--CdsBankDetails-primary);
+            color: white;
+        }
+
+        .CdsBankDetails-btn-primary:hover {
+            background: var(--CdsBankDetails-primary-dark);
+        }
+
+        .CdsBankDetails-btn-secondary {
+            background: var(--CdsBankDetails-border);
+            color: var(--CdsBankDetails-text);
+        }
+
+        .CdsBankDetails-btn-secondary:hover {
+            background: #cbd5e1;
+        }
+
+        .CdsBankDetails-toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--CdsBankDetails-text);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--CdsBankDetails-shadow-lg);
+            transform: translateX(400px);
+            transition: transform 0.3s ease-out;
+            z-index: 2000;
+        }
+
+        .CdsBankDetails-toast.CdsBankDetails-show {
+            transform: translateX(0);
+        }
+
+        .CdsBankDetails-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--CdsBankDetails-card-bg);
+            border-radius: var(--CdsBankDetails-radius);
+            box-shadow: var(--CdsBankDetails-shadow);
+        }
+
+        .CdsBankDetails-empty-icon {
+            font-size: 4rem;
+            color: var(--CdsBankDetails-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .CdsBankDetails-empty-text {
+            color: var(--CdsBankDetails-text-light);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .CdsBankDetails-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .CdsBankDetails-header p {
+                font-size: 1rem;
+            }
+
+            .CdsBankDetails-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .CdsBankDetails-search-wrapper {
+                order: -1;
+            }
+
+            .CdsBankDetails-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .CdsBankDetails-modal-content {
+                margin: 1rem;
+            }
+
+            .CdsBankDetails-toast {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .CdsBankDetails-container {
+                padding: 1rem 0.5rem;
+            }
+
+            .CdsBankDetails-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .CdsBankDetails-card {
+                padding: 1rem;
+            }
+
+            .CdsBankDetails-actions {
+                flex-direction: column;
+            }
+
+            .CdsBankDetails-action-btn {
+                width: 100%;
+            }
+        }
+
+        /* Icons */
+        .CdsBankDetails-icon::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .CdsBankDetails-icon-plus::before { content: "➕"; }
+        .CdsBankDetails-icon-search::before { content: "🔍"; }
+        .CdsBankDetails-icon-edit::before { content: "✏️"; }
+        .CdsBankDetails-icon-delete::before { content: "🗑️"; }
+        .CdsBankDetails-icon-check::before { content: "✓"; }
+        .CdsBankDetails-icon-star::before { content: "⭐"; }
+        .CdsBankDetails-icon-bank::before { content: "🏦"; }
+    </style>
+</head>
+<body>
+    <div class="CdsBankDetails-container">
+        <div class="CdsBankDetails-header">
+            <h1>Manage Your Banking Details</h1>
+            <p>Add and manage your banking accounts for payments and withdrawals. Only one account can be active at a time.</p>
+        </div>
+
+        <div class="CdsBankDetails-controls">
+            <button class="CdsBankDetails-add-btn" onclick="cdsBankDetailOpenModal()">
+                <span class="CdsBankDetails-icon CdsBankDetails-icon-plus"></span>
+                Add New Banking Details
+            </button>
+            <div class="CdsBankDetails-search-wrapper">
+                <span class="CdsBankDetails-search-icon CdsBankDetails-icon CdsBankDetails-icon-search"></span>
+                <input type="text" class="CdsBankDetails-search" id="cdsBankDetailSearch" 
+                       placeholder="Search by Bank Name, Account Holder, or Account Number"
+                       onkeyup="cdsBankDetailSearch()">
+            </div>
+            <div class="CdsBankDetails-counter">
+                Showing <span id="cdsBankDetailCount">2</span> banking details
+            </div>
+        </div>
+
+        <div class="CdsBankDetails-grid" id="cdsBankDetailGrid">
+            <!-- Bank cards will be dynamically inserted here -->
+        </div>
+
+        <div class="CdsBankDetails-empty" id="cdsBankDetailEmpty" style="display: none;">
+            <div class="CdsBankDetails-empty-icon CdsBankDetails-icon CdsBankDetails-icon-bank"></div>
+            <div class="CdsBankDetails-empty-text">No banking details found</div>
+            <button class="CdsBankDetails-add-btn" onclick="cdsBankDetailOpenModal()">
+                <span class="CdsBankDetails-icon CdsBankDetails-icon-plus"></span>
+                Add Your First Bank Account
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit -->
+    <div class="CdsBankDetails-modal" id="cdsBankDetailModal">
+        <div class="CdsBankDetails-modal-content">
+            <div class="CdsBankDetails-modal-header">
+                <h2 class="CdsBankDetails-modal-title" id="cdsBankDetailModalTitle">Add Banking Details</h2>
+            </div>
+            <div class="CdsBankDetails-modal-body">
+                <form id="cdsBankDetailForm">
+                    <div class="CdsBankDetails-form-group">
+                        <label class="CdsBankDetails-form-label">Bank Name</label>
+                        <select class="CdsBankDetails-form-select" id="cdsBankDetailBankName" required>
+                            <option value="">Select Bank</option>
+                            <option value="HDFC">HDFC Bank</option>
+                            <option value="ICICI">ICICI Bank</option>
+                            <option value="SBI">State Bank of India</option>
+                            <option value="AXIS">Axis Bank</option>
+                            <option value="KOTAK">Kotak Mahindra Bank</option>
+                            <option value="PNB">Punjab National Bank</option>
+                        </select>
+                    </div>
+                    <div class="CdsBankDetails-form-group">
+                        <label class="CdsBankDetails-form-label">Account Holder Name</label>
+                        <input type="text" class="CdsBankDetails-form-input" id="cdsBankDetailHolderName" required>
+                    </div>
+                    <div class="CdsBankDetails-form-group">
+                        <label class="CdsBankDetails-form-label">Account Number</label>
+                        <input type="text" class="CdsBankDetails-form-input" id="cdsBankDetailAccountNumber" required>
+                    </div>
+                    <div class="CdsBankDetails-form-group">
+                        <label class="CdsBankDetails-form-label">Account Type</label>
+                        <select class="CdsBankDetails-form-select" id="cdsBankDetailAccountType" required>
+                            <option value="Savings">Savings</option>
+                            <option value="Current">Current</option>
+                            <option value="Salary">Salary</option>
+                        </select>
+                    </div>
+                    <div class="CdsBankDetails-form-group">
+                        <label class="CdsBankDetails-form-label">SWIFT/IFSC Code</label>
+                        <input type="text" class="CdsBankDetails-form-input" id="cdsBankDetailSwiftCode" required>
+                    </div>
+                    <div class="CdsBankDetails-form-group">
+                        <label class="CdsBankDetails-form-label">Branch Name</label>
+                        <input type="text" class="CdsBankDetails-form-input" id="cdsBankDetailBranchName" required>
+                    </div>
+                </form>
+            </div>
+            <div class="CdsBankDetails-modal-footer">
+                <button class="CdsBankDetails-btn CdsBankDetails-btn-secondary" onclick="cdsBankDetailCloseModal()">Cancel</button>
+                <button class="CdsBankDetails-btn CdsBankDetails-btn-primary" onclick="cdsBankDetailSave()">Save Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="CdsBankDetails-toast" id="cdsBankDetailToast"></div>
+
+    <script>
+        // Sample data
+        let cdsBankDetailData = [
+            {
+                id: 1,
+                bankName: 'HDFC',
+                holderName: 'John Doe',
+                accountNumber: '****3435',
+                accountType: 'Savings',
+                swiftCode: 'HDF1235',
+                branchName: 'Satellite Road, New Delhi, Delhi, Delhi, India',
+                isDefault: false
+            },
+            {
+                id: 2,
+                bankName: 'ICICI',
+                holderName: 'John Doe',
+                accountNumber: '****3435',
+                accountType: 'Savings',
+                swiftCode: 'ICDE1235',
+                branchName: 'fsdafdsfdsfdsf, Delhi, Delhi, India',
+                isDefault: true
+            }
+        ];
+
+        let cdsBankDetailEditId = null;
+
+        // Initialize
+        function cdsBankDetailInit() {
+            cdsBankDetailRender();
+        }
+
+        // Render bank cards
+        function cdsBankDetailRender() {
+            const grid = document.getElementById('cdsBankDetailGrid');
+            const empty = document.getElementById('cdsBankDetailEmpty');
+            const count = document.getElementById('cdsBankDetailCount');
+            
+            if (cdsBankDetailData.length === 0) {
+                grid.style.display = 'none';
+                empty.style.display = 'block';
+                count.textContent = '0';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            empty.style.display = 'none';
+            count.textContent = cdsBankDetailData.length;
+            
+            grid.innerHTML = cdsBankDetailData.map(bank => `
+                <div class="CdsBankDetails-card ${bank.isDefault ? 'CdsBankDetails-default' : ''}">
+                    <div class="CdsBankDetails-card-header">
+                        <div class="CdsBankDetails-bank-logo">${bank.bankName.substring(0, 2)}</div>
+                        <div class="CdsBankDetails-bank-info">
+                            <div class="CdsBankDetails-bank-name">${bank.bankName} Bank</div>
+                        </div>
+                        ${bank.isDefault ? '<div class="CdsBankDetails-status">Active</div>' : ''}
+                    </div>
+                    <div class="CdsBankDetails-details">
+                        <div class="CdsBankDetails-detail-row">
+                            <span class="CdsBankDetails-label">Account Holder:</span>
+                            <span class="CdsBankDetails-value">${bank.holderName}</span>
+                        </div>
+                        <div class="CdsBankDetails-detail-row">
+                            <span class="CdsBankDetails-label">Account Number:</span>
+                            <span class="CdsBankDetails-value">${bank.accountNumber}</span>
+                        </div>
+                        <div class="CdsBankDetails-detail-row">
+                            <span class="CdsBankDetails-label">Account Type:</span>
+                            <span class="CdsBankDetails-value">${bank.accountType}</span>
+                        </div>
+                        <div class="CdsBankDetails-detail-row">
+                            <span class="CdsBankDetails-label">SWIFT/IFSC Code:</span>
+                            <span class="CdsBankDetails-value">${bank.swiftCode}</span>
+                        </div>
+                        <div class="CdsBankDetails-detail-row">
+                            <span class="CdsBankDetails-label">Branch:</span>
+                            <span class="CdsBankDetails-value" style="font-family: inherit; font-size: 0.8rem;">${bank.branchName}</span>
+                        </div>
+                    </div>
+                    <div class="CdsBankDetails-actions">
+                        <button class="CdsBankDetails-action-btn CdsBankDetails-btn-default" 
+                                onclick="cdsBankDetailSetDefault(${bank.id})"
+                                ${bank.isDefault ? 'disabled' : ''}>
+                            <span class="CdsBankDetails-icon CdsBankDetails-icon-check"></span>
+                            ${bank.isDefault ? 'Default' : 'Set Default'}
+                        </button>
+                        <button class="CdsBankDetails-action-btn CdsBankDetails-btn-edit" 
+                                onclick="cdsBankDetailEdit(${bank.id})">
+                            <span class="CdsBankDetails-icon CdsBankDetails-icon-edit"></span>
+                            Edit
+                        </button>
+                        <button class="CdsBankDetails-action-btn CdsBankDetails-btn-delete" 
+                                onclick="cdsBankDetailDelete(${bank.id})">
+                            <span class="CdsBankDetails-icon CdsBankDetails-icon-delete"></span>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Search functionality
+        function cdsBankDetailSearch() {
+            const searchTerm = document.getElementById('cdsBankDetailSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.CdsBankDetails-card');
+            let visibleCount = 0;
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('cdsBankDetailCount').textContent = visibleCount;
+        }
+
+        // Open modal
+        function cdsBankDetailOpenModal(id = null) {
+            const modal = document.getElementById('cdsBankDetailModal');
+            const title = document.getElementById('cdsBankDetailModalTitle');
+            const form = document.getElementById('cdsBankDetailForm');
+            
+            cdsBankDetailEditId = id;
+            
+            if (id) {
+                const bank = cdsBankDetailData.find(b => b.id === id);
+                title.textContent = 'Edit Banking Details';
+                document.getElementById('cdsBankDetailBankName').value = bank.bankName;
+                document.getElementById('cdsBankDetailHolderName').value = bank.holderName;
+                document.getElementById('cdsBankDetailAccountNumber').value = bank.accountNumber.replace('****', '');
+                document.getElementById('cdsBankDetailAccountType').value = bank.accountType;
+                document.getElementById('cdsBankDetailSwiftCode').value = bank.swiftCode;
+                document.getElementById('cdsBankDetailBranchName').value = bank.branchName;
+            } else {
+                title.textContent = 'Add Banking Details';
+                form.reset();
+            }
+            
+            modal.classList.add('CdsBankDetails-active');
+        }
+
+        // Close modal
+        function cdsBankDetailCloseModal() {
+            const modal = document.getElementById('cdsBankDetailModal');
+            modal.classList.remove('CdsBankDetails-active');
+            cdsBankDetailEditId = null;
+        }
+
+        // Save bank details
+        function cdsBankDetailSave() {
+            const bankName = document.getElementById('cdsBankDetailBankName').value;
+            const holderName = document.getElementById('cdsBankDetailHolderName').value;
+            const accountNumber = document.getElementById('cdsBankDetailAccountNumber').value;
+            const accountType = document.getElementById('cdsBankDetailAccountType').value;
+            const swiftCode = document.getElementById('cdsBankDetailSwiftCode').value;
+            const branchName = document.getElementById('cdsBankDetailBranchName').value;
+            
+            if (!bankName || !holderName || !accountNumber || !swiftCode || !branchName) {
+                cdsBankDetailShowToast('Please fill all required fields', 'error');
+                return;
+            }
+            
+            const maskedAccount = '****' + accountNumber.slice(-4);
+            
+            if (cdsBankDetailEditId) {
+                const index = cdsBankDetailData.findIndex(b => b.id === cdsBankDetailEditId);
+                cdsBankDetailData[index] = {
+                    ...cdsBankDetailData[index],
+                    bankName,
+                    holderName,
+                    accountNumber: maskedAccount,
+                    accountType,
+                    swiftCode,
+                    branchName
+                };
+                cdsBankDetailShowToast('Banking details updated successfully');
+            } else {
+                const newBank = {
+                    id: Date.now(),
+                    bankName,
+                    holderName,
+                    accountNumber: maskedAccount,
+                    accountType,
+                    swiftCode,
+                    branchName,
+                    isDefault: cdsBankDetailData.length === 0
+                };
+                cdsBankDetailData.push(newBank);
+                cdsBankDetailShowToast('Banking details added successfully');
+            }
+            
+            cdsBankDetailRender();
+            cdsBankDetailCloseModal();
+        }
+
+        // Edit bank details
+        function cdsBankDetailEdit(id) {
+            cdsBankDetailOpenModal(id);
+        }
+
+        // Delete bank details
+        function cdsBankDetailDelete(id) {
+            if (confirm('Are you sure you want to delete this bank account?')) {
+                const bank = cdsBankDetailData.find(b => b.id === id);
+                if (bank.isDefault && cdsBankDetailData.length > 1) {
+                    cdsBankDetailShowToast('Cannot delete the default account. Please set another account as default first.', 'error');
+                    return;
+                }
+                
+                cdsBankDetailData = cdsBankDetailData.filter(b => b.id !== id);
+                
+                // Set first account as default if deleted was default
+                if (cdsBankDetailData.length > 0 && !cdsBankDetailData.some(b => b.isDefault)) {
+                    cdsBankDetailData[0].isDefault = true;
+                }
+                
+                cdsBankDetailRender();
+                cdsBankDetailShowToast('Banking details deleted successfully');
+            }
+        }
+
+        // Set default account
+        function cdsBankDetailSetDefault(id) {
+            cdsBankDetailData.forEach(bank => {
+                bank.isDefault = bank.id === id;
+            });
+            cdsBankDetailRender();
+            cdsBankDetailShowToast('Default account updated successfully');
+        }
+
+        // Show toast notification
+        function cdsBankDetailShowToast(message, type = 'success') {
+            const toast = document.getElementById('cdsBankDetailToast');
+            toast.textContent = message;
+            toast.style.background = type === 'error' ? 'var(--CdsBankDetails-danger)' : 'var(--CdsBankDetails-text)';
+            toast.classList.add('CdsBankDetails-show');
+            
+            setTimeout(() => {
+                toast.classList.remove('CdsBankDetails-show');
+            }, 3000);
+        }
+
+        // Close modal on outside click
+        document.getElementById('cdsBankDetailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                cdsBankDetailCloseModal();
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', cdsBankDetailInit);
+    </script>
+</body>
+</html>

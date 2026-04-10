@@ -1,0 +1,486 @@
+/* Modal */
+        .CdsDashboardPaymentModel-dialog .modal-content{
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            width: auto !important;
+            margin: auto;
+            z-index: 9999;
+        }
+        .CdsDashboardPaymentModel-view01-modal {
+            background: white;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Progress Bar */
+        .CdsDashboardPaymentModel-view01-progress-bar {
+            height: 6px;
+            background: #f3f4f6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .CdsDashboardPaymentModel-view01-progress-fill {
+            height: 100%;
+            background: #3b82f6;
+            width: 50%;
+            transition: width 0.5s ease;
+        }
+
+        .CdsDashboardPaymentModel-view01-progress-fill.CdsDashboardPaymentModel-view01-complete {
+            width: 100%;
+        }
+
+        /* Modal Content */
+        .CdsDashboardPaymentModel-view01-modal-content {
+            padding: 40px 32px;
+        }
+
+        /* Header */
+        .CdsDashboardPaymentModel-view01-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .CdsDashboardPaymentModel-view01-close-button {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .CdsDashboardPaymentModel-view01-close-button:hover {
+            background: #e5e7eb;
+            transform: rotate(90deg);
+        }
+
+        .CdsDashboardPaymentModel-view01-step-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #f3f4f6;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .CdsDashboardPaymentModel-view01-step-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+
+        .CdsDashboardPaymentModel-view01-main-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .CdsDashboardPaymentModel-view01-subtitle {
+            font-size: 16px;
+            color: #6b7280;
+        }
+
+        /* Step Content */
+        .CdsDashboardPaymentModel-view01-step-content {
+            display: none;
+        }
+
+        .CdsDashboardPaymentModel-view01-step-content.CdsDashboardPaymentModel-view01-active {
+            display: block;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Step 1: Combined Selection */
+        .CdsDashboardPaymentModel-view01-selection-group {
+            margin-bottom: 32px;
+        }
+
+        .CdsDashboardPaymentModel-view01-group-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Amount Pills */
+        .CdsDashboardPaymentModel-view01-amount-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .CdsDashboardPaymentModel-view01-amount-pill {
+            position: relative;
+            padding: 12px 24px;
+            border: 2px solid #e5e7eb;
+            border-radius: 30px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsDashboardPaymentModel-view01-amount-pill:hover {
+            border-color: #3b82f6;
+            background: #fafafa;
+        }
+
+        .CdsDashboardPaymentModel-view01-amount-pill.CdsDashboardPaymentModel-view01-selected {
+            border-color: #3b82f6;
+            background: #3b82f6;
+            color: white;
+        }
+
+        .CdsDashboardPaymentModel-view01-amount-pill.CdsDashboardPaymentModel-view01-popular::before {
+            content: '⭐';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .CdsDashboardPaymentModel-view01-pill-amount {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .CdsDashboardPaymentModel-view01-pill-label {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* Custom Amount */
+        .CdsDashboardPaymentModel-view01-custom-amount-input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 30px;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.2s ease;
+            background: #fafafa;
+        }
+
+        .CdsDashboardPaymentModel-view01-custom-amount-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Payment Method List */
+        .CdsDashboardPaymentModel-view01-payment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-option {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-option:hover {
+            border-color: #cbd5e1;
+            background: #fafafa;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-option.CdsDashboardPaymentModel-view01-selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 50%;
+            margin-right: 16px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-option.CdsDashboardPaymentModel-view01-selected .CdsDashboardPaymentModel-view01-payment-radio {
+            border-color: #3b82f6;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-option.CdsDashboardPaymentModel-view01-selected .CdsDashboardPaymentModel-view01-payment-radio::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: #3b82f6;
+            border-radius: 50%;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-text {
+            flex: 1;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-name {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .CdsDashboardPaymentModel-view01-payment-desc {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* Step 2: Payment Form */
+        .CdsDashboardPaymentModel-view01-form-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .CdsDashboardPaymentModel-view01-summary-box {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .CdsDashboardPaymentModel-view01-summary-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .CdsDashboardPaymentModel-view01-summary-amount {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .CdsDashboardPaymentModel-view01-form-field {
+            margin-bottom: 20px;
+        }
+
+        .CdsDashboardPaymentModel-view01-field-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .CdsDashboardPaymentModel-view01-field-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .CdsDashboardPaymentModel-view01-field-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .CdsDashboardPaymentModel-view01-field-group {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+        }
+
+        /* Security Badge */
+        .CdsDashboardPaymentModel-view01-security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #f3f4f6;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        .CdsDashboardPaymentModel-view01-security-icon {
+            color: #10b981;
+        }
+
+        /* Action Button */
+        .CdsDashboardPaymentModel-view01-action-button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 32px;
+        }
+
+        .CdsDashboardPaymentModel-view01-btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .CdsDashboardPaymentModel-view01-btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .CdsDashboardPaymentModel-view01-btn-secondary {
+            background: white;
+            color: #6b7280;
+            border: 2px solid #e5e7eb;
+        }
+
+        .CdsDashboardPaymentModel-view01-btn-secondary:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        /* Navigation */
+        .CdsDashboardPaymentModel-view01-nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .CdsDashboardPaymentModel-view01-nav-buttons .CdsDashboardPaymentModel-view01-action-button {
+            flex: 1;
+            margin-top: 0;
+        }
+
+        /* Success State */
+        .CdsDashboardPaymentModel-view01-success-content {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .CdsDashboardPaymentModel-view01-success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            animation: successZoom 0.5s ease;
+        }
+
+        @keyframes successZoom {
+            0% {
+                transform: scale(0) rotate(-45deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(0);
+                opacity: 1;
+            }
+        }
+
+        .CdsDashboardPaymentModel-view01-success-checkmark {
+            font-size: 40px;
+            color: white;
+        }
+
+        .CdsDashboardPaymentModel-view01-success-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .CdsDashboardPaymentModel-view01-success-message {
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .CdsDashboardPaymentModel-view01-modal {
+                margin: 20px;
+                max-width: calc(100% - 40px);
+            }
+
+            .CdsDashboardPaymentModel-view01-modal-content {
+                padding: 32px 24px;
+            }
+
+            .CdsDashboardPaymentModel-view01-main-title {
+                font-size: 24px;
+            }
+
+            .CdsDashboardPaymentModel-view01-amount-pills {
+                justify-content: center;
+            }
+
+            .CdsDashboardPaymentModel-view01-field-group {
+                grid-template-columns: 1fr;
+            }
+
+            .CdsDashboardPaymentModel-view01-nav-buttons {
+                flex-direction: column;
+            }
+        }

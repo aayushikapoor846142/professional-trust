@@ -1,0 +1,219 @@
+  /* Custom styling */
+        body, html {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+			font-family: "Inter", sans-serif;
+        }
+        .main-container {
+            padding: 30px;
+            flex-grow: 1;
+            background-color: #ddd;
+        }
+        footer {
+            background-color: #0a202b;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo img {
+            max-height: 36px;
+            /* Adjust height as needed */
+        }
+        header {
+            background-color: #0a202b;
+            color: #fff;
+            padding: 1.2rem;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+        }
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+		.domain-takedown-notice{
+    margin: 0 auto;
+    background: #fff;
+    display: flex;
+    max-width: 780px;
+    flex-direction: column;
+}
+		.domain-takedown-notice-container{}
+		.domain-takedown-notice-container-header{
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+}
+		.domain-takedown-notice-container-header-alert{
+    display: flex;
+    align-items: flex-start;
+}
+		.domain-takedown-notice-container-header-alert i{
+    font-size: 4rem;
+    color: #d82417;
+}
+		.domain-takedown-notice-container-header-alert-box h1{
+    font-weight: 600;
+    font-size: 30px;
+    /* margin: 0; */
+    color: #d82417;
+}
+		.domain-takedown-notice-container-header-alert-box p{
+    /* text-transform: uppercase; */
+    color: #000;
+    margin: 0;
+    font-size: 1.2rem;
+}
+		.domain-takedown-notice-container-body{
+    padding: 2rem;
+    /* border-top: 1px solid #eee; */
+    background: #f8f8f8;
+}
+		.domain-takedown-notice-container-header-alert-box{
+    margin-left: 1.5rem;
+}
+.domain-takedown-notice-container-header-alert-box span{ color: #d82417;}
+.domain-takedown-notice-container-individual-company-information h1{
+    display: flex;
+    font-size: 18px;
+    margin-bottom: 0;
+    flex-direction: column;
+}
+.domain-takedown-notice-container-individual-company-information h1 span{
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #d82417;
+}
+.domain-takedown-notice-container-individual-company-information h2{
+    display: flex;
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    flex-direction: column;
+}
+.domain-takedown-notice-container-individual-company-information h2 span{
+    display: inline-block;
+    font-size: 12px;
+    color: #d82417;
+}
+.domain-takedown-notice-container-footer{
+    display: flex;
+    border-top: 1px solid #eee;
+    flex-direction: column;
+}
+.domain-takedown-notice-container-footer-flagged{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 2rem;
+}
+.domain-takedown-notice-container-footer-flagged-list{
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column;
+}
+.domain-takedown-notice-container-footer-flagged-list ul{
+    padding-left: 0;
+    margin: 0;
+}
+.domain-takedown-notice-container-footer-flagged-list li{
+    padding-bottom: 5px;
+    font-size: 14px;
+    list-style: none;
+}
+.domain-takedown-notice-container-footer-flagged i{
+    margin-top: 3px;
+    color: #d82417;
+}
+.domain-takedown-notice-container-footer-flagged-list span{
+    display: block;
+    color: #0a202b;
+    font-size: 12px;
+}
+.domain-takedown-notice-container-individual-company-information{
+    padding: 0;
+    display: flex;
+    /* border-bottom: 1px solid #eee; */
+    margin-bottom: 0;
+    padding-top: 0;
+    align-items: center;
+}
+.domain-takedown-notice-label{
+    /* padding: 10px; */
+    display: flex;
+    background: #0a202b;
+    align-items: center;
+}
+.domain-takedown-notice-label-action{
+    color: #fff;
+    font-size: 12px;
+    flex: 1 1;
+    padding: 15px;
+}
+.domain-takedown-notice-label-action span{
+    color: #fff;
+}.domain-takedown-notice-label-purpose{
+    padding: 15px;
+    font-size: 14px;
+    background: #ffe066;
+}
+.domain-takedown-notice-label-purpose span{}
+.domain-takedown-notice-label-purpose i{
+    margin-right: 5px;
+}
+.domain-takedown-notice-sidebar{
+    background: #f8f8f8;
+    padding: 1.5rem; position: relative;
+}
+.domain-takedown-notice-sidebar p{
+    font-size: 15px;
+}.domain-takedown-notice-sub-sidebar p{
+    font-size: 15px;
+}
+.domain-takedown-notice-sidebar h3{
+    font-size: 18px;
+    color: #0a202b;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}.domain-takedown-notice-sidebar h4{
+    font-size: 18px;
+    font-weight: 600; color: #0a202b;
+    margin-bottom: 1rem;
+}.domain-takedown-notice-sub-sidebar h3{
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    color: #0a202b;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}.domain-takedown-notice-sub-sidebar  p{
+    font-size: 15px;
+}
+.domain-takedown-notice-sidebar ol{}
+.domain-takedown-notice-sidebar li{
+    font-size: 14px;
+    margin-bottom: 15px;
+}.domain-takedown-notice-container-individual-company-information-detail{
+    margin-left: 1rem;
+}.domain-takedown-notice-sub-sidebar{
+    padding: 1.5rem;
+    background: #f8f8f8;
+    position: relative;
+    margin-top: 1.5rem;
+}.domain-takedown-notice-sidebar:before{position:absolute;content:"";top: -2px;left: 0;width:120px;height: 4px;background: #d82417;}
+.domain-takedown-notice-sub-sidebar:before{position:absolute;content:"";top: -2px;left: 0;width:120px;height: 4px;background: #0ca678;}
+.btn-green{background:#0ca678;padding: 10px 15px;border: 1px solid #086a4d;}

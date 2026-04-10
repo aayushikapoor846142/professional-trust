@@ -1,0 +1,167 @@
+/* Form Builder Styles */
+.cdsFbBuilder-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cdsFbBuilder-form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cdsFbBuilder-question-group {
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.cdsFbBuilder-question-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.cdsFbBuilder-required {
+    color: #e74c3c;
+    margin-left: 4px;
+}
+
+.cdsFbBuilder-input,
+.cdsFbBuilder-textarea,
+.cdsFbBuilder-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.cdsFbBuilder-input:focus,
+.cdsFbBuilder-textarea:focus,
+.cdsFbBuilder-select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.cdsFbBuilder-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.cdsFbBuilder-radio-group,
+.cdsFbBuilder-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cdsFbBuilder-radio-option,
+.cdsFbBuilder-checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cdsFbBuilder-radio-option input[type="radio"],
+.cdsFbBuilder-checkbox-option input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.cdsFbBuilder-button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cdsFbBuilder-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cdsFbBuilder-button-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cdsFbBuilder-button-primary:hover {
+    background-color: #45a049;
+}
+
+.cdsFbBuilder-button-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.cdsFbBuilder-button-secondary:hover {
+    background-color: #ccc;
+}
+
+.cdsFbBuilder-error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Demo Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #e9ecef;
+    margin: 0;
+    padding: 20px;
+}
+
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.demo-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.demo-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.demo-section h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+#result {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}

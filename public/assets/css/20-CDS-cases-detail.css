@@ -1,0 +1,1702 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f8f8;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .CDSPostCaseDetail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Bar */
+        .CDSPostCaseDetail-header-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .CDSPostCaseDetail-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseDetail-breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .CDSPostCaseDetail-breadcrumb a:hover {
+            color: #5a6fd8;
+        }
+
+        .CDSPostCaseDetail-header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CDSPostCaseDetail-btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .CDSPostCaseDetail-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .CDSPostCaseDetail-btn-secondary {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+        }
+
+        .CDSPostCaseDetail-btn-secondary:hover {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        /* Main Layout Grid */
+        .CDSPostCaseDetail-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Main Content Area */
+        .CDSPostCaseDetail-main {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Case Header Card */
+        .CDSPostCaseDetail-case-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseDetail-case-title-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .CDSPostCaseDetail-case-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-case-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .CDSPostCaseDetail-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseDetail-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .CDSPostCaseDetail-tag {
+            padding: 4px 12px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .CDSPostCaseDetail-status-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .CDSPostCaseDetail-status-open {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .CDSPostCaseDetail-status-review {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .CDSPostCaseDetail-status-awarded {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .CDSPostCaseDetail-pulse-dot {
+            width: 6px;
+            height: 6px;
+            background: currentColor;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Description Section */
+        .CDSPostCaseDetail-description-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseDetail-section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-description-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #5a6c7d;
+        }
+
+        /* Requirements Section */
+        .CDSPostCaseDetail-requirements-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .CDSPostCaseDetail-requirement-item {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #5a6c7d;
+        }
+
+        .CDSPostCaseDetail-requirement-item::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Proposals Section */
+        .CDSPostCaseDetail-proposals-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseDetail-proposals-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .CDSPostCaseDetail-proposals-count {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseDetail-proposal-count-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        /* Proposal Cards */
+        .CDSPostCaseDetail-proposal-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .CDSPostCaseDetail-proposal-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .CDSPostCaseDetail-proposal-card:hover {
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .CDSPostCaseDetail-proposal-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .CDSPostCaseDetail-proposal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .CDSPostCaseDetail-professional-info {
+            display: flex;
+            gap: 15px;
+        }
+
+        .CDSPostCaseDetail-professional-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .CDSPostCaseDetail-professional-details h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CDSPostCaseDetail-professional-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseDetail-verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #27ae60;
+            font-weight: 500;
+        }
+
+        .CDSPostCaseDetail-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        .CDSPostCaseDetail-proposal-content {
+            margin: 20px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #5a6c7d;
+        }
+
+        .CDSPostCaseDetail-proposal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .CDSPostCaseDetail-proposal-details {
+            display: flex;
+            gap: 25px;
+        }
+
+        .CDSPostCaseDetail-proposal-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .CDSPostCaseDetail-detail-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CDSPostCaseDetail-detail-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .CDSPostCaseDetail-proposal-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-btn-award {
+            background: #27ae60;
+            color: white;
+        }
+
+        .CDSPostCaseDetail-btn-award:hover {
+            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+        }
+
+        /* Sidebar */
+        .CDSPostCaseDetail-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            position: sticky;
+            top: 20px;
+        }
+
+        /* Budget Card */
+        .CDSPostCaseDetail-budget-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+            text-align: center;
+        }
+
+        .CDSPostCaseDetail-budget-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .CDSPostCaseDetail-budget-amount {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .CDSPostCaseDetail-budget-type {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        /* Client Card */
+        .CDSPostCaseDetail-client-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseDetail-client-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .CDSPostCaseDetail-client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .CDSPostCaseDetail-client-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CDSPostCaseDetail-client-status {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseDetail-online-indicator {
+            width: 8px;
+            height: 8px;
+            background: #27ae60;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .CDSPostCaseDetail-client-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .CDSPostCaseDetail-stat {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 12px;
+        }
+
+        .CDSPostCaseDetail-stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .CDSPostCaseDetail-stat-label {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Timeline Card */
+        .CDSPostCaseDetail-timeline-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseDetail-timeline-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .CDSPostCaseDetail-timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseDetail-timeline-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .CDSPostCaseDetail-timeline-content {
+            flex: 1;
+        }
+
+        .CDSPostCaseDetail-timeline-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CDSPostCaseDetail-timeline-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Action Bar */
+        .CDSPostCaseDetail-action-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .CDSPostCaseDetail-action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .CDSPostCaseDetail-share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-btn-icon {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        /* Messages Section */
+        .CDSPostCaseDetail-messages-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-top: 25px;
+        }
+
+        .CDSPostCaseDetail-messages-list {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 10px;
+        }
+
+        .CDSPostCaseDetail-message {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .CDSPostCaseDetail-message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .CDSPostCaseDetail-message-content {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            border-bottom-left-radius: 0;
+        }
+
+        .CDSPostCaseDetail-message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .CDSPostCaseDetail-message-author {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .CDSPostCaseDetail-message-time {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .CDSPostCaseDetail-message-text {
+            font-size: 14px;
+            color: #5a6c7d;
+            line-height: 1.5;
+        }
+
+        .CDSPostCaseDetail-message-input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-message-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseDetail-message-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Notification Badge */
+        .CDSPostCaseDetail-notification-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 2000;
+        }
+
+        .CDSPostCaseDetail-notification-badge.show {
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .CDSPostCaseDetail-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .CDSPostCaseDetail-sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .CDSPostCaseDetail-container {
+                padding: 15px;
+            }
+
+            .CDSPostCaseDetail-header-bar {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .CDSPostCaseDetail-breadcrumb {
+                font-size: 12px;
+            }
+
+            .CDSPostCaseDetail-header-actions {
+                width: 100%;
+                justify-content: stretch;
+            }
+
+            .CDSPostCaseDetail-btn {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .CDSPostCaseDetail-case-title {
+                font-size: 24px;
+            }
+
+            .CDSPostCaseDetail-case-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .CDSPostCaseDetail-proposal-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .CDSPostCaseDetail-proposal-details {
+                justify-content: space-between;
+            }
+
+            .CDSPostCaseDetail-proposal-actions {
+                width: 100%;
+            }
+
+            .CDSPostCaseDetail-proposal-actions .CDSPostCaseDetail-btn {
+                flex: 1;
+            }
+
+            .CDSPostCaseDetail-budget-amount {
+                font-size: 28px;
+            }
+
+            .CDSPostCaseDetail-action-bar {
+                flex-direction: column;
+            }
+
+            .CDSPostCaseDetail-action-buttons,
+            .CDSPostCaseDetail-share-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .CDSPostCaseDetail-sidebar {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .CDSPostCaseDetail-case-header,
+            .CDSPostCaseDetail-description-card,
+            .CDSPostCaseDetail-proposals-section,
+            .CDSPostCaseDetail-messages-section {
+                padding: 20px;
+            }
+
+            .CDSPostCaseDetail-case-title {
+                font-size: 20px;
+            }
+
+            .CDSPostCaseDetail-section-title {
+                font-size: 18px;
+            }
+
+            .CDSPostCaseDetail-proposal-card {
+                padding: 20px;
+            }
+
+            .CDSPostCaseDetail-professional-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .CDSPostCaseDetail-professional-avatar {
+                margin: 0 auto;
+            }
+
+            .CDSPostCaseDetail-btn {
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+
+            .CDSPostCaseDetail-notification-badge {
+                top: auto;
+                bottom: 20px;
+                right: 10px;
+                left: 10px;
+                text-align: center;
+            }
+        }
+
+        /* Scrollbar Styling */
+        .CDSPostCaseDetail-messages-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .CDSPostCaseDetail-messages-list::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+        }
+
+        .CDSPostCaseDetail-messages-list::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.3);
+            border-radius: 3px;
+        }
+
+        .CDSPostCaseDetail-messages-list::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.5);
+        }
+
+        /* Proposal Modal Styles */
+        .CDSPostCaseDetail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .CDSPostCaseDetail-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .CDSPostCaseDetail-modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .CDSPostCaseDetail-modal.active .CDSPostCaseDetail-modal-content {
+            transform: scale(1);
+        }
+
+        .CDSPostCaseDetail-modal-header {
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .CDSPostCaseDetail-modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .CDSPostCaseDetail-modal-close {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CDSPostCaseDetail-modal-close:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #666;
+            transform: rotate(90deg);
+        }
+
+        /* Form Styles */
+        #proposalForm {
+            padding: 40px;
+        }
+
+        .CDSPostCaseDetail-form-group {
+            margin-bottom: 25px;
+        }
+
+        .CDSPostCaseDetail-form-label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CDSPostCaseDetail-form-input,
+        .CDSPostCaseDetail-form-textarea,
+        .CDSPostCaseDetail-form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: white;
+        }
+
+        .CDSPostCaseDetail-form-input:focus,
+        .CDSPostCaseDetail-form-textarea:focus,
+        .CDSPostCaseDetail-form-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .CDSPostCaseDetail-form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .CDSPostCaseDetail-textarea-small {
+            min-height: 80px;
+        }
+
+        .CDSPostCaseDetail-char-count {
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .CDSPostCaseDetail-form-hint {
+            display: block;
+            margin-top: 5px;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseDetail-proposal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Key Points */
+        .CDSPostCaseDetail-key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .CDSPostCaseDetail-key-point-input {
+            margin-bottom: 0;
+        }
+
+        /* File Upload */
+        .CDSPostCaseDetail-file-upload {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            border: 2px dashed #e0e0e0;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseDetail-file-upload:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .CDSPostCaseDetail-file-button {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CDSPostCaseDetail-file-button:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .CDSPostCaseDetail-file-info {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .CDSPostCaseDetail-file-list {
+            margin-top: 10px;
+        }
+
+        .CDSPostCaseDetail-file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .CDSPostCaseDetail-file-remove {
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseDetail-file-remove:hover {
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        /* Checkbox */
+        .CDSPostCaseDetail-checkbox-group {
+            margin: 30px 0;
+        }
+
+        .CDSPostCaseDetail-checkbox-label {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            font-size: 14px;
+            color: #5a6c7d;
+            cursor: pointer;
+        }
+
+        .CDSPostCaseDetail-checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        /* Form Actions */
+        .CDSPostCaseDetail-form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .CDSPostCaseDetail-modal-content {
+                max-width: 100%;
+                margin: 10px;
+            }
+
+            .CDSPostCaseDetail-modal-header {
+                padding: 20px;
+            }
+
+            #proposalForm {
+                padding: 20px;
+            }
+
+            .CDSPostCaseDetail-proposal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .CDSPostCaseDetail-form-actions {
+                flex-direction: column-reverse;
+            }
+
+            .CDSPostCaseDetail-form-actions .CDSPostCaseDetail-btn {
+                width: 100%;
+            }
+        }
+
+
+        /* new */
+             .CDSProposals-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Bar */
+        .CDSProposals-header-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .CDSProposals-header-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .CDSProposals-header-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .CDSProposals-header-text h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CDSProposals-header-text p {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSProposals-filter-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .CDSProposals-filter-btn {
+            padding: 10px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .CDSProposals-filter-btn:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .CDSProposals-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Proposals List */
+        .CDSProposals-main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+                max-width: 100%;
+
+        }
+
+        /* Proposal Card */
+        .CDSProposals-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .CDSProposals-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .CDSProposals-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .CDSProposals-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        /* Professional Header */
+        .CDSProposals-professional-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .CDSProposals-professional-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .CDSProposals-professional-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #667eea;
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .CDSProposals-professional-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .CDSProposals-professional-avatar.no-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .CDSProposals-professional-details h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .CDSProposals-professional-company {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .CDSProposals-professional-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .CDSProposals-professional-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .CDSProposals-tag {
+            padding: 4px 10px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Proposal Content */
+        .CDSProposals-content {
+            padding: 25px 30px;
+        }
+
+        .CDSProposals-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #5a6c7d;
+            margin-bottom: 25px;
+        }
+
+        /* Quotation Section */
+        .CDSProposals-quotation {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .CDSProposals-quotation-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .CDSProposals-quotation-table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .CDSProposals-quotation-table th {
+            background: #f0f2f5;
+            padding: 12px 20px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CDSProposals-quotation-table td {
+            padding: 15px 20px;
+            border-top: 1px solid #f0f2f5;
+        }
+
+        .CDSProposals-quotation-table .amount {
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .CDSProposals-quotation-total {
+            background: #f0f2f5;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .CDSProposals-quotation-total td {
+            color: #2c3e50;
+        }
+
+        /* Service Details */
+        .CDSProposals-service-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .CDSProposals-detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .CDSProposals-detail-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CDSProposals-detail-value {
+            font-size: 15px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* Action Buttons */
+        .CDSProposals-actions {
+            display: flex;
+            gap: 10px;
+            padding: 25px 30px;
+            background: rgba(0, 0, 0, 0.02);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .CDSProposals-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .CDSProposals-btn-view {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+        }
+
+        .CDSProposals-btn-view:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .CDSProposals-btn-message {
+            background: #3498db;
+            color: white;
+        }
+
+        .CDSProposals-btn-message:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .CDSProposals-btn-award {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+        }
+
+        .CDSProposals-btn-award:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+        }
+        .CDSProposals-layout {
+    display: block;
+}
+   /* Modal Styles */
+        .CDSPostCaseNotifications-list-view-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal.CDSPostCaseNotifications-list-view-active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .CDSPostCaseNotifications-list-view-modal.CDSPostCaseNotifications-list-view-active .CDSPostCaseNotifications-list-view-modal-content {
+            transform: scale(1);
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-group {
+            margin-bottom: 25px;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-input,
+        .CDSPostCaseNotifications-list-view-form-textarea,
+        .CDSPostCaseNotifications-list-view-form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-input:focus,
+        .CDSPostCaseNotifications-list-view-form-textarea:focus,
+        .CDSPostCaseNotifications-list-view-form-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .CDSPostCaseNotifications-list-view-form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Success animation */
+        .CDSPostCaseNotifications-list-view-success-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0;
+            pointer-events: none;
+            animation: CDSPostCaseNotifications-list-view-successPop 1s ease;
+        }
+
+        @keyframes CDSPostCaseNotifications-list-view-successPop {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+        .close-modal-btn {
+            background: transparent;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0 10px;
+        }
+
+        /* Notification */
+        .CDSPostCaseNotifications-list-view-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 2000;
+            max-width: 90%;
+        }
+
+        .CDSPostCaseNotifications-list-view-notification.CDSPostCaseNotifications-list-view-show {
+            transform: translateX(0);
+        }

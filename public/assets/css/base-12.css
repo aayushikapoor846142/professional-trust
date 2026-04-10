@@ -1,0 +1,1867 @@
+/* ---------------------------------
+   4. COLORS & THEMING
+----------------------------------- */
+
+/* 
+   Default color definitions.
+   You can override these in a custom theme body class 
+   or in a separate :root block to adjust the entire site's colors.
+*/
+:root {
+  --cdsTYFramework-primary: #212529;
+  --cdsTYFramework-secondary: #6c757d;
+  --cdsTYFramework-success: #198754;
+  --cdsTYFramework-danger: #dc3545;
+  --cdsTYFramework-warning: #ffc107;
+  --cdsTYFramework-info: #0dcaf0;
+  --cdsTYFramework-light: #f8f9fa;
+  --cdsTYFramework-dark: #212529;
+
+  /* Extended shades (optional) */
+  --cdsTYFramework-primary-light: #3d8bfd;
+  --cdsTYFramework-primary-dark: #0a58ca;
+  /* Add more as needed. */
+}
+
+/* Body background & text color (themable) */
+body.cdsTYFramework-theme-dark {
+  --cdsTYFramework-bg-base: #121212;
+  --cdsTYFramework-text-base: #ffffff;
+  background-color: var(--cdsTYFramework-bg-base);
+  color: var(--cdsTYFramework-text-base);
+}
+
+/* Background colors */
+.cdsTYFramework-bg-primary {
+  background-color: var(--cdsTYFramework-primary) !important;
+  color: #fff !important;
+}
+.cdsTYFramework-bg-secondary {
+  background-color: var(--cdsTYFramework-secondary) !important;
+  color: #fff !important;
+}
+.cdsTYFramework-bg-success {
+  background-color: var(--cdsTYFramework-success) !important;
+  color: #fff !important;
+}
+.cdsTYFramework-bg-danger {
+  background-color: var(--cdsTYFramework-danger) !important;
+  color: #fff !important;
+}
+.cdsTYFramework-bg-warning {
+  background-color: var(--cdsTYFramework-warning) !important;
+  color: #212529 !important;
+}
+.cdsTYFramework-bg-info {
+  background-color: var(--cdsTYFramework-info) !important;
+  color: #212529 !important;
+}
+.cdsTYFramework-bg-light {
+  background-color: var(--cdsTYFramework-light) !important;
+  color: #212529 !important;
+}
+.cdsTYFramework-bg-dark {
+  background-color: var(--cdsTYFramework-dark) !important;
+  color: #fff !important;
+}
+
+/* Text colors */
+.cdsTYFramework-text-primary {
+  color: var(--cdsTYFramework-primary) !important;
+}
+.cdsTYFramework-text-secondary {
+  color: var(--cdsTYFramework-secondary) !important;
+}
+.cdsTYFramework-text-success {
+  color: var(--cdsTYFramework-success) !important;
+}
+.cdsTYFramework-text-danger {
+  color: var(--cdsTYFramework-danger) !important;
+}
+.cdsTYFramework-text-warning {
+  color: var(--cdsTYFramework-warning) !important;
+}
+.cdsTYFramework-text-info {
+  color: var(--cdsTYFramework-info) !important;
+}
+.cdsTYFramework-text-light {
+  color: var(--cdsTYFramework-light) !important;
+}
+.cdsTYFramework-text-dark {
+  color: var(--cdsTYFramework-dark) !important;
+}
+
+/*********************************************
+ * EXTENDED RESPONSIVE GRID
+ *
+ * 12-column system with breakpoint classes.
+ * 
+ * Breakpoint reference (you can adjust these):
+ * xs  (extra-small):    < 576px (default, no media query)
+ * sm  (small):          ≥ 576px
+ * md  (medium):         ≥ 768px
+ * lg  (large):          ≥ 992px
+ * xl  (extra-large):    ≥ 1200px
+ * xxl (extra-extra-large): ≥ 1400px
+ *********************************************/
+
+/* Base column class */
+.cdsTYFramework-col {
+  flex: 1 0 0%;
+  max-width: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  /* The parent .cdsTYFramework-row usually has:
+     display: flex; flex-wrap: wrap; 
+     negative margins to account for column padding */
+}
+
+/* 
+  1) Extra-small (xs): no media query needed 
+     because this is the default for all columns 
+     below 576px. 
+  2) For columns that you want to ALWAYS be a 
+     certain width regardless of screen, you can 
+     use .cdsTYFramework-col-<N> without a breakpoint.
+  3) For simplicity, we'll demonstrate from 
+     .col-sm-* to .col-xxl-* 
+*/
+
+/* ---------- SMALL (≥ 576px) ---------- */
+@media (min-width: 576px) {
+  .cdsTYFramework-col-sm-1  { flex: 0 0 8.333333%;  max-width: 8.333333%; }
+  .cdsTYFramework-col-sm-2  { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .cdsTYFramework-col-sm-3  { flex: 0 0 25%;        max-width: 25%; }
+  .cdsTYFramework-col-sm-4  { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .cdsTYFramework-col-sm-5  { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .cdsTYFramework-col-sm-6  { flex: 0 0 50%;        max-width: 50%; }
+  .cdsTYFramework-col-sm-7  { flex: 0 0 58.333333%; max-width: 58.333333%; }
+  .cdsTYFramework-col-sm-8  { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .cdsTYFramework-col-sm-9  { flex: 0 0 75%;        max-width: 75%; }
+  .cdsTYFramework-col-sm-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .cdsTYFramework-col-sm-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+  .cdsTYFramework-col-sm-12 { flex: 0 0 100%;       max-width: 100%; }
+}
+
+/* ---------- MEDIUM (≥ 768px) ---------- */
+@media (min-width: 768px) {
+  .cdsTYFramework-col-md-1  { flex: 0 0 8.333333%;  max-width: 8.333333%; }
+  .cdsTYFramework-col-md-2  { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .cdsTYFramework-col-md-3  { flex: 0 0 25%;        max-width: 25%; }
+  .cdsTYFramework-col-md-4  { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .cdsTYFramework-col-md-5  { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .cdsTYFramework-col-md-6  { flex: 0 0 50%;        max-width: 50%; }
+  .cdsTYFramework-col-md-7  { flex: 0 0 58.333333%; max-width: 58.333333%; }
+  .cdsTYFramework-col-md-8  { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .cdsTYFramework-col-md-9  { flex: 0 0 75%;        max-width: 75%; }
+  .cdsTYFramework-col-md-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .cdsTYFramework-col-md-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+  .cdsTYFramework-col-md-12 { flex: 0 0 100%;       max-width: 100%; }
+}
+
+/* ---------- LARGE (≥ 992px) ---------- */
+@media (min-width: 992px) {
+  .cdsTYFramework-col-lg-1  { flex: 0 0 8.333333%;  max-width: 8.333333%; }
+  .cdsTYFramework-col-lg-2  { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .cdsTYFramework-col-lg-3  { flex: 0 0 25%;        max-width: 25%; }
+  .cdsTYFramework-col-lg-4  { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .cdsTYFramework-col-lg-5  { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .cdsTYFramework-col-lg-6  { flex: 0 0 50%;        max-width: 50%; }
+  .cdsTYFramework-col-lg-7  { flex: 0 0 58.333333%; max-width: 58.333333%; }
+  .cdsTYFramework-col-lg-8  { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .cdsTYFramework-col-lg-9  { flex: 0 0 75%;        max-width: 75%; }
+  .cdsTYFramework-col-lg-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .cdsTYFramework-col-lg-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+  .cdsTYFramework-col-lg-12 { flex: 0 0 100%;       max-width: 100%; }
+}
+
+/* ---------- EXTRA-LARGE (≥ 1200px) ---------- */
+@media (min-width: 1200px) {
+  .cdsTYFramework-col-xl-1  { flex: 0 0 8.333333%;  max-width: 8.333333%; }
+  .cdsTYFramework-col-xl-2  { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .cdsTYFramework-col-xl-3  { flex: 0 0 25%;        max-width: 25%; }
+  .cdsTYFramework-col-xl-4  { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .cdsTYFramework-col-xl-5  { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .cdsTYFramework-col-xl-6  { flex: 0 0 50%;        max-width: 50%; }
+  .cdsTYFramework-col-xl-7  { flex: 0 0 58.333333%; max-width: 58.333333%; }
+  .cdsTYFramework-col-xl-8  { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .cdsTYFramework-col-xl-9  { flex: 0 0 75%;        max-width: 75%; }
+  .cdsTYFramework-col-xl-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .cdsTYFramework-col-xl-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+  .cdsTYFramework-col-xl-12 { flex: 0 0 100%;       max-width: 100%; }
+}
+
+/* ---------- EXTRA-EXTRA-LARGE (≥ 1400px) ---------- */
+@media (min-width: 1400px) {
+  .cdsTYFramework-col-xxl-1  { flex: 0 0 8.333333%;  max-width: 8.333333%; }
+  .cdsTYFramework-col-xxl-2  { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .cdsTYFramework-col-xxl-3  { flex: 0 0 25%;        max-width: 25%; }
+  .cdsTYFramework-col-xxl-4  { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .cdsTYFramework-col-xxl-5  { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .cdsTYFramework-col-xxl-6  { flex: 0 0 50%;        max-width: 50%; }
+  .cdsTYFramework-col-xxl-7  { flex: 0 0 58.333333%; max-width: 58.333333%; }
+  .cdsTYFramework-col-xxl-8  { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .cdsTYFramework-col-xxl-9  { flex: 0 0 75%;        max-width: 75%; }
+  .cdsTYFramework-col-xxl-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .cdsTYFramework-col-xxl-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+  .cdsTYFramework-col-xxl-12 { flex: 0 0 100%;       max-width: 100%; }
+}
+
+/***************************************************
+ * cdsTYFramework
+ *
+ * A more advanced, Bootstrap-inspired CSS framework 
+ * using the prefix "cdsTYFramework-".
+ ***************************************************/
+
+/* --------------------------------- 
+   1. RESET & BASE STYLES
+----------------------------------- */
+.cdsTYFramework-reset,
+.cdsTYFramework-reset * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* --------------------------------- 
+   1.1 BASIC HTML ELEMENTS
+----------------------------------- */
+
+/* Lists */
+.cdsTYFramework ul,
+.cdsTYFramework ol {
+  margin: 0 0 0 0;
+  padding-left: 0;
+  line-height: 1.6;
+}
+
+.cdsTYFramework ul ul,
+.cdsTYFramework ul ol,
+.cdsTYFramework ol ul,
+.cdsTYFramework ol ol {
+  margin-bottom: 0;
+  margin-top: 0.25rem;
+}
+
+.cdsTYFramework li {
+  list-style: none;
+  margin-bottom: 0.25rem;
+  line-height: 1.6;
+}
+
+.cdsTYFramework li:last-child {
+  margin-bottom: 0;
+}
+
+/* Unordered list styles */
+.cdsTYFramework ul {
+  list-style-type: disc;
+}
+
+.cdsTYFramework ul ul {
+  list-style-type: circle;
+}
+
+.cdsTYFramework ul ul ul {
+  list-style-type: square;
+}
+
+/* Ordered list styles */
+.cdsTYFramework ol {
+  list-style-type: decimal;
+}
+
+.cdsTYFramework ol ol {
+  list-style-type: lower-alpha;
+}
+
+.cdsTYFramework ol ol ol {
+  list-style-type: lower-roman;
+}
+
+/* Links */
+.cdsTYFramework a {
+ 
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, 
+              text-decoration 0.15s ease-in-out;
+}
+
+.cdsTYFramework a:hover {
+ 
+}
+
+.cdsTYFramework a:focus {
+ 
+}
+
+.cdsTYFramework a:visited {
+  
+}
+
+/* Paragraphs */
+.cdsTYFramework p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.cdsTYFramework p:last-child {
+  margin-bottom: 0;
+}
+
+/* Headings */
+.cdsTYFramework h1,
+.cdsTYFramework h2,
+.cdsTYFramework h3,
+.cdsTYFramework h4,
+.cdsTYFramework h5,
+.cdsTYFramework h6 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--cdsTYFramework-dark, #212529);
+}
+
+.cdsTYFramework h1 { font-size: 2.5rem; }
+.cdsTYFramework h2 { font-size: 2rem; }
+.cdsTYFramework h3 { font-size: 1.75rem; }
+.cdsTYFramework h4 { font-size: 1.5rem; }
+.cdsTYFramework h5 { font-size: 1.25rem; }
+.cdsTYFramework h6 { font-size: 1rem; }
+
+/* Tables */
+.cdsTYFramework table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.cdsTYFramework th,
+.cdsTYFramework td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.cdsTYFramework thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+.cdsTYFramework tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+/* Images */
+.cdsTYFramework img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+/* Code */
+.cdsTYFramework code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  background-color: #f8f9fa;
+  border-radius: 3px;
+  color: #d63384;
+}
+
+.cdsTYFramework pre {
+  display: block;
+  margin: 0 0 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow: auto;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.cdsTYFramework pre code {
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Blockquotes */
+.cdsTYFramework blockquote {
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 4px solid var(--cdsTYFramework-primary, #0d6efd);
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* Horizontal Rules */
+.cdsTYFramework hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Definition Lists */
+.cdsTYFramework dl {
+  margin: 0 0 1rem 0;
+}
+
+.cdsTYFramework dt {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cdsTYFramework dd {
+  margin: 0 0 0.5rem 1.5rem;
+}
+
+/* Form Elements */
+.cdsTYFramework input,
+.cdsTYFramework textarea,
+.cdsTYFramework select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.cdsTYFramework button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cdsTYFramework button:focus {
+  outline: 2px solid var(--cdsTYFramework-primary, #0d6efd);
+  outline-offset: 2px;
+}
+
+/* Utility: Remove list styles */
+.cdsTYFramework .list-unstyled,
+.cdsTYFramework-list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.cdsTYFramework .list-inline,
+.cdsTYFramework-list-inline {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cdsTYFramework .list-inline li,
+.cdsTYFramework-list-inline li {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+/* ---------------------------------
+   2. LAYOUT
+----------------------------------- */
+
+/* Container */
+.cdsTYFramework-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+   padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 1340px;
+}
+
+.cdsTYFramework-container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Rows & Columns */
+.cdsTYFramework-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.cdsTYFramework-col {
+  flex: 1 0 0%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Example column breakpoints */
+@media (min-width: 576px) {
+  .cdsTYFramework-col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .cdsTYFramework-col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .cdsTYFramework-col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+  .cdsTYFramework-col-md-8 {
+    flex: 0 0 66.666%;
+    max-width: 66.666%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cdsTYFramework-col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .cdsTYFramework-col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+.cdsTYFramework-main-content-container-wrapper{ display:flex; width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 1340px;}
+.cdsTYFramework-main-content-container{ flex: 0 0 66.666%;
+    max-width: 66.666%;}
+.cdsTYFramework-sidebar-content-container{ flex: 0 0 33.333%;
+    max-width: 33.333%;}
+	.cdsTYFramework-sidebar-content-inner{max-width:320px;margin:0 auto;}
+/* ---------------------------------
+   3. TYPOGRAPHY
+----------------------------------- */
+
+.cdsTYFramework-h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.cdsTYFramework-h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.cdsTYFramework-h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.cdsTYFramework-h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cdsTYFramework-h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cdsTYFramework-h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cdsTYFramework-p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Links */
+.cdsTYFramework-link {
+  color: var(--cdsTYFramework-primary, #0d6efd);
+  text-decoration: none;
+}
+.cdsTYFramework-link:hover {
+  text-decoration: underline;
+}
+
+/* Text alignment utilities */
+.cdsTYFramework-text-left {
+  text-align: left !important;
+}
+.cdsTYFramework-text-center {
+  text-align: center !important;
+}
+.cdsTYFramework-text-right {
+  text-align: right !important;
+}
+.cdsTYFramework-text-justify {
+  text-align: justify !important;
+}
+
+/* Text truncation utility */
+.cdsTYFramework-text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ---------------------------------
+   5. SPACING UTILITIES
+----------------------------------- */
+
+/* Margin classes (example: 0 to 5) */
+.cdsTYFramework-m-0 { margin: 0 !important; }
+.cdsTYFramework-m-1 { margin: 0.25rem !important; }
+.cdsTYFramework-m-2 { margin: 0.5rem !important; }
+.cdsTYFramework-m-3 { margin: 1rem !important; }
+.cdsTYFramework-m-4 { margin: 1.5rem !important; }
+.cdsTYFramework-m-5 { margin: 3rem !important; }
+
+/* Padding classes (example: 0 to 5) */
+.cdsTYFramework-p-0 { padding: 0 !important; }
+.cdsTYFramework-p-1 { padding: 0.25rem !important; }
+.cdsTYFramework-p-2 { padding: 0.5rem !important; }
+.cdsTYFramework-p-3 { padding: 1rem !important; }
+.cdsTYFramework-p-4 { padding: 1.5rem !important; }
+.cdsTYFramework-p-5 { padding: 3rem !important; }
+
+/* ---------------------------------
+   6. BUTTONS
+----------------------------------- */
+
+.cdsTYFramework-btn {
+  display: inline-flex;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 12px 24px;
+  line-height: 1.5;
+  background-color: transparent;
+  border-radius: 25px;
+  transition: background-color 0.15s ease-in-out, 
+              border-color 0.15s ease-in-out,
+              color 0.15s ease-in-out;
+  align-items: center;
+}
+.cdsTYFramework-btn-small{
+  display: inline-flex;
+  font-weight: 400;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 10px 18px;
+  line-height: 1.5;
+  background-color: transparent;
+  border-radius: 25px;
+  transition: background-color 0.15s ease-in-out, 
+              border-color 0.15s ease-in-out,
+              color 0.15s ease-in-out;
+  align-items: center;
+  }
+  
+/* Button Variants */
+.cdsTYFramework-btn-red {
+  background-color:  #bb0202 !important;
+  border-color: #840101;
+  color: #fff;
+}
+.cdsTYFramework-btn-red:hover {
+  filter: brightness(90%);
+  color: rgba(255,255,255,0.9);
+}
+.cdsTYFramework-btn-primary {
+  
+   border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: #074fdf;
+    color: white;
+    cursor: pointer;
+  
+    transition: 0.3s;
+}.cdsTYFramework-btn-primary-outline {
+  
+   border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    color: #666;
+    cursor: pointer;
+  
+    transition: 0.3s;
+}.cdsTYFramework-btn-primary-outline:hover {
+  
+  
+    color: #444;
+    
+}
+.cdsTYFramework-btn-primary:hover {
+  filter: brightness(90%);
+}
+
+.cdsTYFramework-btn-secondary {
+  background-color: var(--cdsTYFramework-secondary);
+  border-color: var(--cdsTYFramework-secondary);
+  color: #fff;
+}
+.cdsTYFramework-btn-secondary:hover {
+  filter: brightness(90%);
+}
+
+.cdsTYFramework-btn-success {
+  background-color: var(--cdsTYFramework-success);
+  border-color: var(--cdsTYFramework-success);
+  color: #fff;
+}
+.cdsTYFramework-btn-success:hover {
+  filter: brightness(90%);
+}
+
+.cdsTYFramework-btn-danger {
+  background-color: var(--cdsTYFramework-danger);
+  border-color: var(--cdsTYFramework-danger);
+  color: #fff;
+}
+.cdsTYFramework-btn-danger:hover {
+  filter: brightness(90%);
+}
+
+/* Outline Buttons */
+.cdsTYFramework-btn-outline-primary {
+  background-color: transparent;
+  color: var(--cdsTYFramework-primary);
+  border-color: var(--cdsTYFramework-primary);
+}
+.cdsTYFramework-btn-outline-primary:hover {
+  background-color: var(--cdsTYFramework-primary);
+  color: #fff;
+}
+
+/* Button sizes */
+.cdsTYFramework-btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+.cdsTYFramework-btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+
+/* ---------------------------------
+   7. FORMS
+----------------------------------- */
+
+.cdsTYFramework-form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.cdsTYFramework-form-control:focus {
+  border-color: var(--cdsTYFramework-primary);
+  outline: 0;
+}
+
+/* ---------------------------------
+   8. EXTENDED UTILITIES
+----------------------------------- */
+
+/* Float utilities */
+.cdsTYFramework-float-start {
+  float: left !important;
+}
+.cdsTYFramework-float-end {
+  float: right !important;
+}
+.cdsTYFramework-float-none {
+  float: none !important;
+}
+
+/* Display utilities */
+.cdsTYFramework-d-block {
+  display: block !important;
+}
+.cdsTYFramework-d-inline {
+  display: inline !important;
+}
+.cdsTYFramework-d-inline-block {
+  display: inline-block !important;
+}
+.cdsTYFramework-d-none {
+  display: none !important;
+}
+
+/* Overflow utilities */
+.cdsTYFramework-overflow-auto {
+  overflow: auto !important;
+}
+.cdsTYFramework-overflow-hidden {
+  overflow: hidden !important;
+}
+
+/* Border utilities */
+.cdsTYFramework-border {
+  border: 1px solid #dee2e6 !important;
+}
+.cdsTYFramework-border-0 {
+  border: 0 !important;
+}
+.cdsTYFramework-rounded {
+  border-radius: 0.25rem !important;
+}
+.cdsTYFramework-rounded-circle {
+  border-radius: 50% !important;
+}
+
+/* Shadow utilities */
+.cdsTYFramework-shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+.cdsTYFramework-shadow {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+.cdsTYFramework-shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+}
+
+/* ---------------------------------
+   9. ADVANCED COMPONENTS
+----------------------------------- */
+
+/* 9.1 NAVBAR */
+.cdsTYFramework-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--cdsTYFramework-light);
+  border-bottom: 1px solid #dee2e6;
+}
+.cdsTYFramework-navbar-brand {
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  margin-right: 1rem;
+}
+.cdsTYFramework-navbar-brand:hover {
+  text-decoration: none;
+}
+
+.cdsTYFramework-navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cdsTYFramework-navbar-nav li {
+  margin-left: 1rem;
+}
+.cdsTYFramework-navbar-nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 0;
+  transition: color 0.15s ease-in-out;
+}
+.cdsTYFramework-navbar-nav a:hover {
+  color: var(--cdsTYFramework-primary);
+}
+
+/* 9.2 MODAL */
+.cdsTYFramework-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+}
+.cdsTYFramework-modal.active {
+  display: flex;
+}
+.cdsTYFramework-modal-dialog {
+  position: relative;
+  margin: 0.5rem;
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+.cdsTYFramework-modal-header,
+.cdsTYFramework-modal-body,
+.cdsTYFramework-modal-footer {
+  padding: 1rem;
+}
+.cdsTYFramework-modal-header {
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cdsTYFramework-modal-footer {
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 9.3 ALERTS */
+.cdsTYFramework-alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.cdsTYFramework-alert-primary {
+  color: #084298;
+  background-color: #cfe2ff;
+  border-color: #b6d4fe;
+}
+.cdsTYFramework-alert-secondary {
+  color: #41464b;
+  background-color: #e2e3e5;
+  border-color: #d3d6d8;
+}
+.cdsTYFramework-alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+.cdsTYFramework-alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+.cdsTYFramework-alert-warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+.cdsTYFramework-alert-info {
+  color: #055160;
+  background-color: #cff4fc;
+  border-color: #b6effb;
+}
+ /*********************************************************************
+     * 5) DESCRIPTIVE SPACING CLASSES                                   *
+     *********************************************************************/
+    /* We'll define increments for 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 
+       1.5rem, 2rem, etc. and apply to top (mt), bottom (mb), left (ml), right (mr),
+       x (mx => left/right), y (my => top/bottom), and all (m => all sides).
+       Similarly for padding. */
+
+    /* MARGIN TOP (mt-#) */
+    .cdsTYFramework-mt-0_25 { margin-top: 0.25rem; }
+    .cdsTYFramework-mt-0_5  { margin-top: 0.5rem;  }
+    .cdsTYFramework-mt-0_75 { margin-top: 0.75rem; }
+    .cdsTYFramework-mt-1_0  { margin-top: 1rem;    }
+    .cdsTYFramework-mt-1_25 { margin-top: 1.25rem; }
+    .cdsTYFramework-mt-1_5  { margin-top: 1.5rem;  }
+    .cdsTYFramework-mt-2_0  { margin-top: 2rem;    }
+
+    /* MARGIN BOTTOM (mb-#) */
+    .cdsTYFramework-mb-0_25 { margin-bottom: 0.25rem; }
+    .cdsTYFramework-mb-0_5  { margin-bottom: 0.5rem;  }
+    .cdsTYFramework-mb-0_75 { margin-bottom: 0.75rem; }
+    .cdsTYFramework-mb-1_0  { margin-bottom: 1rem;    }
+    .cdsTYFramework-mb-1_25 { margin-bottom: 1.25rem; }
+    .cdsTYFramework-mb-1_5  { margin-bottom: 1.5rem;  }
+    .cdsTYFramework-mb-2_0  { margin-bottom: 2rem;    }
+
+    /* MARGIN LEFT (ml-#) */
+    .cdsTYFramework-ml-0_25 { margin-left: 0.25rem; }
+    .cdsTYFramework-ml-0_5  { margin-left: 0.5rem;  }
+    .cdsTYFramework-ml-1_0  { margin-left: 1rem;    }
+
+    /* MARGIN RIGHT (mr-#) */
+    .cdsTYFramework-mr-0_25 { margin-right: 0.25rem; }
+    .cdsTYFramework-mr-0_5  { margin-right: 0.5rem;  }
+    .cdsTYFramework-mr-1_0  { margin-right: 1rem;    }
+
+    /* MARGIN X (mx => left & right) */
+    .cdsTYFramework-mx-0_5  { margin-left: 0.5rem; margin-right: 0.5rem; }
+
+    /* MARGIN Y (my => top & bottom) */
+    .cdsTYFramework-my-1_0  { margin-top: 1rem; margin-bottom: 1rem; }
+
+    /* M => margin all sides */
+    .cdsTYFramework-m-1_0   { margin: 1rem; }
+    /* Feel free to define .cdsTYFramework-m-0_25, m-0_5, etc. similarly. */
+
+    /* PADDING CLASSES (p => all sides, px => left/right, py => top/bottom, etc.) */
+
+    /* P (all sides) */
+    .cdsTYFramework-p-0_25  { padding: 0.25rem; }
+    .cdsTYFramework-p-0_5   { padding: 0.5rem;  }
+    .cdsTYFramework-p-1_0   { padding: 1rem;    }
+    .cdsTYFramework-p-1_5   { padding: 1.5rem;  }
+    .cdsTYFramework-p-2_0   { padding: 2rem;    }
+
+    /* PX => left & right */
+    .cdsTYFramework-px-1_0  { padding-left:1rem; padding-right:1rem; }
+
+    /* PY => top & bottom */
+    .cdsTYFramework-py-0_5  { padding-top:0.5rem; padding-bottom:0.5rem; }
+
+    /* PT, PB, PL, PR if you want them:
+       e.g. .cdsTYFramework-pt-0_25 => padding-top:0.25rem */
+
+    /*********************************************************************
+     * 6) COLORS & BACKGROUND (sample)                                  *
+     *********************************************************************/
+    .cdsTYFramework-bg-primary { background-color:#0d6efd; color:#fff; }
+	
+    .cdsTYFramework-bg-dark    { background-color:#212529; color:#fff; }
+    .cdsTYFramework-bg-light   {background-color:#f8f9fa;color:#000;border-right: 1px solid #ddd;border-left: 1px solid #ddd;}
+
+    /*********************************************************************
+     * 7) TYPOGRAPHY                                                     *
+     *********************************************************************/
+    .cdsTYFramework-h1 {
+      font-size: clamp(2rem,5vw,3rem);
+      font-weight:700;
+      margin-bottom:0.5rem;
+    }
+    .cdsTYFramework-h2 {
+      font-size:clamp(1.5rem,4vw,2.5rem);
+      font-weight:600;
+      margin-bottom:0.5rem;
+    }
+    .cdsTYFramework-p {
+      margin-bottom:1rem;
+    }
+
+  /****************************************
+     *   9)      HEADER & NAV WRAPPERS        *
+     ****************************************/
+    .CDSMain-header {
+      display: flex;
+      align-items: center;
+      /* border-bottom: 1px dashed rgba(0,0,0,0.1); */
+      position: relative;
+      box-shadow: 0px -1px 2px rgb(56 52 52 / 8%), 0px 2px 3px rgb(56 52 52 / 12%);
+      justify-content: space-between;
+      background: #fff;
+      background: -moz-linear-gradient(90deg, rgba(10,32,43,1) 0%, rgba(28,39,61,1) 50%);
+      /* background: -webkit-linear-gradient(90deg, rgba(10,32,43,1) 0%, rgba(28,39,61,1) 50%); */
+      /* background: linear-gradient(90deg, rgba(10,32,43,1) 0%, rgba(28,39,61,1) 50%); */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0a202b",endColorstr="#1c273d",GradientType=1);
+      padding: 8px 24px;
+    }
+    .CDSMainNavigation-logo {
+      font-size: 1.5rem;
+      color: #fff;
+    }.CDSMainNavigation-logo a { display: flex;}
+	.CDSMainNavigation-logo img{max-width: 145px;}
+    .CDSMainNavigation-nav-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /****************************************
+     *       NAVIGATION (DESKTOP VIEW)      *
+     ****************************************/
+    /* The entire nav bar (including the sub nav row)
+       is inside #CDSMainNavigation-navBar */
+    #CDSMainNavigation-navBar {
+      display: flex;
+       /* 2 rows in desktop: mainItems + subItems */
+      gap: 0.5rem;
+    }
+    /* Row 1: main items */
+    .CDSMainNavigation-mainItems,
+    /* Row 2: sub items */
+    .CDSMainNavigation-subItems {
+      display: flex;
+      gap: 0;
+      padding: 0;
+      list-style-type: none;
+      align-items: center;
+    }
+    .CDSMainNavigation-mainItems li,
+    .CDSMainNavigation-subItems li {
+      position: relative; /* for absolutely positioned dropdown content */
+      /* flex: 1; */
+      /* margin-bottom: 5px; */
+      /* border-bottom: 1px solid #eee; */
+      margin: 0;
+      /* margin-bottom: 5px; */
+      /* padding-top: 5px; */
+      /* padding-bottom: 5px; */
+    }
+    .CDSMainNavigation-mainItems li a,
+    .CDSMainNavigation-subItems li a {
+      
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      transition: background-color 0.3s;
+    }.CDSMainNavigation-mainItems li a
+     {
+      color: #212529;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 10px 20px;
+    
+      transition: background-color 0.3s;
+    } .CDSMainNavigation-mainItems li li a
+     {
+      color: #212529;
+      font-size: 14px;
+      text-wrap-mode: nowrap;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: background-color 0.3s;
+    }
+	 .CDSMainNavigation-mainItems li li a span
+     {
+     display:flex;
+     flex-direction: column;
+    }
+    .CDSMainNavigation-mainItems li li a span span
+     {
+     font-size: 11px;
+     display:flex;
+     color: #666;
+    }
+    .CDSMainNavigation-mainItems li li a:hover span span {color: #fff;}
+	.CDSMainNavigation-mainItems li li a i
+     {
+     
+margin-right: 8px;
+    }.CDSMainNavigation-show  a {
+      color: #212529 !important;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      transition: background-color 0.3s;
+    } 
+    .CDSMainNavigation-mainItems li a:hover,
+    .CDSMainNavigation-subItems li a:hover {
+      /* background-color: #444; */
+    }
+
+    /****************************************
+     *         HAMBURGER (MOBILE)           *
+     ****************************************/
+    .CDSMainNavigation-hamburger {
+      display: none; /* hidden on desktop */
+      padding: 8px 6px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      background: #f8f8f8;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .CDSMainNavigation-hamburger span {
+      width: 25px;
+      display: block;
+      border-radius: 25px;
+      height: 3px;
+      background-color: #aaa;
+    }
+
+    /****************************************
+     *  SIMPLE DROPDOWN ("About") STYLES    *
+     ****************************************/
+    .CDSMainNavigation-simple-dropdown-content {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: #fff;
+      /* border: 1px solid #444; */
+      overflow: hidden;
+      box-shadow: 0px 0px 64px 0px #0000001A;
+      max-height: 0;             /* collapsed by default */
+      transition: max-height 0.3s ease;
+      z-index: 999;
+    }
+    .CDSMainNavigation-simple-dropdown-content.CDSMainNavigation-show {
+      max-height: 300px;         /* enough to display simple links */
+      display: flex;
+      margin-bottom: 10px !important;
+      border-radius: 8px;
+      min-width: 150px;
+      flex-direction: column;
+    }
+    .CDSMainNavigation-simple-dropdown-content a {
+      display: flex;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .CDSMainNavigation-simple-dropdown-content a:hover {
+      background-color: #768ea7;color:#fff;
+    }
+
+    /****************************************
+     *         MEGA DROPDOWN STYLES         *
+     ****************************************/
+    .CDSMainNavigation-mega-dropdown-content {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: #fff;
+      /* border: 1px solid #444; */
+      overflow: hidden;
+      max-height: 0;             /* collapsed by default */
+      transition: max-height 0.3s ease;
+      z-index: 999;
+      width: 400px;              /* typical mega dropdown width */
+      padding: 0;                /* no direct padding */
+    }
+    .CDSMainNavigation-mega-dropdown-content.CDSMainNavigation-show {
+      max-height: 600px;         /* expand enough to display content */
+    }
+    .CDSMainNavigation-mega-inner {
+      padding: 1rem;             /* internal padding for columns */
+    }
+    .CDSMainNavigation-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .CDSMainNavigation-column {
+      flex: 1;
+    }
+    .CDSMainNavigation-column h3 {
+      margin-bottom: 0.5rem;
+      color: #212529;
+    }
+    .CDSMainNavigation-column a {
+      display: block;
+      color: #212529;
+      padding: 0.25rem 0;
+      text-decoration: none;
+    }
+    .CDSMainNavigation-column a:hover {
+      background-color: #444;
+    }
+
+    /****************************************
+     *      PROFILE SLIDE-IN PANEL          *
+     ****************************************/
+    .CDSMainNavigation-profile-dropdown {
+      /* margin-left: auto; */
+      /* display: flex; */
+      /* border-bottom: 0 none !important; */
+      /* align-items: center; */
+      /* padding: 10px; */
+      /* margin-top: 10px !important; */
+      /* border: 1px solid #eee; */
+      /* background: #f8f8f8; */
+      /* justify-content: flex-start; */
+    }
+    .CDSMainNavigation-profile-dropdown img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      object-fit: cover;
+    }
+    #CDSMainNavigation-profilePanel {
+      position: fixed;
+      top: 15px;
+      right: 0;
+      width: 250px;
+      /* height: 100%; */
+      border-radius: 8px;
+      background-color: #fff;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 9999;
+      padding: 1rem;
+    }
+    #CDSMainNavigation-profilePanel.CDSMainNavigation-show {
+      transform: translateX(0);
+      top: 15px;
+      right: 15px;
+    }
+    #CDSMainNavigation-profilePanel h2 {
+      color: #212529;
+      margin-bottom: 1rem;
+      font-size: 16px;
+    }
+    #CDSMainNavigation-profilePanel a {
+      display: block;
+      text-decoration: none;
+      padding: 0.5rem 10px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 0.5rem;
+    }
+    #CDSMainNavigation-profilePanel a:hover {
+      background-color: #444;
+      color: #fff !important;
+    }
+    .CDSMainNavigation-close-profile {
+      background: none;
+      border: none;
+      color: #0d6efd;
+      font-size: 1.2rem;
+      display: flex;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      float: right;
+    }
+
+    /****************************************
+     *       RESPONSIVE BREAKPOINTS         *
+     ****************************************/
+    @media (max-width: 768px) {
+      header {
+        padding: 0.5rem 1rem;
+      }
+.CDSMainNavigation-mainItems li li a
+     {
+      color: #212529;
+      font-size: 13px;
+      flex: 0 0 100%;
+      display:flex;
+      width: 100%;
+      text-wrap-mode: nowrap;
+      padding: 10px 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: background-color 0.3s;
+      align-items: baseline;
+    }.CDSMainNavigation-mainItems li
+     {
+      
+      border-bottom: 0 none;
+      transition: background-color 0.3s;
+      align-items: baseline;
+    }
+      /* The entire #CDSMainNavigation-navBar becomes a side drawer */
+      #CDSMainNavigation-navBar {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 280px;
+        box-shadow: rgba(19, 38, 68, 0.12) 0px 8px 24px 0px;
+        height: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1002;
+    }
+      #CDSMainNavigation-navBar.CDSMainNavigation-show {
+        transform: translateX(0);
+      }
+
+      /* The two <ul> (mainItems + subItems) now stack in a single column */
+      .CDSMainNavigation-mainItems,
+      .CDSMainNavigation-subItems {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+      }
+      .CDSMainNavigation-mainItems li a,
+      .CDSMainNavigation-subItems li a {
+       
+display: flex;
+       
+/* flex: 0 0 100%; */
+       
+/* width: 100%; */
+      }
+ .CDSMainNavigation-mainItems>li ,
+      .CDSMainNavigation-subItems>li  {
+         border-bottom: 1px solid #ddd;
+        display: flex;
+        flex: 1 1;
+        width: 100%;
+        flex-direction: column;
+      }
+      /* Show hamburger on mobile */
+      .CDSMainNavigation-hamburger {
+        display: flex;
+      }
+
+      /* Simple dropdown and mega dropdown become 'static' in mobile. */
+      .CDSMainNavigation-simple-dropdown-content,
+      .CDSMainNavigation-mega-dropdown-content {
+        position: static;
+        max-height: 0;
+        width: 100%;
+        border: none;
+        /* background-color: #444; */
+        margin-bottom: 0.25rem;
+      }
+      .CDSMainNavigation-simple-dropdown-content.CDSMainNavigation-show,
+      .CDSMainNavigation-mega-dropdown-content.CDSMainNavigation-show {
+        max-height: 600px;
+      }
+      .cdsTYOnboardingDashboard-container-left-menu.open {
+        background: #fff;
+        transform: translateX(300px);
+    }
+    }
+
+    @media (min-width: 769px) {
+      /* On desktop, #CDSMainNavigation-navBar is 2 rows (main + sub). 
+         There's no side-drawer effect. */
+      #CDSMainNavigation-navBar {
+        position: static;
+        transform: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+      }
+    }/*---------Support Us Pane-------*/
+  /* Button to open the panel */
+    .CDSMain-support-us-panel-open-panel-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 15px;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* The semi-transparent overlay behind the panel */
+    .CDSMain-support-us-panel-overlay {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none; /* hidden by default */
+      z-index: 9998; /* behind the panel (9999) */
+    }
+    /* "open" state for the overlay */
+    .CDSMain-support-us-panel-overlay.CDSMain-support-us-panel-open {
+      display: block;
+    }
+
+    /* The slide-out panel */
+    .CDSMain-support-us-panel-panel {
+      position: fixed;
+      top: 0; 
+      bottom: 0;        /* full height */
+      right: -480px;    /* hidden off-screen for large screens */
+      width: 480px;     /* default width on large screens */
+      max-width: 100%;  /* never exceed viewport width */
+      background: #f1f1f1;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+      transition: right 0.3s ease;
+      z-index: 9999;
+      overflow-y: auto; /* scroll if content is tall */
+    }
+    /* "open" state for the panel (slides in on large screens) */
+    .CDSMain-support-us-panel-panel.CDSMain-support-us-panel-open {
+      right: 0;
+    }
+
+    /* On screens below 480px, panel is 100% wide by default */
+    @media screen and (max-width: 480px) {
+      .CDSMain-support-us-panel-panel {
+        width: 100%;
+        right: -100%; /* hidden off-screen */
+      }
+      .CDSMain-support-us-panel-panel.CDSMain-support-us-panel-open {
+        right: 0;
+      }
+    }
+
+    /* 
+       .CDSMain-support-us-panel-fullwidth forces the panel to 100% width 
+       on ANY screen size (overrides the default 480px).
+    */
+    .CDSMain-support-us-panel-panel.CDSMain-support-us-panel-fullwidth {
+      width: 100% !important;
+      right: 0 !important;
+    }
+
+    /* Panel header styling */
+    .CDSMain-support-us-panel-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      background-color: #ddd;
+      border-bottom: 1px solid #ccc;
+    }
+    /* Button that toggles the panel's full-width state */
+    .CDSMain-support-us-panel-fullwidth-btn {
+      flex: 1; /* occupy remaining space in the header */
+      padding: 10px;
+      border: none;
+      background-color: #888;
+      color: #fff;
+      font-size: 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .CDSMain-support-us-panel-close-btn {
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .CDSMain-support-us-panel-panel-content {
+      padding: 15px;
+    }	
+	
+	 .cdsTYOnboardingDashboard-container-header, .cdsTYOnboardingDashboard-container-footer {
+            /* background-color: #333; */
+            color: #333;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+        }
+        .cdsTYOnboardingDashboard-container-profile-menu {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .cdsTYOnboardingDashboard-container-profile-menu img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .cdsTYOnboardingDashboard-container-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cdsTYOnboardingDashboard-container-dropdown-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cdsTYOnboardingDashboard-container-dropdown-menu ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .cdsTYOnboardingDashboard-container-dropdown-menu ul li:hover {
+            background-color: #f4f4f4;
+        }
+        .cdsTYOnboardingDashboard-container-main-content {
+            display: flex;
+            flex: 1;
+            padding: 1.5rem;
+        }
+        .cdsTYOnboardingDashboard-container-left-menu {
+            width: 320px;
+            /* background-color: #333; */
+            color: #333;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            transition: transform 0.3s ease-in-out;
+        }
+        .cdsTYOnboardingDashboard-container-menu-button {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .cdsTYOnboardingDashboard-container-right-container {
+            margin: 0 auto;
+            margin-left: 320px;
+            flex: 1 1;
+            /* max-width: 980px; */
+            display: flex;
+            border: 1px solid #e3e6e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            min-height: 90vh;
+        }
+        .cdsTYOnboardingDashboard-container-content-wrapper {
+            /* max-width: 1100px; */
+            width: 100%;
+            display: flex;
+            /* padding: 20px; */
+            /* background-color: white; */
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            /* border-radius: 8px; */
+            flex-direction: column;
+        }
+        @media (max-width: 767px) {
+            .cdsTYOnboardingDashboard-container-left-menu {
+                width: 300px;
+                z-index: 1;
+                height: 100vh;
+                position: fixed;
+                left: -300px;
+                top: 0;
+                transition: transform 0.3s ease-in-out;
+            }
+            .cdsTYOnboardingDashboard-container-left-menu.open {
+                background: #fff;
+                transform: translateX(300px);
+            }
+            .cdsTYOnboardingDashboard-container-right-container {
+                margin-left: 0;
+                padding-top: 20px;
+            }
+            .cdsTYOnboardingDashboard-container-menu-button {
+                display: block;
+            }
+        }
+.cdsTYOnboardingDashboard-container-left-menu{}
+.cdsTYOnboardingDashboard-container-left-menu h2{
+    font-size: 16px;
+}
+.cdsTYOnboardingDashboard-container-left-menu ul{}
+.cdsTYOnboardingDashboard-container-left-menu li{}
+.cdsTYOnboardingDashboard-container-left-menu li a{display: flex;gap: 10px;border-bottom: 1px solid #ddd;align-items: center;padding: 12px 0;}
+.cdsTYOnboardingDashboard-container-left-menu li a img{
+    max-width: 30px;
+} 
+.cdsTYOnboardingDashboard-container-left-menu li a span{
+    color: #112d55;
+    font-size: 14px;
+    display: flex;
+} 
+.cdsTYOnboardingDashboard-container-left-menu .sb-nav-link-icon{}
+.cdsTYOnboardingDashboard-breadcrumb-section{
+    padding-bottom: 0;
+    border-bottom: 1px solid #e3e6e9;
+}
+.cdsTYOnboardingDashboard-breadcrumb-section-header {}
+.cdsTYOnboardingDashboard-breadcrumb-section .breadcrumb-container{
+    display: flex;
+}
+.cdsTYOnboardingDashboard-breadcrumb-section .breadcrumb{
+    padding: 0;
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+    margin: 0;
+    align-items: center;
+}
+.cdsTYOnboardingDashboard-breadcrumb-section .breadcrumb-item{}
+.cdsTYOnboardingDashboard-breadcrumb-section .breadcrumb-item i{}
+.cdsTYOnboardingDashboard-breadcrumb-section .breadcrumb-link{}
+.cdsTYOnboardingDashboard-breadcrumb-section .breadcrumb-item.active{}
+.cdsTYSupportDashboard-main-panel-section{}
+.cdsTYSupportDashboard-main-panel-section-header{}
+.cdsTYSupportDashboard-main-panel-section-header-points{
+    max-width: 280px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+.cdsTYSupportDashboard-main-panel-section-header-points-earn{}
+.cdsTYSupportDashboard-main-panel-section-header-points-earn h5{}
+.cdsTYSupportDashboard-main-panel-section-header-points-earn span{
+    display: inline-flex;
+    color: #222;
+}
+.cdsTYSupportDashboard-main-panel-section-header-points-earn i{}
+.cdsTYSupportDashboard-main-panel-section-header-points-earn a{}
+.cdsTYSupportDashboard-main-panel-section-header-points-progress{
+    padding: 2rem;
+    flex: 1 1;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #fff;
+    margin-bottom: 1.5rem;
+    min-height: 240px;
+}
+.cdsTYSupportDashboard-main-panel-section-header-points-progress-wrapper{}
+.cdsTYSupportDashboard-main-panel-section-header-points-progress-wrapper  .badge-labels{}
+.cdsTYSupportDashboard-main-panel-section-header-points-progress-wrapper  	.progress-container{}
+.cdsTYSupportDashboard-main-panel-section-header-points-progress-wrapper  	.progress-fill{
+    max-width: calc(100% + 2px);
+}.cdsTYMainsite-login-form-container-resend-wrap{
+    display: flex;
+    justify-content: flex-end;
+}
+.cdsTYMainsite-login-form-container-otp-timer{
+    display: flex;
+    font-size: 13px;
+    padding-top: 16px;
+    justify-content: center;
+}
+.cdsTYMainsite-login-form-container-otp-timer span{}
+.cdsTYMainsite-login-form-container-otp-timer #countdown{
+    margin-left: 5px;
+}
+.cdsTYSupportDashboard-main-panel-section-header-points-progress-wrapper  	.separator-container{}
+.separator-container{}
+.separator::before{
+    content: "";
+    position: absolute;
+    top: -43px;
+    right: -10px;
+    z-index: 1;
+    bottom: 0;
+    width: 28px;
+    height: 30px;
+    background: url(../images/icons/points-badge-empty.png) no-repeat 0 center / cover  !important;
+    }.separator.cds-badge-cross::before{
+    content: "";
+    position: absolute;
+    top: -43px;
+    right: -10px;
+    z-index: 1;
+    bottom: 0;
+    width: 28px;
+    height: 30px;
+    background: url(../images/icons/points-badge-acheived.png) no-repeat 0 center / cover  !important;
+    }.separator.cds-badge-cross::after{
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -1px;
+    border-radius: 25px;
+    z-index: 1;
+    width: 4px;
+    height: calc(100% + 4px);
+    background: #5497d3 !important;
+    }
+	.cdsTYDashboard-button-primary:hover{color:#fff;}
+	/* --- select --- */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #00000017;
+    outline: none;
+    border-radius: 10px;
+    height: 34px;
+    padding: 6px 8px;
+}
+
+.select2-dropdown {
+    background-color: #fff !important;
+    border: 1px solid #0000000A !important;
+    box-shadow: 0px 0px 6px 0px #0000004a;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.select2-dropdown {
+    z-index: 9999 !important;
+}
+button.co-remove-addr.btn.btn-outline-danger {display: block;margin: 0 auto;}
+.select2-results__option[aria-selected] {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #E9EBFD;
+    color: var(--color-primary);
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #e9ebfd;
+    color: var(--color-primary);
+}
+
+.select2-selection--single {
+    min-height: 50px;
+    padding-top: 0;
+    border-radius: 0.5rem !important;
+}
+.select2-container--default .select2-selection--single {padding-top: 0;}
+.select2-selection--single .select2-selection__rendered {
+    padding-left: 18px !important;
+    line-height: 56px !important;
+    /* line-height: 48px !important; */
+}
+
+.select2-selection--single .select2-selection__arrow {
+    top: 5px !important;
+    right: 10px !important;
+}
+
+.noborder .select2-selection--single {
+    border: 0 !important;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.pagination a {
+    color: #5B6B86;
+    padding: 9px 18px;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0 2px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .prev,
+.pagination .next {
+    color: var(--black);
+}
+
+.pagination a:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.pagination .active {
+    background-color: var(--blue);
+    color: var(--white);
+    border: 1px solid var(--blue);
+}
+
+.pagination .prev,
+.pagination .next {
+    font-weight: bold;
+}

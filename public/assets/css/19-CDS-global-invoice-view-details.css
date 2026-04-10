@@ -1,0 +1,298 @@
+  
+    .CDSPaymentInvoice-view-invoice-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .CDSPaymentInvoice-view-invoice-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 3rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-header-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
+    
+    .CDSPaymentInvoice-view-logo-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .CDSPaymentInvoice-view-logo-wrapper {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 12px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+    }
+    
+    .CDSPaymentInvoice-view-cds-invoice-logo {
+        max-width: 150px;
+        height: auto;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-meta {
+        text-align: right;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-dates {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-body {
+        padding: 3rem;
+    }
+    
+    .CDSPaymentInvoice-view-billing-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .CDSPaymentInvoice-view-billing-card {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 2rem;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+    
+    .CDSPaymentInvoice-view-billing-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+    }
+    
+    .CDSPaymentInvoice-view-billing-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    
+    .CDSPaymentInvoice-view-billing-icon {
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+    }
+    
+    .CDSPaymentInvoice-view-billing-details {
+        line-height: 1.8;
+        color: #1e293b;
+    }
+    
+    .CDSPaymentInvoice-view-billing-details strong {
+        display: block;
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+        color: #0f172a;
+    }
+    
+    .CDSPaymentInvoice-view-items-section {
+        margin-top: 2rem;
+    }
+    
+    .CDSPaymentInvoice-view-items-header {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .CDSPaymentInvoice-view-items-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .CDSPaymentInvoice-view-items-table thead {
+        background: #f1f5f9;
+        border-radius: 8px;
+    }
+    
+    .CDSPaymentInvoice-view-items-table th {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    .CDSPaymentInvoice-view-items-table th:last-child {
+        text-align: right;
+    }
+    
+    .CDSPaymentInvoice-view-items-table td {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid #e2e8f0;
+        color: #334155;
+    }
+    
+    .CDSPaymentInvoice-view-items-table td:last-child {
+        text-align: right;
+        font-weight: 600;
+        color: #1e293b;
+    }
+    
+    .CDSPaymentInvoice-view-items-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .CDSPaymentInvoice-view-items-table tbody tr:hover {
+        background: #f8fafc;
+    }
+    
+    .CDSPaymentInvoice-view-totals-section {
+        margin-top: 2rem;
+        border-top: 2px solid #e2e8f0;
+        padding-top: 2rem;
+    }
+    
+    .CDSPaymentInvoice-view-totals-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+    }
+    
+    .CDSPaymentInvoice-view-totals-label {
+        font-weight: 500;
+        color: #64748b;
+    }
+    
+    .CDSPaymentInvoice-view-totals-value {
+        font-weight: 600;
+        color: #1e293b;
+        font-size: 1.125rem;
+    }
+    
+    .CDSPaymentInvoice-view-totals-row.CDSPaymentInvoice-view-total {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 2px solid #e2e8f0;
+    }
+    
+    .CDSPaymentInvoice-view-totals-row.CDSPaymentInvoice-view-total .CDSPaymentInvoice-view-totals-label {
+        font-size: 1.25rem;
+        color: #1e293b;
+        font-weight: 700;
+    }
+    
+    .CDSPaymentInvoice-view-totals-row.CDSPaymentInvoice-view-total .CDSPaymentInvoice-view-totals-value {
+        font-size: 1.5rem;
+        color: #667eea;
+        font-weight: 700;
+    }
+    
+    .CDSPaymentInvoice-view-invoice-footer {
+        background: #f8fafc;
+        padding: 2rem 3rem;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.875rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .CDSPaymentInvoice-view-status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #10b981;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .CDSPaymentInvoice-view-status-badge::before {
+        content: '✓';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        font-size: 10px;
+    }
+    
+    .CDSPaymentInvoice-view-email-link {
+        color: #667eea;
+        text-decoration: none;
+    }
+    
+    .CDSPaymentInvoice-view-email-link:hover {
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+        .CDSPaymentInvoice-view-invoice-header {
+            padding: 2rem;
+        }
+        
+        .CDSPaymentInvoice-view-invoice-header-content {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .CDSPaymentInvoice-view-invoice-meta {
+            text-align: left;
+        }
+        
+        .CDSPaymentInvoice-view-billing-section {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .CDSPaymentInvoice-view-invoice-body {
+            padding: 2rem;
+        }
+    }

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Entry Live Feed - Timeline View</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .CDSPostCaseNotifications-list-view02-header {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .CDSPostCaseNotifications-list-view02-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a202c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        .CDSPostCaseNotifications-list-view02-live-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 1.4s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .CDSPostCaseNotifications-list-view02-feed-list {
+            list-style: none;
+        }
+
+        .CDSPostCaseNotifications-list-view02-feed-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+            border-left: 4px solid transparent;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .CDSPostCaseNotifications-list-view02-feed-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateX(5px);
+            border-left-color: #6366f1;
+        }
+
+        .CDSPostCaseNotifications-list-view02-feed-item.CDSPostCaseNotifications-list-view02-new {
+            border-left-color: #10b981;
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.05) 0%, white 10%);
+        }
+
+        .CDSPostCaseNotifications-list-view02-feed-item.CDSPostCaseNotifications-list-view02-new::before {
+            content: 'NEW';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #10b981;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .CDSPostCaseNotifications-list-view02-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-item-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .CDSPostCaseNotifications-list-view02-item-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-meta-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .CDSPostCaseNotifications-list-view02-meta-info svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.6;
+        }
+
+        .CDSPostCaseNotifications-list-view02-item-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .CDSPostCaseNotifications-list-view02-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .CDSPostCaseNotifications-list-view02-tag {
+            padding: 4px 10px;
+            background: #f1f5f9;
+            color: #475569;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .CDSPostCaseNotifications-list-view02-tag:hover {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .CDSPostCaseNotifications-list-view02-item-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-action-btn {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f8fafc;
+            color: #475569;
+        }
+
+        .CDSPostCaseNotifications-list-view02-action-btn:hover {
+            background: #6366f1;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .CDSPostCaseNotifications-list-view02-action-btn.CDSPostCaseNotifications-list-view02-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .CDSPostCaseNotifications-list-view02-action-btn.CDSPostCaseNotifications-list-view02-primary:hover {
+            background: #4f46e5;
+        }
+
+        .CDSPostCaseNotifications-list-view02-status-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-status-posted {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .CDSPostCaseNotifications-list-view02-status-urgent {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .CDSPostCaseNotifications-list-view02-status-featured {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .CDSPostCaseNotifications-list-view02-proposals-count {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: #fef3c7;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .CDSPostCaseNotifications-list-view02-timestamp {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .CDSPostCaseNotifications-list-view02-timestamp::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        /* Auto-refresh animation */
+        .CDSPostCaseNotifications-list-view02-refresh-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e2e8f0;
+            z-index: 1000;
+        }
+
+        .CDSPostCaseNotifications-list-view02-refresh-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            width: 0;
+            animation: refresh 30s linear infinite;
+        }
+
+        @keyframes refresh {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* Loading skeleton for new items */
+        .CDSPostCaseNotifications-list-view02-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="CDSPostCaseNotifications-list-view02-refresh-bar">
+        <div class="CDSPostCaseNotifications-list-view02-refresh-progress"></div>
+    </div>
+
+    <div class="CDSPostCaseNotifications-list-view02-container">
+        <div class="CDSPostCaseNotifications-list-view02-header">
+            <h1>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                Express Entry Live Feed
+            </h1>
+            <div class="CDSPostCaseNotifications-list-view02-live-indicator">
+                <span class="CDSPostCaseNotifications-list-view02-live-dot"></span>
+                LIVE
+            </div>
+        </div>
+
+        <ul class="CDSPostCaseNotifications-list-view02-feed-list">
+            <li class="CDSPostCaseNotifications-list-view02-feed-item CDSPostCaseNotifications-list-view02-new">
+                <span class="CDSPostCaseNotifications-list-view02-timestamp">just now</span>
+                <div class="CDSPostCaseNotifications-list-view02-item-header">
+                    <div>
+                        <h2 class="CDSPostCaseNotifications-list-view02-item-title">Application for Express Entry to Canada</h2>
+                        <div class="CDSPostCaseNotifications-list-view02-item-meta">
+                            <span class="CDSPostCaseNotifications-list-view02-meta-info">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                Lucy Doe
+                            </span>
+                            <span class="CDSPostCaseNotifications-list-view02-meta-info">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Canada
+                            </span>
+                            <span class="CDSPostCaseNotifications-list-view02-status-badge CDSPostCaseNotifications-list-view02-status-posted">Posted</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="CDSPostCaseNotifications-list-view02-item-description">
+                    The client intends to apply for the Express Entry system in Canada, designed to select skilled workers for immigration. Seeking assistance in navigating the application process and fulfilling CRS criteria.
+                </p>
+                <div class="CDSPostCaseNotifications-list-view02-item-footer">
+                    <div class="CDSPostCaseNotifications-list-view02-tags">
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Express Entry</span>
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Immigration</span>
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Skilled Worker</span>
+                    </div>
+                    <div class="CDSPostCaseNotifications-list-view02-item-actions">
+                        <span class="CDSPostCaseNotifications-list-view02-proposals-count">0 proposals</span>
+                        <button class="CDSPostCaseNotifications-list-view02-action-btn">View</button>
+                        <button class="CDSPostCaseNotifications-list-view02-action-btn CDSPostCaseNotifications-list-view02-primary">Apply</button>
+                    </div>
+                </div>
+            </li>
+
+            <li class="CDSPostCaseNotifications-list-view02-feed-item">
+                <span class="CDSPostCaseNotifications-list-view02-timestamp">2 min ago</span>
+                <div class="CDSPostCaseNotifications-list-view02-item-header">
+                    <div>
+                        <h2 class="CDSPostCaseNotifications-list-view02-item-title">Provincial Nominee Program (PNP) Application</h2>
+                        <div class="CDSPostCaseNotifications-list-view02-item-meta">
+                            <span class="CDSPostCaseNotifications-list-view02-meta-info">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                John Smith
+                            </span>
+                            <span class="CDSPostCaseNotifications-list-view02-meta-info">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Ontario
+                            </span>
+                            <span class="CDSPostCaseNotifications-list-view02-status-badge CDSPostCaseNotifications-list-view02-status-urgent">Urgent</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="CDSPostCaseNotifications-list-view02-item-description">
+                    Looking for expert assistance with Ontario PNP application. Need help with documentation, eligibility assessment, and submission process for tech sector nomination.
+                </p>
+                <div class="CDSPostCaseNotifications-list-view02-item-footer">
+                    <div class="CDSPostCaseNotifications-list-view02-tags">
+                        <span class="CDSPostCaseNotifications-list-view02-tag">PNP</span>
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Ontario</span>
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Tech Sector</span>
+                    </div>
+                    <div class="CDSPostCaseNotifications-list-view02-item-actions">
+                        <span class="CDSPostCaseNotifications-list-view02-proposals-count">3 proposals</span>
+                        <button class="CDSPostCaseNotifications-list-view02-action-btn">View</button>
+                        <button class="CDSPostCaseNotifications-list-view02-action-btn CDSPostCaseNotifications-list-view02-primary">Apply</button>
+                    </div>
+                </div>
+            </li>
+
+            <li class="CDSPostCaseNotifications-list-view02-feed-item">
+                <span class="CDSPostCaseNotifications-list-view02-timestamp">5 min ago</span>
+                <div class="CDSPostCaseNotifications-list-view02-item-header">
+                    <div>
+                        <h2 class="CDSPostCaseNotifications-list-view02-item-title">Study Permit to PR Pathway Consultation</h2>
+                        <div class="CDSPostCaseNotifications-list-view02-item-meta">
+                            <span class="CDSPostCaseNotifications-list-view02-meta-info">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                Sarah Chen
+                            </span>
+                            <span class="CDSPostCaseNotifications-list-view02-meta-info">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                British Columbia
+                            </span>
+                            <span class="CDSPostCaseNotifications-list-view02-status-badge CDSPostCaseNotifications-list-view02-status-featured">Featured</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="CDSPostCaseNotifications-list-view02-item-description">
+                    Current international student seeking guidance on transitioning from study permit to permanent residence. Need advice on PGWP, Canadian work experience, and Express Entry preparation.
+                </p>
+                <div class="CDSPostCaseNotifications-list-view02-item-footer">
+                    <div class="CDSPostCaseNotifications-list-view02-tags">
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Study Permit</span>
+                        <span class="CDSPostCaseNotifications-list-view02-tag">PGWP</span>
+                        <span class="CDSPostCaseNotifications-list-view02-tag">Student PR</span>
+                    </div>
+                    <div class="CDSPostCaseNotifications-list-view02-item-actions">
+                        <span class="CDSPostCaseNotifications-list-view02-proposals-count">7 proposals</span>
+                        <button class="CDSPostCaseNotifications-list-view02-action-btn">View</button>
+                        <button class="CDSPostCaseNotifications-list-view02-action-btn CDSPostCaseNotifications-list-view02-primary">Apply</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Simulate live updates
+        setInterval(() => {
+            const feedList = document.querySelector('.CDSPostCaseNotifications-list-view02-feed-list');
+            const items = feedList.querySelectorAll('.CDSPostCaseNotifications-list-view02-feed-item');
+            
+            // Remove 'new' class from existing items
+            items.forEach(item => {
+                item.classList.remove('CDSPostCaseNotifications-list-view02-new');
+            });
+            
+            // Update timestamps
+            items.forEach((item, index) => {
+                const timestamp = item.querySelector('.CDSPostCaseNotifications-list-view02-timestamp');
+                if (timestamp) {
+                    const times = ['just now', '2 min ago', '5 min ago', '10 min ago', '15 min ago'];
+                    timestamp.textContent = times[Math.min(index, times.length - 1)];
+                }
+            });
+        }, 30000);
+    </script>
+</body>
+</html>

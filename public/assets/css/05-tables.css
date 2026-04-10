@@ -1,0 +1,134 @@
+  .cdsTYDashboard-custom-table01-document-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .cdsTYDashboard-custom-table01-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cdsTysearchInput {
+    padding: 8px 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .cdsTYDashboard-custom-table01-top-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .cdsTYDashboard-custom-table01-dropdown {
+    position: relative;
+  }
+
+  .cdsTYDashboard-custom-table01-dropdown button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .cdsTYDashboard-custom-table01-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 150px;
+    z-index: 100;
+  }
+
+  .cdsTYDashboard-custom-table01-dropdown-menu div {
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .cdsTYDashboard-custom-table01-dropdown-menu div:hover {
+    background: #f0f0f0;
+  }
+
+  .cdsTYDashboard-custom-table01-doc-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+  }
+
+  .cdsTYDashboard-custom-table01-doc-grid.cdsTYDashboard-custom-table01-header {
+    font-weight: bold;
+    background: #fafafa;
+  }
+
+  .cdsTYDashboard-custom-table01-doc-grid .cdsTYDashboard-custom-table01-sortable {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .cdsTYDashboard-custom-table01-doc-row {
+    transition: background 0.3s;
+  }
+
+  .cdsTYDashboard-custom-table01-doc-row:hover {
+    background: #f9f9f9;
+  }
+
+  .cdsTYDashboard-custom-table01-status {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .cdsTYDashboard-custom-table01-completed { background: #d4edda; color: #155724; }
+  .cdsTYDashboard-custom-table01-pending { background: #fff3cd; color: #856404; }
+  .cdsTYDashboard-custom-table01-draft { background: #e2e3e5; color: #383d41; }
+
+  .cdsTYDashboard-custom-table01-pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .cdsTYDashboard-custom-table01-pagination button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .cdsTYDashboard-custom-table01-pagination button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+
+  /* status active filer */
+  .cds-status-filter.cds-active {
+    color: blue;
+    font-weight: 600;
+}
+/* end */

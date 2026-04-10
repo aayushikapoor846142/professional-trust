@@ -1,0 +1,1922 @@
+.CDSPostCaseNotifications-compact-list-container {
+            /* max-width: 1400px; */
+            /* margin: 0 auto; */
+            border: 1px solid var(--cds-border01);
+            /* background: white; */
+            border-radius: 8px;
+            /* box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06); */
+            overflow: hidden;
+        }
+
+        .CDSPostCaseNotifications-compact-list-header {
+            display: flex;
+            background: #f8f9fc;
+            border-bottom: 1px solid var(--cds-border01);
+            padding: 0;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .CDSPostCaseNotifications-compact-list-header-item {
+            flex: 1;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid var(--cds-border01);
+        }
+
+        .CDSPostCaseNotifications-compact-list-header-item:first-child {
+            flex: 1.5;
+            text-align: left;
+        }
+
+        .CDSPostCaseNotifications-compact-list-header-item:last-child {
+            border-right: none;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-list {
+            padding: 0;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            border-bottom: 1px solid #f0f1f5;
+            background: white;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-item:hover {
+            background: #fafbfc;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-item:last-child {
+            border-bottom: none;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-details {
+            flex: 1.5;
+            padding-right: 0;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-flame-icon {
+            width: 16px;
+            height: 16px;
+            color: #f97316;
+        }
+
+        .CDSPostCaseNotifications-compact-list-case-description {
+            font-size: 13px;
+            color: #718096;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-new {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-live {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-urgent {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-tech {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-uk {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-family {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .CDSPostCaseNotifications-compact-list-tag.CDSPostCaseNotifications-compact-list-documentation {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .CDSPostCaseNotifications-compact-list-status {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CDSPostCaseNotifications-compact-list-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-status-badge.CDSPostCaseNotifications-compact-list-open {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .CDSPostCaseNotifications-compact-list-status-badge.CDSPostCaseNotifications-compact-list-review {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .CDSPostCaseNotifications-compact-list-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .CDSPostCaseNotifications-compact-list-client {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .CDSPostCaseNotifications-compact-list-avatar.CDSPostCaseNotifications-compact-list-purple {
+            background: #7c3aed;
+        }
+
+        .CDSPostCaseNotifications-compact-list-avatar.CDSPostCaseNotifications-compact-list-blue {
+            background: #3b82f6;
+        }
+
+        .CDSPostCaseNotifications-compact-list-avatar.CDSPostCaseNotifications-compact-list-indigo {
+            background: #6366f1;
+        }
+
+        .CDSPostCaseNotifications-compact-list-client-info {
+            text-align: left;
+        }
+
+        .CDSPostCaseNotifications-compact-list-client-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-client-time {
+            font-size: 11px;
+            color: #9ca3af;
+        }
+
+        .CDSPostCaseNotifications-compact-list-proposals {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CDSPostCaseNotifications-compact-list-proposal-count {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #718096;
+        }
+
+        .CDSPostCaseNotifications-compact-list-proposal-badge {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fee2e2;
+            color: #ef4444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-actions {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .CDSPostCaseNotifications-compact-list-btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .CDSPostCaseNotifications-compact-list-btn-view {
+            background: white;
+            color: #7c3aed;
+            border: 1.5px solid #e9d5ff;
+        }
+
+        .CDSPostCaseNotifications-compact-list-btn-view:hover {
+            background: #f3e8ff;
+        }
+
+        .CDSPostCaseNotifications-compact-list-btn-apply {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .CDSPostCaseNotifications-compact-list-btn-apply:hover {
+            background: #6b21a8;
+        }
+
+        @media (max-width: 1024px) {
+            .CDSPostCaseNotifications-compact-list-header {
+                display: none;
+            }
+
+            .CDSPostCaseNotifications-compact-list-case-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .CDSPostCaseNotifications-compact-list-case-details {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .CDSPostCaseNotifications-compact-list-status, 
+            .CDSPostCaseNotifications-compact-list-client, 
+            .CDSPostCaseNotifications-compact-list-proposals, 
+            .CDSPostCaseNotifications-compact-list-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .CDSPostCaseNotifications-compact-list-actions {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            .CDSPostCaseNotifications-compact-list-case-item {
+                padding: 16px;
+            }
+
+            .CDSPostCaseNotifications-compact-list-btn {
+                flex: 1;
+            }
+        }
+		        .CdsDashboardAppoinment-compact-list-container {
+            /* max-width: 1400px; */
+            /* margin: 0 auto; */
+            /* background: white; */
+            border-radius: 8px;
+            border: 1px solid var(--cds-border01);
+            /* box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06); */
+            overflow: hidden;
+        }
+
+        .CdsDashboardAppoinment-compact-list-header {
+            display: flex;
+            background: #f8f9fc;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0;
+            align-items: stretch;
+            justify-content: space-around;
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item {
+            flex: 1;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid #e5e7eb;
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item.CdsDashboardAppoinment-compact-list-checkbox {
+            flex: 0.3;
+            padding: 20px 15px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item.CdsDashboardAppoinment-compact-list-client {
+            flex: 1.5;
+            /* text-align: left; */
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item.CdsDashboardAppoinment-compact-list-patient {
+            flex: 1.5;
+            /* text-align: left; */
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item.CdsDashboardAppoinment-compact-list-service {
+            flex: 1.2;
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item.CdsDashboardAppoinment-compact-list-datetime {
+            flex: 1.3;
+        }
+
+        .CdsDashboardAppoinment-compact-list-header-item:last-child {
+            border-right: none;
+        }
+
+        .CdsDashboardAppoinment-compact-list-appointment-list {
+            padding: 0;
+        }
+
+        .CdsDashboardAppoinment-compact-list-appointment-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            border-bottom: 1px solid #f0f1f5;
+            background: white;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .CdsDashboardAppoinment-compact-list-appointment-item:hover {
+            background: #fafbfc;
+        }
+
+        .CdsDashboardAppoinment-compact-list-appointment-item:last-child {
+            border-bottom: none;
+        }
+
+        .CdsDashboardAppoinment-compact-list-checkbox-cell {
+            flex: 0.3;
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CdsDashboardAppoinment-compact-list-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .CdsDashboardAppoinment-compact-list-client-cell {
+            flex: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 20px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .CdsDashboardAppoinment-compact-list-avatar.CdsDashboardAppoinment-compact-list-purple {
+            background: #7c3aed;
+        }
+
+        .CdsDashboardAppoinment-compact-list-avatar.CdsDashboardAppoinment-compact-list-orange {
+            background: #f97316;
+        }
+
+        .CdsDashboardAppoinment-compact-list-avatar.CdsDashboardAppoinment-compact-list-teal {
+            background: #14b8a6;
+        }
+
+        .CdsDashboardAppoinment-compact-list-client-info {
+            text-align: left;
+        }
+
+        .CdsDashboardAppoinment-compact-list-client-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-client-specialty {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        
+        .CdsDashboardAppoinment-compact-list-patient-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-patient-id {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .CdsDashboardAppoinment-compact-list-service-cell {
+            flex: 1.2;
+            font-size: 14px;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        .CdsDashboardAppoinment-compact-list-datetime-cell {
+            flex: 1.3;
+            text-align: center;
+        }
+
+        .CdsDashboardAppoinment-compact-list-datetime-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-datetime-duration {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .CdsDashboardAppoinment-compact-list-status-cell {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CdsDashboardAppoinment-compact-list-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .CdsDashboardAppoinment-compact-list-status-badge.CdsDashboardAppoinment-compact-list-confirmed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .CdsDashboardAppoinment-compact-list-status-badge.CdsDashboardAppoinment-compact-list-pending {
+            background: #fed7aa;
+            color: #9a3412;
+        }
+
+        .CdsDashboardAppoinment-compact-list-status-badge.CdsDashboardAppoinment-compact-list-completed {
+            background: #ddd6fe;
+            color: #581c87;
+        }
+
+        .CdsDashboardAppoinment-compact-list-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .CdsDashboardAppoinment-compact-list-payment-cell {
+            flex: 1;
+            text-align: center;
+        }
+
+        .CdsDashboardAppoinment-compact-list-payment-amount {
+            font-size: 16px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 2px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-payment-status {
+            font-size: 11px;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-payment-status.CdsDashboardAppoinment-compact-list-paid {
+            color: #059669;
+        }
+
+        .CdsDashboardAppoinment-compact-list-payment-status.CdsDashboardAppoinment-compact-list-payment-pending {
+            color: #d97706;
+        }
+
+        .CdsDashboardAppoinment-compact-list-actions-cell {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            background: #f3f4f6;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-view {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-edit {
+            background: #fef3c7;
+            color: #f59e0b;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-notify {
+            background: #fed7e2;
+            color: #ec4899;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-confirm {
+            background: #d1fae5;
+            color: #10b981;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-cancel {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-call {
+            background: #dbeafe;
+            color: #3b82f6;
+        }
+
+        .CdsDashboardAppoinment-compact-list-action-btn.CdsDashboardAppoinment-compact-list-print {
+            background: #e9d5ff;
+            color: #9333ea;
+        }
+
+        .CdsDashboardAppoinment-compact-list-check-icon {
+            color: #059669;
+        }
+
+        @media (max-width: 1024px) {
+            .CdsDashboardAppoinment-compact-list-header {
+                display: none;
+            }
+
+            .CdsDashboardAppoinment-compact-list-appointment-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .CdsDashboardAppoinment-compact-list-checkbox-cell,
+            .CdsDashboardAppoinment-compact-list-client-cell,
+            
+            .CdsDashboardAppoinment-compact-list-service-cell,
+            .CdsDashboardAppoinment-compact-list-datetime-cell,
+            .CdsDashboardAppoinment-compact-list-status-cell,
+            .CdsDashboardAppoinment-compact-list-payment-cell,
+            .CdsDashboardAppoinment-compact-list-actions-cell {
+                width: 100%;
+                padding-right: 0;
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            .CdsDashboardAppoinment-compact-list-appointment-item {
+                padding: 16px;
+            }
+        }
+
+        /* message overview */
+.CdsDashboardChat-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .CdsDashboardChat-panel {
+            background: white;
+            border-radius: 8px;
+            /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); */
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            /* height: 600px; */
+        }
+
+        .CdsDashboardChat-header {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f3f8 100%);
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .CdsDashboardChat-title-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .CdsDashboardChat-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: white;
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+        }
+
+        .CdsDashboardChat-icon.chat {
+            color: #3b82f6;
+        }
+
+        .CdsDashboardChat-icon.group {
+            color: #3b82f6;
+        }
+
+        .CdsDashboardChat-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .CdsDashboardChat-subtitle {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        .CdsDashboardChat-view-all {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            background: white;
+            color: #6366f1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid #e0e7ff;
+        }
+
+        .CdsDashboardChat-view-all:hover {
+            background: #6366f1;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .CdsDashboardChat-list {
+            flex: 1;
+            background: #f8f8f8;
+            /* overflow-y: auto; */
+        }
+
+        .CdsDashboardChat-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .CdsDashboardChat-list::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+
+        .CdsDashboardChat-list::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .CdsDashboardChat-list::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .CdsDashboardChat-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 15px 15px;
+            border-radius: 0;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-bottom: 0;
+            position: relative;
+            background: white;
+        }
+
+        .CdsDashboardChat-item:hover {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            transform: translateX(4px);
+        }
+
+        .CdsDashboardChat-item.unread {
+            background: linear-gradient(135deg, #fef3f2 0%, #fef6f2 100%);
+        }
+
+        .CdsDashboardChat-avatar-wrapper {
+            position: relative;
+            margin-right: 16px;
+        }
+
+        .CdsDashboardChat-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .CdsDashboardChat-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .CdsDashboardChat-avatar.user {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .CdsDashboardChat-avatar.group-pr {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .CdsDashboardChat-avatar.group-wo {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .CdsDashboardChat-avatar.group-gr {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .CdsDashboardChat-avatar.group-de {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+
+        .CdsDashboardChat-avatar.group-my {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+        }
+
+        .CdsDashboardChat-avatar.initials-dd {
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+
+        .CdsDashboardChat-avatar.initials-ps {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        }
+
+        .CdsDashboardChat-status-indicator {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+            background: #22c55e;
+        }
+
+        .CdsDashboardChat-status-indicator.offline {
+            background: #94a3b8;
+        }
+
+        .CdsDashboardChat-status-indicator.away {
+            background: #fbbf24;
+        }
+
+        .CdsDashboardChat-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .CdsDashboardChat-content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .CdsDashboardChat-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+
+        .CdsDashboardChat-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .CdsDashboardChat-category.work {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .CdsDashboardChat-category.personal {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .CdsDashboardChat-category.team {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .CdsDashboardChat-category.project {
+            background: #fed7aa;
+            color: #9a3412;
+        }
+
+        .CdsDashboardChat-group-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .CdsDashboardChat-group-name {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .CdsDashboardChat-members-count {
+            font-size: 10px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .CdsDashboardChat-message {
+            font-size: 14px;
+            color: #64748b;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 1.4;
+        }
+
+        .CdsDashboardChat-typing {
+            color: #22c55e;
+            font-style: italic;
+        }
+
+        .CdsDashboardChat-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .CdsDashboardChat-time {
+            font-size: 12px;
+            color: #94a3b8;
+            white-space: nowrap;
+        }
+
+        .CdsDashboardChat-badges {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .CdsDashboardChat-unread-count {
+            min-width: 20px;
+            height: 20px;
+            padding: 0 6px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CdsDashboardChat-pinned {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fbbf24;
+        }
+
+        .CdsDashboardChat-muted {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+        }
+
+        .CdsDashboardChat-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            color: #94a3b8;
+        }
+
+        .CdsDashboardChat-empty-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .CdsDashboardChat-empty-text {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        @media (max-width: 1024px) {
+            .CdsDashboardChat-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            .CdsDashboardChat-panel {
+                border-radius: 16px;
+            }
+
+            .CdsDashboardChat-header {
+                padding: 16px;
+            }
+
+            .CdsDashboardChat-title {
+                font-size: 18px;
+            }
+
+            .CdsDashboardChat-item {
+                padding: 12px;
+            }
+        }
+        /* end message overview */
+        /* review overview  */
+        .CdsDashboardReviews-compact-list-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .CdsDashboardReviews-compact-list-header {
+            display: flex;
+            background: #f8f9fc;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0;
+            align-items: stretch;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item {
+            flex: 1;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-checkbox {
+            flex: 0.3;
+            padding: 20px 15px;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-professional {
+            flex: 1.5;
+            text-align: left;
+            justify-content: flex-start;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-status {
+            flex: 1.2;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-sent-date {
+            flex: 1.3;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-response {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-created {
+            flex: 1.2;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item.CdsDashboardReviews-compact-list-actions {
+            flex: 1.2;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-header-item:last-child {
+            border-right: none;
+        }
+
+        .CdsDashboardReviews-compact-list-sort-icon {
+            width: 16px;
+            height: 16px;
+            color: #9ca3af;
+            cursor: pointer;
+        }
+
+        .CdsDashboardReviews-compact-list-reviews-list {
+            padding: 0;
+        }
+
+        .CdsDashboardReviews-compact-list-review-wrapper {
+            border-bottom: 1px solid #f0f1f5;
+        }
+
+        .CdsDashboardReviews-compact-list-review-wrapper:last-child {
+            border-bottom: none;
+        }
+
+        .CdsDashboardReviews-compact-list-review-item {
+            display: flex;
+            align-items: center;
+            padding: 24px 30px;
+            background: white;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .CdsDashboardReviews-compact-list-review-item:hover {
+            background: #fafbfc;
+        }
+
+        .CdsDashboardReviews-compact-list-checkbox-cell {
+            flex: 0.3;
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .CdsDashboardReviews-compact-list-professional-cell {
+            flex: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 20px;
+        }
+
+        .CdsDashboardReviews-compact-list-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            background: #7c3aed;
+        }
+
+        .CdsDashboardReviews-compact-list-professional-info {
+            text-align: left;
+        }
+
+        .CdsDashboardReviews-compact-list-professional-email {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .CdsDashboardReviews-compact-list-invitation-number {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .CdsDashboardReviews-compact-list-status-cell {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .CdsDashboardReviews-compact-list-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f59e0b;
+        }
+
+        .CdsDashboardReviews-compact-list-sent-date-cell {
+            flex: 1.3;
+            text-align: center;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .CdsDashboardReviews-compact-list-response-cell {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .CdsDashboardReviews-compact-list-star-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .CdsDashboardReviews-compact-list-star {
+            width: 16px;
+            height: 16px;
+            color: #fbbf24;
+        }
+
+        .CdsDashboardReviews-compact-list-star.CdsDashboardReviews-compact-list-empty {
+            color: #e5e7eb;
+        }
+
+        .CdsDashboardReviews-compact-list-created-cell {
+            flex: 1.2;
+            text-align: center;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .CdsDashboardReviews-compact-list-actions-cell {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .CdsDashboardReviews-compact-list-show-review-btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            background: #7c3aed;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .CdsDashboardReviews-compact-list-show-review-btn:hover {
+            background: #6b21a8;
+        }
+
+        .CdsDashboardReviews-compact-list-show-review-btn.CdsDashboardReviews-compact-list-expanded {
+            background: #6b21a8;
+        }
+
+        .CdsDashboardReviews-compact-list-arrow-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s;
+        }
+
+        .CdsDashboardReviews-compact-list-arrow-icon.CdsDashboardReviews-compact-list-rotated {
+            transform: rotate(180deg);
+        }
+
+        .CdsDashboardReviews-compact-list-menu-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: #6b7280;
+            position: relative;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-btn:hover {
+            background: #f3f4f6;
+        }
+
+        .CdsDashboardReviews-compact-list-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 4px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            min-width: 180px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .CdsDashboardReviews-compact-list-dropdown-menu.CdsDashboardReviews-compact-list-show {
+            display: block;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-item {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #4a5568;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-item:hover {
+            background: #f9fafb;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-item:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-item.CdsDashboardReviews-compact-list-delete {
+            color: #ef4444;
+        }
+
+        .CdsDashboardReviews-compact-list-menu-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .CdsDashboardReviews-compact-list-review-panel {
+            display: none;
+            padding: 30px;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .CdsDashboardReviews-compact-list-review-panel.CdsDashboardReviews-compact-list-show {
+            display: block;
+        }
+
+        .CdsDashboardReviews-compact-list-review-section {
+            margin-bottom: 24px;
+        }
+
+        .CdsDashboardReviews-compact-list-section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .CdsDashboardReviews-compact-list-review-content {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            min-height: 80px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .CdsDashboardReviews-compact-list-review-date {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .CdsDashboardReviews-compact-list-reply-section {
+            margin-top: 24px;
+        }
+
+        .CdsDashboardReviews-compact-list-reply-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 80px;
+            margin-bottom: 16px;
+        }
+
+        .CdsDashboardReviews-compact-list-reply-input:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        .CdsDashboardReviews-compact-list-reply-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .CdsDashboardReviews-compact-list-post-reply-btn {
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            background: #7c3aed;
+            color: white;
+            transition: all 0.2s;
+        }
+
+        .CdsDashboardReviews-compact-list-post-reply-btn:hover {
+            background: #6b21a8;
+        }
+
+        @media (max-width: 1024px) {
+            .CdsDashboardReviews-compact-list-header {
+                display: none;
+            }
+
+            .CdsDashboardReviews-compact-list-review-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .CdsDashboardReviews-compact-list-checkbox-cell,
+            .CdsDashboardReviews-compact-list-professional-cell,
+            .CdsDashboardReviews-compact-list-status-cell,
+            .CdsDashboardReviews-compact-list-sent-date-cell,
+            .CdsDashboardReviews-compact-list-response-cell,
+            .CdsDashboardReviews-compact-list-created-cell,
+            .CdsDashboardReviews-compact-list-actions-cell {
+                width: 100%;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            .CdsDashboardReviews-compact-list-review-item {
+                padding: 16px;
+            }
+
+            .CdsDashboardReviews-compact-list-review-panel {
+                padding: 20px;
+            }
+        }
+        /* end review overview */
+
+        /* case with professional */
+.CdsCompactCaseList-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .CdsCompactCaseList-header {
+            display: flex;
+            background: #f8f9fc;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0;
+            align-items: stretch;
+        }
+
+        .CdsCompactCaseList-header-item {
+            flex: 1;
+            padding: 20px 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+
+        .CdsCompactCaseList-header-item.CdsCompactCaseList-case-info {
+            flex: 2.5;
+        }
+
+        .CdsCompactCaseList-header-item.CdsCompactCaseList-team {
+            flex: 2.5;
+        }
+
+        .CdsCompactCaseList-header-item.CdsCompactCaseList-progress {
+            flex: 1.8;
+        }
+
+        .CdsCompactCaseList-header-item.CdsCompactCaseList-posted {
+            flex: 1;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .CdsCompactCaseList-header-item.CdsCompactCaseList-actions {
+            flex: 1;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .CdsCompactCaseList-header-item:last-child {
+            border-right: none;
+        }
+
+        .CdsCompactCaseList-list {
+            padding: 0;
+        }
+
+        .CdsCompactCaseList-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid #f0f1f5;
+            background: white;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .CdsCompactCaseList-item:hover {
+            background: #fafbfc;
+        }
+
+        .CdsCompactCaseList-item:last-child {
+            border-bottom: none;
+        }
+
+        .CdsCompactCaseList-case-info {
+            flex: 2.5;
+            padding-right: 20px;
+        }
+
+        .CdsCompactCaseList-case-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #06b6d4;
+            margin-bottom: 8px;
+        }
+
+        .CdsCompactCaseList-case-number-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .CdsCompactCaseList-priority-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        .CdsCompactCaseList-priority-badge.CdsCompactCaseList-medium {
+            background: #fef3c7;
+            color: #f59e0b;
+            border-left: 2px solid #f59e0b;
+        }
+
+        .CdsCompactCaseList-priority-badge.CdsCompactCaseList-high {
+            background: #fee2e2;
+            color: #ef4444;
+            border-left: 2px solid #ef4444;
+        }
+
+        .CdsCompactCaseList-case-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .CdsCompactCaseList-case-pathway {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .CdsCompactCaseList-pathway-icon {
+            width: 14px;
+            height: 14px;
+            color: #94a3b8;
+        }
+
+        .CdsCompactCaseList-team {
+            flex: 2.5;
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .CdsCompactCaseList-team-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .CdsCompactCaseList-team-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .CdsCompactCaseList-team-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsCompactCaseList-client-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsCompactCaseList-avatar-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .CdsCompactCaseList-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            border: 2px solid white;
+            margin-left: -8px;
+            transition: transform 0.2s, z-index 0.2s;
+            cursor: pointer;
+        }
+
+        .CdsCompactCaseList-avatar:hover {
+            transform: translateY(-2px);
+            z-index: 10 !important;
+        }
+
+        .CdsCompactCaseList-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-manager {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            z-index: 3;
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-advisor {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            z-index: 2;
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-lawyer {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            z-index: 2;
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-more {
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            z-index: 1;
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-client {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-manager-orange {
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+            z-index: 3;
+        }
+
+        .CdsCompactCaseList-avatar.CdsCompactCaseList-client-green {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+        }
+
+        .CdsCompactCaseList-client-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsCompactCaseList-team-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .CdsCompactCaseList-client-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .CdsCompactCaseList-client-info .CdsCompactCaseList-avatar {
+            margin-left: 0;
+        }
+
+        .CdsCompactCaseList-progress {
+            flex: 1.8;
+            padding-right: 20px;
+        }
+
+        .CdsCompactCaseList-stage-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .CdsCompactCaseList-stage-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .CdsCompactCaseList-stage-percent {
+            font-size: 18px;
+            font-weight: 700;
+            color: #6366f1;
+        }
+
+        .CdsCompactCaseList-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+
+        .CdsCompactCaseList-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+
+        .CdsCompactCaseList-status-text {
+            font-size: 11px;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .CdsCompactCaseList-posted {
+            flex: 1;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .CdsCompactCaseList-actions {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .CdsCompactCaseList-btn {
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            background: #6366f1;
+            color: white;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .CdsCompactCaseList-btn:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .CdsCompactCaseList-btn-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        @media (max-width: 1200px) {
+            .CdsCompactCaseList-header {
+                display: none;
+            }
+
+            .CdsCompactCaseList-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .CdsCompactCaseList-case-info,
+            .CdsCompactCaseList-team,
+            .CdsCompactCaseList-progress,
+            .CdsCompactCaseList-posted,
+            .CdsCompactCaseList-actions {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .CdsCompactCaseList-posted {
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            .CdsCompactCaseList-container {
+                border-radius: 12px;
+            }
+
+            .CdsCompactCaseList-item {
+                padding: 16px;
+            }
+        }
+
+        /* end case with professional */

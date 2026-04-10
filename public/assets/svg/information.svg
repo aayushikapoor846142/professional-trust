@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="questions_and_answers" data-name="questions and answers">
+    <g id="_Grupo_" data-name="&amp;lt;Grupo&amp;gt;">
+      <path class="cls-1" d="m20.5,39.5c-3.81,0-7.37-1.13-10.34-3.07l-8.66,3.07,3.07-8.67c-1.93-2.97-3.07-6.52-3.07-10.33C1.5,10.01,10.01,1.5,20.5,1.5s19,8.51,19,19"/>
+      <g>
+        <ellipse class="cls-1" cx="20.5" cy="20.5" rx="6" ry="7"/>
+        <line class="cls-1" x1="20.5" y1="27.5" x2="25.5" y2="28.5"/>
+      </g>
+    </g>
+    <g id="_Grupo_-2" data-name="&amp;lt;Grupo&amp;gt;">
+      <path class="cls-1" d="m60.43,54.84c1.94-2.97,3.07-6.52,3.07-10.34,0-10.49-8.51-19-19-19s-19,8.51-19,19,8.51,19,19,19c3.81,0,7.37-1.13,10.34-3.07l8.66,3.07-3.07-8.66Z"/>
+      <g>
+        <line class="cls-1" x1="44.5" y1="37.5" x2="39.5" y2="51.5"/>
+        <line class="cls-1" x1="44.5" y1="37.5" x2="49.5" y2="51.5"/>
+        <line class="cls-1" x1="41.29" y1="46.5" x2="47.72" y2="46.51"/>
+      </g>
+    </g>
+  </g>
+</svg>

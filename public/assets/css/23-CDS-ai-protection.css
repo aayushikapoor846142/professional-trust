@@ -1,0 +1,217 @@
+.CDSDashboardActivity-AI-Protection-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.CDSDashboardActivity-AI-Protection-variation {
+    margin-bottom: 60px;
+    padding: 0 0 40px 0;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.CDSDashboardActivity-AI-Protection-variation:last-child {
+    border-bottom: none;
+}
+
+.CDSDashboardActivity-AI-Protection-variation-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #343a40;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Common Styles */
+.CDSDashboardActivity-AI-Protection-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.CDSDashboardActivity-AI-Protection-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.CDSDashboardActivity-AI-Protection-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.CDSDashboardActivity-AI-Protection-btn-primary {
+    background: #4f46ef;
+    color: white;
+}
+
+.CDSDashboardActivity-AI-Protection-btn-primary:hover {
+    background: #0052cc;
+    transform: translateY(-1px);
+}
+
+.CDSDashboardActivity-AI-Protection-btn-secondary {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.CDSDashboardActivity-AI-Protection-btn-secondary:hover {
+    background: #dee2e6;
+}
+
+.CDSDashboardActivity-AI-Protection-btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.CDSDashboardActivity-AI-Protection-btn-danger:hover {
+    background: #c82333;
+}
+
+.CDSDashboardActivity-AI-Protection-input-group {
+    margin-bottom: 20px;
+}
+
+.CDSDashboardActivity-AI-Protection-input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.CDSDashboardActivity-AI-Protection-input-field {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.CDSDashboardActivity-AI-Protection-input-field:focus {
+    outline: none;
+    border-color: #0066ff;
+}
+
+/* Variation 1: Unified Dashboard */
+.CDSDashboardActivity-AI-Protection-v1-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.CDSDashboardActivity-AI-Protection-v1-header {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+    
+        /* Variation 2: QR Code Generator Focus */
+        .CDSDashboardActivity-AI-Protection-v2-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+.CDSDashboardActivity-AI-Protection-qr-info {
+    background: #e7f3ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Variation 3: Domain Verification Focus */
+.CDSDashboardActivity-AI-Protection-v3-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.CDSDashboardActivity-AI-Protection-tab {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.CDSDashboardActivity-AI-Protection-tab.CDSDashboardActivity-AI-Protection-active {
+    background: #0066ff;
+    color: white;
+}
+
+.CDSDashboardActivity-AI-Protection-verification-method {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.CDSDashboardActivity-AI-Protection-code-block {
+    background: #1a1a1a;
+    color: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+/* Variation 4: Combined Workflow */
+.CDSDashboardActivity-AI-Protection-v4-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.CDSDashboardActivity-AI-Protection-v4-steps::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e9ecef;
+    z-index: 0;
+}
+
+
+.CDSDashboardActivity-AI-Protection-status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* ======================
+    Responsive 
+========================= */
+@media (max-width: 768px) {
+    .CDSDashboardActivity-AI-Protection-v1-grid {
+        grid-template-columns: 1fr;
+    }
+
+        .CDSDashboardActivity-AI-Protection-status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .CDSDashboardActivity-AI-Protection-qr-preview, .CDSDashboardActivity-AI-Protection-card {padding: 1rem;}
+}

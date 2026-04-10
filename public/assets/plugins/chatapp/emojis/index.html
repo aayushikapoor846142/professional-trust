@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/joypixels.min.js"></script>
+    <script src="js/joypixels-custom.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cds-emojieffects">
+            <input type="text" id="emoji-target" class="emoji-input" placeholder="Type something...">
+            <div id="emoji-trigger" class="emoji-button">😀</div>
+        </div>
+    </div>
+    <script>
+        // Initialize the Emoji Picker
+        document.addEventListener("DOMContentLoaded", () => {
+            // new EmojiPicker("#emoji-target", {
+            //     targetElement:"",
+            //     onEmojiSelect: (selectedEmoji) => {
+            //         // alert("Emoji selected:"+selectedEmoji); 
+            //     },
+            // });
+
+            new EmojiPicker("#emoji-trigger", {
+                targetElement: "#emoji-target",
+                onEmojiSelect: (selectedEmoji) => {
+                },
+            });
+        });
+    </script>
+</body>
+</html>

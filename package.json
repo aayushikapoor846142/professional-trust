@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "axios": "^1.1.2",
+        "bootstrap": "^5.2.3",
+        "laravel-vite-plugin": "^0.7.8",
+        "sass": "^1.56.1",
+        "vite": "^4.5.12"
+    },
+    "dependencies": {
+        "laravel-echo": "^1.17.1",
+        "p-queue": "^8.0.1",
+        "puppeteer": "^23.6.0",
+        "pusher-js": "^8.4.0-rc2"
+    }
+}

@@ -1,0 +1,624 @@
+.CdsDashboardCaseStages-add-btn{
+    float: right;
+}
+
+.CdsDashboardCaseStages-list-view-header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .CdsDashboardCaseStages-list-view-header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .CdsDashboardCaseStages-list-view-project-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .CdsDashboardCaseStages-list-view-project-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .CdsDashboardCaseStages-list-view-project-details h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .CdsDashboardCaseStages-list-view-project-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .CdsDashboardCaseStages-list-view-team-members {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .CdsDashboardCaseStages-list-view-avatar-group {
+            display: flex;
+            margin-right: 10px;
+        }
+
+        .CdsDashboardCaseStages-list-view-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -10px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            overflow: hidden;
+        }
+
+        .CdsDashboardCaseStages-list-view-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .CdsDashboardCaseStages-list-view-add-member {
+            width: 36px;
+            height: 36px;
+            border: 2px dashed #dee2e6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: -10px;
+        }
+
+        .CdsDashboardCaseStages-list-view-add-member:hover {
+            border-color: #667eea;
+            background: #f8f9fa;
+        }
+
+        .CdsDashboardCaseStages-list-view-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-overview {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .CdsDashboardCaseStages-list-view-stat-item {
+            text-align: center;
+        }
+
+        .CdsDashboardCaseStages-list-view-stat-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .CdsDashboardCaseStages-list-view-stat-label {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-bar-container {
+            background: #e9ecef;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 65%;
+            transition: width 0.5s ease;
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-line {
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #e9ecef;
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-stage {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 50px;
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-dot {
+            position: absolute;
+            left: 28px;
+            top: 8px;
+            width: 28px;
+            height: 28px;
+            background: white;
+            border: 4px solid #e9ecef;
+            border-radius: 50%;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-dot.CdsDashboardCaseStages-list-view-completed {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+
+        .CdsDashboardCaseStages-list-view-timeline-dot.CdsDashboardCaseStages-list-view-active {
+            background: white;
+            border-color: #667eea;
+            color: #667eea;
+            box-shadow: 0 0 0 8px rgba(102, 126, 234, 0.1);
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 25px;
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-date {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-badge.CdsDashboardCaseStages-list-view-completed {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .CdsDashboardCaseStages-list-view-stage-badge.CdsDashboardCaseStages-list-view-active {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        /* LIST VIEW STYLES */
+        .CdsDashboardCaseStages-list-view-sub-stages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-row {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px 20px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-row:hover {
+            background: white;
+            border-color: #667eea;
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-row.completed .CdsDashboardCaseStages-list-view-sub-stage-checkbox {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-row.completed .CdsDashboardCaseStages-list-view-sub-stage-checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-description {
+            font-size: 13px;
+            color: #6c757d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-shrink: 0;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-indicator {
+            width: 120px;
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .CdsDashboardCaseStages-list-view-progress-text {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+
+        .CdsDashboardCaseStages-list-view-deadline-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .CdsDashboardCaseStages-list-view-deadline-info.warning {
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        .CdsDashboardCaseStages-list-view-assigned-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsDashboardCaseStages-list-view-assigned-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .CdsDashboardCaseStages-list-view-assigned-name {
+            font-size: 13px;
+            color: #495057;
+        }
+
+        .CdsDashboardCaseStages-list-view-status-pill {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .CdsDashboardCaseStages-list-view-status-completed {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .CdsDashboardCaseStages-list-view-status-in-progress {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        .CdsDashboardCaseStages-list-view-status-pending {
+            background: #f8d7da;
+            color: #842029;
+        }
+
+        .CdsDashboardCaseStages-list-view-status-review {
+            background: #fff3cd;
+            color: #664d03;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-actions {
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .CdsDashboardCaseStages-list-view-sub-stage-row:hover .CdsDashboardCaseStages-list-view-sub-stage-actions {
+            opacity: 1;
+        }
+
+        .CdsDashboardCaseStages-list-view-action-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .CdsDashboardCaseStages-list-view-action-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .CdsDashboardCaseStages-list-view-action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .CdsDashboardCaseStages-list-view-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsDashboardCaseStages-list-view-btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .CdsDashboardCaseStages-list-view-btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .CdsDashboardCaseStages-list-view-btn-outline {
+            background: white;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+
+        .CdsDashboardCaseStages-list-view-btn-outline:hover {
+            background: #f8f9fa;
+        }
+
+        .CdsDashboardCaseStages-list-view-activity-feed {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .CdsDashboardCaseStages-list-view-activity-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .CdsDashboardCaseStages-list-view-activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .CdsDashboardCaseStages-list-view-activity-text {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .CdsDashboardCaseStages-list-view-activity-time {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        /* List view specific enhancements */
+        .CdsDashboardCaseStages-list-view-list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .CdsDashboardCaseStages-list-view-list-header-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .CdsDashboardCaseStages-list-view-bulk-select {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .CdsDashboardCaseStages-list-view-header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .CdsDashboardCaseStages-list-view-progress-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .CdsDashboardCaseStages-list-view-sub-stage-row {
+                flex-wrap: wrap;
+            }
+
+            .CdsDashboardCaseStages-list-view-sub-stage-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .CdsDashboardCaseStages-list-view-sub-stage-meta {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .CdsDashboardCaseStages-list-view-timeline-line {
+                left: 20px;
+            }
+
+            .CdsDashboardCaseStages-list-view-timeline-stage {
+                padding-left: 50px;
+            }
+
+            .CdsDashboardCaseStages-list-view-timeline-dot {
+                left: 8px;
+            }
+        }

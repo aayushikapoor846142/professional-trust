@@ -1,0 +1,466 @@
+:root {
+    --CdsTicket-primary: #6366f1;
+    --CdsTicket-secondary: #8b5cf6;
+    --CdsTicket-accent: #ec4899;
+    --CdsTicket-success: #10b981;
+    --CdsTicket-warning: #f59e0b;
+    --CdsTicket-danger: #ef4444;
+    --CdsTicket-dark: #1f2937;
+    --CdsTicket-light: #ffffff;
+    --CdsTicket-glass: rgba(255, 255, 255, 0.7);
+    --CdsTicket-shadow: rgba(0, 0, 0, 0.1);
+    --CdsTicket-text: #1f2937;
+    --CdsTicket-text-secondary: #6b7280;
+}
+
+@keyframes CdsTicket-float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(30px, -30px) rotate(180deg); }
+}
+.CDSDashboardProfessional-main-container-body {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.CdsTicket-container-outer{max-width:1400px;}
+.CdsTicket-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--CdsTicket-text-secondary);
+    animation: CdsTicket-slideDown 0.4s ease-out;
+}
+
+.CdsTicket-breadcrumb a {
+    color: var(--CdsTicket-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.CdsTicket-breadcrumb a:hover {
+    color: var(--CdsTicket-accent);
+}
+
+@keyframes CdsTicket-slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.CdsTicket-header {
+    background: var(--CdsTicket-glass);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px var(--CdsTicket-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    animation: CdsTicket-slideDown 0.5s ease-out 0.1s backwards;
+}
+
+.CdsTicket-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.CdsTicket-ticket-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.CdsTicket-ticket-id {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--CdsTicket-primary), var(--CdsTicket-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.CdsTicket-status-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.CdsTicket-status-open {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.CdsTicket-priority-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.CdsTicket-priority-normal {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.CdsTicket-header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.CdsTicket-btn {
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.CdsTicket-btn-primary {
+    background: linear-gradient(135deg, var(--CdsTicket-primary), var(--CdsTicket-accent));
+    color: white;
+}
+
+.CdsTicket-btn-secondary {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--CdsTicket-text);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.CdsTicket-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.3s ease;
+}
+
+.CdsTicket-btn:hover::before {
+    left: 100%;
+}
+
+.CdsTicket-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.CdsTicket-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.CdsTicket-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.CdsTicket-info-label {
+    font-size: 0.85rem;
+    color: var(--CdsTicket-text-secondary);
+    font-weight: 500;
+}
+
+.CdsTicket-info-value {
+    font-size: 0.95rem;
+    color: var(--CdsTicket-text);
+    font-weight: 600;
+}
+
+.CdsTicket-main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    animation: CdsTicket-fadeIn 0.6s ease-out 0.2s backwards;
+}
+
+@keyframes CdsTicket-fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.CdsTicket-conversation {
+    background: var(--CdsTicket-glass);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px var(--CdsTicket-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.CdsTicket-conversation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.CdsTicket-conversation-title {
+    font-size: 1.2rem;
+    color: var(--CdsTicket-text);
+}
+
+.CdsTicket-message {
+    margin-bottom: 1.5rem;
+    animation: CdsTicket-messageSlide 0.5s ease-out;
+}
+
+@keyframes CdsTicket-messageSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.CdsTicket-message-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.CdsTicket-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--CdsTicket-primary), var(--CdsTicket-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.CdsTicket-message-info {
+    flex: 1;
+}
+
+.CdsTicket-message-author {
+    font-weight: 600;
+    color: var(--CdsTicket-text);
+}
+
+.CdsTicket-message-time {
+    font-size: 0.85rem;
+    color: var(--CdsTicket-text-secondary);
+}
+
+.CdsTicket-message-body {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-left: 3.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.CdsTicket-reply-box {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.CdsTicket-reply-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.CdsTicket-reply-textarea:focus {
+    outline: none;
+    border-color: var(--CdsTicket-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.CdsTicket-reply-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.CdsTicket-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.CdsTicket-sidebar-card {
+    background: var(--CdsTicket-glass);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px var(--CdsTicket-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.CdsTicket-sidebar-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--CdsTicket-text);
+}
+
+.CdsTicket-activity-item {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.CdsTicket-activity-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.CdsTicket-activity-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--CdsTicket-primary);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.CdsTicket-activity-content {
+    flex: 1;
+}
+
+.CdsTicket-activity-text {
+    font-size: 0.9rem;
+    color: var(--CdsTicket-text);
+    margin-bottom: 0.2rem;
+}
+
+.CdsTicket-activity-time {
+    font-size: 0.8rem;
+    color: var(--CdsTicket-text-secondary);
+}
+
+.CdsTicket-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.CdsTicket-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.CdsTicket-contact-icon {
+    color: var(--CdsTicket-primary);
+}
+
+/* =========================================== */
+@media (max-width: 1024px) {
+    .CdsTicket-main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .CdsTicket-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .CdsTicket-container {
+        padding: 1rem;
+    }
+
+    .CdsTicket-header,
+    .CdsTicket-conversation,
+    .CdsTicket-sidebar-card {
+        padding: 1.5rem;
+    }
+
+    .CdsTicket-ticket-id {
+        font-size: 1.5rem;
+    }
+
+    .CdsTicket-header-actions {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .CdsTicket-btn {
+        flex: 1;
+        padding: 0.6rem 1rem;
+    }
+}
+
+.CdsTicket-attachments {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.CdsTicket-attachment {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--CdsTicket-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.CdsTicket-attachment:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-1px);
+}

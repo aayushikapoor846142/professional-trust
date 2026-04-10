@@ -1,0 +1,551 @@
+/* Banking Details CSS */
+:root {
+    --CdsBankDetails-primary: #2563eb;
+    --CdsBankDetails-primary-dark: #1d4ed8;
+    --CdsBankDetails-success: #10b981;
+    --CdsBankDetails-danger: #ef4444;
+    --CdsBankDetails-warning: #f59e0b;
+    --CdsBankDetails-bg: #f8fafc;
+    --CdsBankDetails-card-bg: #ffffff;
+    --CdsBankDetails-text: #1e293b;
+    --CdsBankDetails-text-light: #64748b;
+    --CdsBankDetails-border: #e2e8f0;
+    --CdsBankDetails-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    --CdsBankDetails-shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+    --CdsBankDetails-radius: 12px;
+    --CdsBankDetails-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.CdsBankDetails-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.CdsBankDetails-header {
+    background: linear-gradient(135deg, var(--CdsBankDetails-primary) 0%, var(--CdsBankDetails-primary-dark) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--CdsBankDetails-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--CdsBankDetails-shadow-lg);
+}
+
+.CdsBankDetails-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.CdsBankDetails-header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.CdsBankDetails-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.CdsBankDetails-add-btn {
+    background: var(--CdsBankDetails-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--CdsBankDetails-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.CdsBankDetails-add-btn:hover {
+    background: var(--CdsBankDetails-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--CdsBankDetails-shadow-lg);
+}
+
+.CdsBankDetails-search-wrapper {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.CdsBankDetails-search {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    border: 1px solid var(--CdsBankDetails-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--CdsBankDetails-transition);
+    background: var(--CdsBankDetails-card-bg);
+}
+
+.CdsBankDetails-search:focus {
+    outline: none;
+    border-color: var(--CdsBankDetails-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.CdsBankDetails-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--CdsBankDetails-text-light);
+}
+
+.CdsBankDetails-counter {
+    background: var(--CdsBankDetails-card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--CdsBankDetails-text-light);
+    font-weight: 500;
+    box-shadow: var(--CdsBankDetails-shadow);
+}
+
+.CdsBankDetails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.CdsBankDetails-card {
+    background: var(--CdsBankDetails-card-bg);
+    border-radius: var(--CdsBankDetails-radius);
+    padding: 1.5rem;
+    box-shadow: var(--CdsBankDetails-shadow);
+    transition: var(--CdsBankDetails-transition);
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.CdsBankDetails-card.CdsBankDetails-default {
+    border-color: var(--CdsBankDetails-success);
+}
+
+.CdsBankDetails-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--CdsBankDetails-shadow-lg);
+}
+
+.CdsBankDetails-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--CdsBankDetails-border);
+}
+
+.CdsBankDetails-bank-logo {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.CdsBankDetails-bank-info {
+    flex: 1;
+}
+
+.CdsBankDetails-bank-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--CdsBankDetails-text);
+}
+
+.CdsBankDetails-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--CdsBankDetails-success);
+    color: white;
+}
+
+.CdsBankDetails-status.CdsBankDetails-inactive {
+    background: var(--CdsBankDetails-text-light);
+}
+
+.CdsBankDetails-details {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.CdsBankDetails-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CdsBankDetails-label {
+    color: var(--CdsBankDetails-text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.CdsBankDetails-value {
+    color: var(--CdsBankDetails-text);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+.CdsBankDetails-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--CdsBankDetails-border);
+}
+
+.CdsBankDetails-action-btn {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--CdsBankDetails-transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.CdsBankDetails-btn-edit {
+    background: var(--CdsBankDetails-primary);
+    color: white;
+}
+
+.CdsBankDetails-btn-edit:hover {
+    background: var(--CdsBankDetails-primary-dark);
+}
+
+.CdsBankDetails-btn-delete {
+    background: var(--CdsBankDetails-danger);
+    color: white;
+}
+
+.CdsBankDetails-btn-delete:hover {
+    background: #dc2626;
+}
+
+.CdsBankDetails-btn-default {
+    background: var(--CdsBankDetails-success);
+    color: white;
+}
+
+.CdsBankDetails-btn-default:hover {
+    background: #059669;
+}
+
+.CdsBankDetails-btn-default:disabled {
+    background: var(--CdsBankDetails-text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Modal Styles */
+.CdsBankDetails-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+    z-index: 1040;
+}
+
+.CdsBankDetails-modal.CdsBankDetails-active {
+    display: flex;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Ensure modal appears above all other elements */
+
+.CdsBankDetails-modal-content {
+    z-index: 1000 !important;
+}
+
+.CdsBankDetails-modal-content {
+    background: var(--CdsBankDetails-card-bg);
+    border-radius: var(--CdsBankDetails-radius);
+    max-width: 600px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: CdsBankDetails-slideUp 0.3s ease-out;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 100000 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes CdsBankDetails-slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.CdsBankDetails-modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--CdsBankDetails-border);
+    position: sticky;
+    top: 0;
+    background: var(--CdsBankDetails-card-bg);
+    z-index: 10;
+}
+
+.CdsBankDetails-modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--CdsBankDetails-text);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.CdsBankDetails-modal-body {
+    padding: 1.5rem;
+}
+
+.CdsBankDetails-form-group {
+    margin-bottom: 1rem;
+}
+
+.CdsBankDetails-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.CdsBankDetails-form-row .CdsBankDetails-form-group {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .CdsBankDetails-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.CdsBankDetails-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--CdsBankDetails-text);
+    font-size: 0.875rem;
+}
+
+.CdsBankDetails-form-input,
+.CdsBankDetails-form-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--CdsBankDetails-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--CdsBankDetails-transition);
+    background: var(--CdsBankDetails-card-bg);
+    color: var(--CdsBankDetails-text);
+    display: block;
+    cursor: pointer;
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+}
+
+.CdsBankDetails-form-input:focus,
+.CdsBankDetails-form-select:focus {
+    outline: none;
+    border-color: var(--CdsBankDetails-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Ensure select dropdown is properly styled and interactive */
+.CdsBankDetails-form-select {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.CdsBankDetails-form-select option {
+    background: var(--CdsBankDetails-card-bg);
+    color: var(--CdsBankDetails-text);
+    padding: 0.5rem;
+}
+
+.CdsBankDetails-modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--CdsBankDetails-border);
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    position: sticky;
+    bottom: 0;
+    background: var(--CdsBankDetails-card-bg);
+    z-index: 10;
+}
+
+.CdsBankDetails-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--CdsBankDetails-transition);
+}
+
+.CdsBankDetails-btn-primary {
+    background: var(--CdsBankDetails-primary);
+    color: white;
+}
+
+.CdsBankDetails-btn-primary:hover {
+    background: var(--CdsBankDetails-primary-dark);
+}
+
+.CdsBankDetails-btn-secondary {
+    background: var(--CdsBankDetails-border);
+    color: var(--CdsBankDetails-text);
+}
+
+.CdsBankDetails-btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.CdsBankDetails-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--CdsBankDetails-text);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--CdsBankDetails-shadow-lg);
+    transform: translateX(400px);
+    transition: transform 0.3s ease-out;
+    z-index: 2000;
+}
+
+.CdsBankDetails-toast.CdsBankDetails-show {
+    transform: translateX(0);
+}
+
+.CdsBankDetails-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--CdsBankDetails-card-bg);
+    border-radius: var(--CdsBankDetails-radius);
+    box-shadow: var(--CdsBankDetails-shadow);
+}
+
+.CdsBankDetails-empty-icon {
+    font-size: 4rem;
+    color: var(--CdsBankDetails-text-light);
+    margin-bottom: 1rem;
+}
+
+.CdsBankDetails-empty-text {
+    color: var(--CdsBankDetails-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .CdsBankDetails-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .CdsBankDetails-header p {
+        font-size: 1rem;
+    }
+
+    .CdsBankDetails-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .CdsBankDetails-search-wrapper {
+        order: -1;
+    }
+
+    .CdsBankDetails-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .CdsBankDetails-toast {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .CdsBankDetails-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .CdsBankDetails-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .CdsBankDetails-card {
+        padding: 1rem;
+    }
+
+    .CdsBankDetails-actions {
+        flex-direction: column;
+    }
+
+    .CdsBankDetails-action-btn {
+        width: 100%;
+    }
+}
+
+/* Icons */
+.CdsBankDetails-icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.CdsBankDetails-icon-plus::before { content: "➕"; }
+.CdsBankDetails-icon-search::before { content: "🔍"; }
+.CdsBankDetails-icon-edit::before { content: "✏️"; }
+.CdsBankDetails-icon-delete::before { content: "🗑️"; }
+.CdsBankDetails-icon-check::before { content: "✓"; }
+.CdsBankDetails-icon-star::before { content: "⭐"; }
+.CdsBankDetails-icon-bank::before { content: "🏦"; } 

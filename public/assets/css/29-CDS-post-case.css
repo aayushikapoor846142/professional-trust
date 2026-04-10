@@ -1,0 +1,871 @@
+.CdsDashboardUtilities-dropdown-tags-country-selector-container {
+    max-width: unset !important;
+    width: 100%;
+    box-shadow: unset !important;
+}
+.CdsDashboardUtilities-dropdown-tags-country-selector-container {
+    padding: 0px !important;
+}
+
+.CdsPostcase-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.CdsPostcase-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+.CdsPostcase-logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.CdsPostcase-header-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.CdsPostcase-header-subtitle {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.CdsPostcase-setup-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.CdsPostcase-setup-card.CdsPostcase-completed {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.select2-selection--single .select2-selection__rendered {
+    padding-top: 0px !important;
+}
+.CdsPostcase-card-header {
+    padding: 30px;
+    background: #f9fafb;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+.CdsPostcase-card-header:hover {
+    background: #f3f4f6;
+}
+
+.CdsPostcase-card-header.CdsPostcase-active {
+    background: white;
+}
+
+.CdsPostcase-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CdsPostcase-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.CdsPostcase-step-number {
+    width: 40px;
+    height: 40px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.CdsPostcase-step-number.CdsPostcase-active {
+    background: #6366f1;
+    color: white;
+}
+
+.CdsPostcase-step-number.CdsPostcase-completed {
+    background: #10b981;
+    color: white;
+}
+
+.CdsPostcase-step-number.CdsPostcase-completed::after {
+    content: '✓';
+    font-size: 20px;
+}
+
+.CdsPostcase-step-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.CdsPostcase-step-info p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.CdsPostcase-status-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.CdsPostcase-status-badge.CdsPostcase-completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.CdsPostcase-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.CdsPostcase-card-body.CdsPostcase-active {
+    max-height: 2000px;
+}
+
+.CdsPostcase-body-content {
+    padding: 30px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.CdsPostcase-section-divider {
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.CdsPostcase-section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.CdsPostcase-section-divider-text {
+    background: white;
+    padding: 0 20px;
+    position: relative;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.CdsPostcase-service-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.CdsPostcase-service-option {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.CdsPostcase-service-option:hover {
+    border-color: #6366f1;
+    background: #f5f3ff;
+}
+
+.CdsPostcase-service-option.CdsPostcase-selected {
+    border-color: #6366f1;
+    background: #f5f3ff;
+}
+
+.CdsPostcase-service-option.CdsPostcase-selected::after {
+    content: '✓';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background: #6366f1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.CdsPostcase-service-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.CdsPostcase-service-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.CdsPostcase-service-desc {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.CdsPostcase-quick-tip {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.CdsPostcase-quick-tip-icon {
+    font-size: 32px;
+}
+
+.CdsPostcase-quick-tip-content h4 {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.CdsPostcase-quick-tip-content p {
+    font-size: 14px;
+    color: #92400e;
+}
+
+.CdsPostcase-form-group {
+    margin-bottom: 20px;
+}
+
+.CdsPostcase-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.CdsPostcase-input,
+.CdsPostcase-textarea,
+.CdsPostcase-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: white;
+}
+
+.CdsPostcase-input:focus,
+.CdsPostcase-textarea:focus,
+.CdsPostcase-select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.CdsPostcase-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.CdsPostcase-priority-list {
+    display: grid;
+    gap: 12px;
+}
+
+.CdsPostcase-priority-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.CdsPostcase-priority-item:hover {
+    background: #f3f4f6;
+}
+
+.CdsPostcase-priority-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+}
+
+.CdsPostcase-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.CdsPostcase-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.CdsPostcase-btn-secondary {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.CdsPostcase-btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+.CdsPostcase-btn-primary {
+    background: #6366f1;
+    color: white;
+}
+
+.CdsPostcase-btn-primary:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.CdsPostcase-floating-progress {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 16px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.CdsPostcase-progress-bar {
+    width: 200px;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.CdsPostcase-progress-fill {
+    height: 100%;
+    background: #6366f1;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.CdsPostcase-progress-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.CdsPostcase-final-summary {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+}
+
+.CdsPostcase-success-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.CdsPostcase-character-count {
+    text-align: right;
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 5px;
+}
+.CdsPostcase-success-section {
+    display: none;
+    text-align: center;
+    padding: 60px 30px;
+    animation: CdsPostcase-fadeIn 0.6s ease-out;
+}
+
+.CdsPostcase-success-section.CdsPostcase-show {
+    display: block;
+}
+
+@keyframes CdsPostcase-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.CdsPostcase-lottie-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CdsPostcase-success-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 16px;
+    animation: CdsPostcase-slideUp 0.8s ease-out 0.2s both;
+}
+
+.CdsPostcase-success-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 30px;
+    animation: CdsPostcase-slideUp 0.8s ease-out 0.3s both;
+}
+
+.CdsPostcase-case-number {
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 20px 30px;
+    display: inline-block;
+    margin-bottom: 40px;
+    animation: CdsPostcase-slideUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes CdsPostcase-slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.CdsPostcase-case-number-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.CdsPostcase-case-number-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.CdsPostcase-success-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: CdsPostcase-slideUp 0.8s ease-out 0.5s both;
+}
+
+.CdsPostcase-btn-success {
+    background: #10b981;
+    color: white;
+}
+
+.CdsPostcase-btn-success:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.CdsPostcase-hide {
+    display: none !important;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes CdsPostcase-bounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.CdsPostcase-success-checkmark {
+    font-size: 120px;
+    color: #10b981;
+    animation: CdsPostcase-bounce 0.6s ease-out;
+}
+
+/* Error States */
+.CdsPostcase-form-group.CdsPostcase-has-error .CdsPostcase-input,
+.CdsPostcase-form-group.CdsPostcase-has-error .CdsPostcase-textarea,
+.CdsPostcase-form-group.CdsPostcase-has-error .CdsPostcase-select {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.CdsPostcase-error-message {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.CdsPostcase-error-alert {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    animation: CdsPostcase-shake 0.5s ease-in-out;
+}
+
+.CdsPostcase-error-alert-icon {
+    font-size: 20px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+.CdsPostcase-error-alert-content {
+    flex: 1;
+}
+
+.CdsPostcase-error-alert-content strong {
+    display: block;
+    color: #dc2626;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.CdsPostcase-error-alert-content p {
+    color: #991b1b;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+@keyframes CdsPostcase-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Authentication Popup Styles */
+.CdsPostcase-auth-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.CdsPostcase-auth-popup.CdsPostcase-show {
+    display: flex;
+    animation: CdsPostcase-fadeIn 0.3s ease-out;
+}
+
+.CdsPostcase-auth-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.CdsPostcase-auth-popup-content {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 90%;
+    overflow: hidden;
+    animation: CdsPostcase-slideUp 0.4s ease-out;
+}
+
+.CdsPostcase-auth-popup-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.CdsPostcase-auth-popup-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.CdsPostcase-auth-popup-header p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.CdsPostcase-auth-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.CdsPostcase-auth-popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.CdsPostcase-auth-popup-body {
+    padding: 30px;
+}
+
+.CdsPostcase-auth-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.CdsPostcase-auth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    width: 100%;
+}
+
+.CdsPostcase-auth-btn-login {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.CdsPostcase-auth-btn-login:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.CdsPostcase-auth-btn-signup {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.CdsPostcase-auth-btn-signup:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.CdsPostcase-auth-divider {
+    text-align: center;
+    position: relative;
+    margin: 8px 0;
+}
+
+.CdsPostcase-auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.CdsPostcase-auth-divider span {
+    background: white;
+    padding: 0 16px;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.CdsPostcase-auth-info {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.CdsPostcase-auth-info p {
+    margin: 0;
+    color: #92400e;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Responsive design for auth popup */
+@media (max-width: 480px) {
+    .CdsPostcase-auth-popup-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .CdsPostcase-auth-popup-header {
+        padding: 20px 20px 15px;
+    }
+    
+    .CdsPostcase-auth-popup-header h3 {
+        font-size: 20px;
+    }
+    
+    .CdsPostcase-auth-popup-body {
+        padding: 20px;
+    }
+    
+    .CdsPostcase-auth-btn {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}
+.CdsPostcase-fee-summary {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+}
+
+.CdsPostcase-fee-summary h4 {
+    color: #4c1d95;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.CdsPostcase-fee-total {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px solid #e5e7eb;
+}
+
+.CdsPostcase-fee-total .total-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4c1d95;
+}
+
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.fee-item:last-child {
+    margin-bottom: 0;
+}
+
+.fee-item .fee-description {
+    color: #374151;
+    font-weight: 500;
+}
+
+.fee-item .fee-amount {
+    color: #4c1d95;
+    font-weight: bold;
+    font-size: 16px;
+}
+/* Required field indicator */
+.CdsPostcase-required {
+    color: #ef4444;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+/* Disabled button state */
+.CdsPostcase-btn-disabled {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.CdsPostcase-btn-disabled:hover {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    transform: none !important;
+    box-shadow: none !important;
+}

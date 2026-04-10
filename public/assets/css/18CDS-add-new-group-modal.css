@@ -1,0 +1,445 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .modal-dialog.CdsDashboardMessagesGroup-create-group-model-modal {
+        max-width: 1200px;
+        margin: 30px auto;
+    }
+    
+    .modal-content.CdsDashboardMessagesGroup-create-group-model-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        border: none;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-form-wrapper {
+        padding: 40px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        padding: 0;
+        border: none;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-title {
+        font-size: 28px;
+        color: #2c3e50;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-close-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background: #f1f3f5;
+        cursor: pointer;
+        font-size: 20px;
+        color: #6c757d;
+        transition: all 0.2s;
+        opacity: 1;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-close-btn:hover {
+        background: #e9ecef;
+        transform: rotate(90deg);
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-upload-section {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #e3f2fd;
+        border: 2px dashed #2196f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-circle:hover {
+        background: #bbdefb;
+        border-style: solid;
+        transform: scale(1.05);
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-circle svg {
+        pointer-events: none;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-info {
+        flex: 1;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-info h3 {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #2c3e50;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-icon-info p {
+        color: #6c757d;
+        font-size: 14px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #495057;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-required {
+        color: #dc3545;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-input {
+        padding: 12px 16px;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.2s;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-input:focus {
+        outline: none;
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-radio-group {
+        display: flex;
+        gap: 24px;
+        margin-top: 8px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-radio-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        color: #495057;
+        transition: color 0.2s;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-radio-label:hover {
+        color: #2196f3;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-radio-input {
+        width: 20px;
+        height: 20px;
+        accent-color: #2196f3;
+        cursor: pointer;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-banner-upload {
+        height: 200px;
+        border: 2px dashed #dee2e6;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: #f8f9fa;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-banner-upload:hover {
+        border-color: #2196f3;
+        background: #e3f2fd;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-banner-upload img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-banner-content {
+        text-align: center;
+        pointer-events: none;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-banner-content svg {
+        margin-bottom: 8px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-banner-content p {
+        color: #6c757d;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-textarea {
+        padding: 12px 16px;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 16px;
+        resize: vertical;
+        min-height: 120px;
+        font-family: inherit;
+        transition: all 0.2s;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-textarea:focus {
+        outline: none;
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-members-section {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 24px;
+        height: fit-content;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-members-header {
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-search-box {
+        width: 100%;
+        padding: 12px 16px 12px 44px;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 16px;
+        background: white;
+        margin-bottom: 16px;
+        position: relative;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-search-wrapper {
+        position: relative;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-search-box:focus {
+        outline: none;
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 8px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-list::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-list::-webkit-scrollbar-track {
+        background: #f1f3f5;
+        border-radius: 3px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-list::-webkit-scrollbar-thumb {
+        background: #dee2e6;
+        border-radius: 3px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-list::-webkit-scrollbar-thumb:hover {
+        background: #ced4da;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: 2px solid transparent;
+        width: 100%;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-item:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-color: #e3f2fd;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-item.CdsDashboardMessagesGroup-create-group-model-selected {
+        border-color: #2196f3;
+        background: #f0f8ff;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-checkbox {
+        width: 20px;
+        height: 20px;
+        accent-color: #2196f3;
+        cursor: pointer;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        flex-shrink: 0;
+        position: relative;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar .group-icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e3f2fd;
+        color: #2196f3;
+        border-radius: 50%;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar .status-online,
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar .status-offline {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar .status-online {
+        background: #4caf50;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-avatar .status-offline {
+        background: #9e9e9e;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-info {
+        flex: 1;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-member-name {
+        font-weight: 500;
+        color: #2c3e50;
+        margin-bottom: 2px;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-submit-section {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 32px;
+        padding-top: 32px;
+        border-top: 1px solid #e9ecef;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-submit-btn {
+        padding: 14px 32px;
+        background: #2196f3;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-submit-btn:hover {
+        background: #1976d2;
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        transform: translateY(-1px);
+    }
+    
+    .CdsDashboardMessagesGroup-create-group-model-submit-btn:active {
+        transform: translateY(0);
+    }
+    
+    .text-danger.errmsg {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    
+    @media (max-width: 768px) {
+        .CdsDashboardMessagesGroup-create-group-model-form-grid {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+        
+        .CdsDashboardMessagesGroup-create-group-model-submit-section {
+            flex-direction: column-reverse;
+            gap: 12px;
+        }
+        
+        .CdsDashboardMessagesGroup-create-group-model-submit-btn {
+            width: 100%;
+        }
+    }

@@ -1,0 +1,497 @@
+        /* Primary button style */
+        .CdsTYButton-btn-primary {
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            color: white !important;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(85, 89, 188, 0.25);
+            outline: none;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+     
+        .CdsTYButton-btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .CdsTYButton-btn-primary:hover {
+            box-shadow: 0 4px 12px rgba(85, 89, 188, 0.35);
+            transform: translateY(-1px);
+        }
+.CdsTYButton-btn-secondary {
+    background: #e5e7eb;
+    border: none;
+    outline: none;
+    color: #374151;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 18px;
+}
+.CdsTYButton-btn-secondary-outline {
+    background: #f8f8f8;
+    border: none;
+    outline: none;
+    color: #374151;
+    border: 1px solid var(--cds-border01);
+    padding: 13px 24px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 26px;
+}
+.CdsTYButton-btn-secondary:hover {
+    background: #d1d5db;
+}
+        /* Gradient Variations */
+        .CdsTYButton-gradient-sunset {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+        }
+
+        .CdsTYButton-gradient-ocean {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+        }
+
+        .CdsTYButton-gradient-fire {
+            background: linear-gradient(135deg, #F93822 0%, #F9D423 100%);
+        }
+
+        .CdsTYButton-gradient-space {
+            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+        }
+
+        .CdsTYButton-gradient-candy {
+            background: linear-gradient(135deg, #D3CCE3 0%, #E9E4F0 100%);
+            color: #5559BC;
+        }
+
+        .CdsTYButton-gradient-neon {
+            background: linear-gradient(135deg, #00F260 0%, #0575E6 100%);
+        }
+
+        .CdsTYButton-gradient-royal {
+            background: linear-gradient(135deg, #141E30 0%, #243B55 100%);
+        }
+
+        .CdsTYButton-gradient-rose {
+            background: linear-gradient(135deg, #E8CBC0 0%, #636FA4 100%);
+        }
+
+        /* Shape Variations */
+        .CdsTYButton-shape-square {
+            border-radius: 8px;
+        }
+
+        .CdsTYButton-shape-sharp {
+            border-radius: 0;
+        }
+
+        .CdsTYButton-shape-pill {
+            border-radius: 50px;
+            padding: 12px 32px;
+        }
+
+        .CdsTYButton-shape-circle {
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Border Styles */
+        .CdsTYButton-border-thick {
+            border: 1px solid transparent !important;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            box-shadow: none;
+            color: #5559BC;
+        }
+
+        .CdsTYButton-border-dashed {
+            border: 2px dashed #5559BC;
+            background: transparent;
+            color: #5559BC;
+        }
+
+        .CdsTYButton-border-double {
+            border: 4px double #9857CD;
+            background: transparent;
+            color: #9857CD;
+            padding: 10px 22px;
+        }
+
+        /* Animation Effects */
+        .CdsTYButton-animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(152, 87, 205, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(152, 87, 205, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(152, 87, 205, 0);
+            }
+        }
+
+        .CdsTYButton-animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .CdsTYButton-animate-shake:hover {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+        }
+
+        /* 3D Effects */
+        .CdsTYButton-3d {
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            box-shadow: 
+                0 4px 0 #4449AC,
+                0 6px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            transition: all 0.1s ease;
+        }
+
+        .CdsTYButton-3d:hover {
+            transform: translateY(2px);
+            box-shadow: 
+                0 2px 0 #4449AC,
+                0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .CdsTYButton-3d:active {
+            transform: translateY(4px);
+            box-shadow: 
+                0 0 0 #4449AC,
+                0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Neumorphism */
+        .CdsTYButton-neumorphic {
+            background: #f5f5f5;
+            color: #5559BC;
+            border: none;
+            box-shadow: 
+                5px 5px 10px #d0d0d0,
+                -5px -5px 10px #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .CdsTYButton-neumorphic:hover {
+            box-shadow: 
+                2px 2px 5px #d0d0d0,
+                -2px -2px 5px #ffffff;
+        }
+
+        .CdsTYButton-neumorphic:active {
+            box-shadow: 
+                inset 2px 2px 5px #d0d0d0,
+                inset -2px -2px 5px #ffffff;
+        }
+
+        /* Glassmorphism */
+        .CdsTYButton-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #5559BC;
+            box-shadow: 0 8px 32px 0 rgba(85, 89, 188, 0.2);
+        }
+
+        .CdsTYButton-glass:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(85, 89, 188, 0.3);
+        }
+
+        /* Loading State */
+        .CdsTYButton-loading {
+            color: transparent;
+            pointer-events: none;
+            position: relative;
+        }
+
+        .CdsTYButton-loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Disabled State */
+        .CdsTYButton-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Icon Support */
+        .CdsTYButton-icon-left {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .CdsTYButton-icon-right {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-direction: row-reverse;
+        }
+
+        /* Hover Effects */
+        .CdsTYButton-hover-slide {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .CdsTYButton-hover-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .CdsTYButton-hover-slide:hover::before {
+            left: 0;
+        }
+
+        .CdsTYButton-hover-fill {
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+            color: #5559BC;
+            border: 2px solid #5559BC;
+            z-index: 1;
+        }
+
+        .CdsTYButton-hover-fill::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+            z-index: -1;
+        }
+
+        .CdsTYButton-hover-fill:hover {
+            color: white;
+            border-color: transparent;
+        }
+
+        .CdsTYButton-hover-fill:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Ripple Effect */
+        .CdsTYButton-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .CdsTYButton-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .CdsTYButton-ripple:active::after {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+        }
+
+        /* Split Button */
+        .CdsTYButton-split-group {
+            display: inline-flex;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(85, 89, 188, 0.25);
+        }
+
+        .CdsTYButton-split-main {
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 0;
+        }
+
+        .CdsTYButton-split-dropdown {
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Text Effects */
+        .CdsTYButton-text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .CdsTYButton-text-uppercase {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .CdsTYButton-text-gradient {
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #5559BC 0%, #9857CD 100%) 1;
+        }
+
+        /* Size Variations */
+        .CdsTYButton-size-xs {
+            padding: 6px 12px;
+            font-size: 11px;
+            border-radius: 16px;
+        }
+
+        .CdsTYButton-size-sm {
+            padding: 8px 16px;
+            font-size: 12px;
+            border-radius: 20px;
+        }
+
+        .CdsTYButton-size-lg {
+            padding: 16px 32px;
+            font-size: 16px;
+            border-radius: 28px;
+        }
+
+        .CdsTYButton-size-xl {
+            padding: 20px 40px;
+            font-size: 18px;
+            border-radius: 32px;
+        }
+
+        /* Button Groups */
+        .CdsTYButton-group {
+            display: inline-flex;
+            box-shadow: 0 2px 8px rgba(85, 89, 188, 0.25);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .CdsTYButton-group button {
+            border-radius: 0;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .CdsTYButton-group button:last-child {
+            border-right: none;
+        }
+
+        /* Floating Action Button */
+        .CdsTYButton-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 6px 20px rgba(85, 89, 188, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .CdsTYButton-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(85, 89, 188, 0.5);
+        }

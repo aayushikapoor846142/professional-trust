@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Variation 1 - Minimalist Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .CDSBookingsFlow02container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .CDSBookingsFlow02status-bar {
+            background: linear-gradient(90deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 15px 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .CDSBookingsFlow02status-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .CDSBookingsFlow02form-content {
+            padding: 40px;
+        }
+        
+        .CDSBookingsFlow02form-group {
+            margin-bottom: 30px;
+        }
+        
+        .CDSBookingsFlow02form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .CDSBookingsFlow02form-group input[type="text"],
+        .CDSBookingsFlow02form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+        
+        .CDSBookingsFlow02form-group input[type="text"]:focus,
+        .CDSBookingsFlow02form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+        
+        .CDSBookingsFlow02form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+        
+        .CDSBookingsFlow02mode-selector {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .CDSBookingsFlow02radio-wrapper {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .CDSBookingsFlow02radio-wrapper input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .CDSBookingsFlow02radio-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .CDSBookingsFlow02radio-wrapper input[type="radio"]:checked + .CDSBookingsFlow02radio-custom {
+            border-color: #667eea;
+            background: #667eea;
+        }
+        
+        .CDSBookingsFlow02radio-wrapper input[type="radio"]:checked + .CDSBookingsFlow02radio-custom::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .CDSBookingsFlow02radio-label {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .CDSBookingsFlow02warning-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            border-radius: 5px;
+            color: #856404;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .CDSBookingsFlow02save-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .CDSBookingsFlow02save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .CDSBookingsFlow02grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .CDSBookingsFlow02card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .CDSBookingsFlow02card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .CDSBookingsFlow02card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .CDSBookingsFlow02card-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .CDSBookingsFlow02add-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .CDSBookingsFlow02add-btn:hover {
+            background: #5a67d8;
+            transform: translateX(5px);
+        }
+        
+        .CDSBookingsFlow02add-btn::before {
+            content: '+';
+            font-size: 20px;
+            font-weight: 300;
+        }
+        
+        .CDSBookingsFlow02selected-items {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="CDSBookingsFlow02container">
+        <div class="CDSBookingsFlow02status-bar">
+            <span>Your flow status is</span>
+            <span class="CDSBookingsFlow02status-badge">Draft</span>
+        </div>
+        
+        <div class="CDSBookingsFlow02form-content">
+            <div class="CDSBookingsFlow02form-group">
+                <label for="title">Enter Title</label>
+                <input type="text" id="title" placeholder="Enter your title here">
+            </div>
+            
+            <div class="CDSBookingsFlow02form-group">
+                <label for="description">Enter Description</label>
+                <textarea id="description" placeholder="Describe your content in detail"></textarea>
+            </div>
+            
+            <div class="CDSBookingsFlow02form-group">
+                <label>Mode Selection</label>
+                <div class="CDSBookingsFlow02mode-selector">
+                    <label class="CDSBookingsFlow02radio-wrapper">
+                        <input type="radio" name="mode" value="onsite" checked>
+                        <span class="CDSBookingsFlow02radio-custom"></span>
+                        <span class="CDSBookingsFlow02radio-label">Onsite</span>
+                    </label>
+                    <label class="CDSBookingsFlow02radio-wrapper">
+                        <input type="radio" name="mode" value="online">
+                        <span class="CDSBookingsFlow02radio-custom"></span>
+                        <span class="CDSBookingsFlow02radio-label">Online</span>
+                    </label>
+                </div>
+                <div class="CDSBookingsFlow02warning-note">
+                    <strong>Note:</strong> If you change appointment mode, you will need to add location again
+                </div>
+            </div>
+            
+            <button class="CDSBookingsFlow02save-btn">Save Changes</button>
+            
+            <div class="CDSBookingsFlow02grid-container">
+                <div class="CDSBookingsFlow02card">
+                    <h3 class="CDSBookingsFlow02card-title">Time Duration</h3>
+                    <p class="CDSBookingsFlow02card-description">Set the duration for your appointment. This helps manage scheduling effectively.</p>
+                    <button class="CDSBookingsFlow02add-btn">Add Duration</button>
+                </div>
+                
+                <div class="CDSBookingsFlow02card">
+                    <h3 class="CDSBookingsFlow02card-title">Types</h3>
+                    <p class="CDSBookingsFlow02card-description">Define different types of appointments or services you offer.</p>
+                    <button class="CDSBookingsFlow02add-btn">Add Type</button>
+                </div>
+                
+                <div class="CDSBookingsFlow02card">
+                    <h3 class="CDSBookingsFlow02card-title">Location</h3>
+                    <p class="CDSBookingsFlow02card-description">Specify where the appointment will take place.</p>
+                    <button class="CDSBookingsFlow02add-btn">Add Location</button>
+                </div>
+                
+                <div class="CDSBookingsFlow02card">
+                    <h3 class="CDSBookingsFlow02card-title">Services</h3>
+                    <p class="CDSBookingsFlow02card-description">List the services available for this appointment.</p>
+                    <button class="CDSBookingsFlow02add-btn">Add Service</button>
+                    <div class="CDSBookingsFlow02selected-items">Your selected services:</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add interactivity
+        document.querySelectorAll('.CDSBookingsFlow02add-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.CDSBookingsFlow02card');
+                const title = card.querySelector('.CDSBookingsFlow02card-title').textContent;
+                
+                // Animation feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    alert(`Adding ${title}...`);
+                }, 200);
+            });
+        });
+        
+        // Save button animation
+        document.querySelector('.CDSBookingsFlow02save-btn').addEventListener('click', function() {
+            this.textContent = 'Saving...';
+            this.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+            
+            setTimeout(() => {
+                this.textContent = 'Saved!';
+                setTimeout(() => {
+                    this.textContent = 'Save Changes';
+                    this.style.background = '';
+                }, 2000);
+            }, 1000);
+        });
+        
+        // Radio button change handler
+        document.querySelectorAll('input[name="mode"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'online') {
+                    document.querySelector('.CDSBookingsFlow02warning-note').style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

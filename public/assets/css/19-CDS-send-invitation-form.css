@@ -1,0 +1,608 @@
+.CdsSendInvitation-header {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.CdsSendInvitation-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.CdsSendInvitation-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CdsSendInvitation-logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6366f1;
+    text-decoration: none;
+}
+
+.CdsSendInvitation-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.CdsSendInvitation-breadcrumb a {
+    color: #6366f1;
+    text-decoration: none;
+}
+
+.CdsSendInvitation-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.CdsSendInvitation-main-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.CdsSendInvitation-card-header {
+    padding: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.CdsSendInvitation-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.CdsSendInvitation-card-description {
+    color: #6c757d;
+}
+
+.CdsSendInvitation-tabs {
+    display: flex;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.CdsSendInvitation-tab {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #6c757d;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.CdsSendInvitation-tab:hover {
+    color: #212529;
+}
+
+.CdsSendInvitation-tab.CdsSendInvitation-active {
+    color: #6366f1;
+    font-weight: 600;
+}
+
+.CdsSendInvitation-tab.CdsSendInvitation-active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #6366f1;
+}
+
+.CdsSendInvitation-tab-content {
+    padding: 2rem;
+}
+
+.CdsSendInvitation-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.CdsSendInvitation-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #212529;
+}
+
+.CdsSendInvitation-form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.CdsSendInvitation-form-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.CdsSendInvitation-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.CdsSendInvitation-form-help {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+.CdsSendInvitation-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.CdsSendInvitation-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.CdsSendInvitation-info-box {
+    background-color: #ede9fe;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.CdsSendInvitation-info-icon {
+    color: #6366f1;
+    flex-shrink: 0;
+}
+
+.CdsSendInvitation-info-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.CdsSendInvitation-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.CdsSendInvitation-btn-primary {
+    background-color: #6366f1;
+    color: white;
+}
+
+.CdsSendInvitation-btn-primary:hover {
+    background-color: #4f46e5;
+}
+
+.CdsSendInvitation-btn-secondary {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.CdsSendInvitation-btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+.CdsSendInvitation-form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.CdsSendInvitation-upload-area {
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    padding: 3rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.CdsSendInvitation-upload-area:hover {
+    border-color: #6366f1;
+    background-color: #ede9fe;
+}
+
+.CdsSendInvitation-upload-icon {
+    font-size: 3rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.CdsSendInvitation-upload-text {
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.CdsSendInvitation-upload-hint {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.CdsSendInvitation-file-input {
+    display: none;
+}
+
+.CdsSendInvitation-csv-template-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6366f1;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.CdsSendInvitation-csv-template-link:hover {
+    text-decoration: underline;
+}
+
+.CdsSendInvitation-hidden {
+    display: none;
+}
+
+/* Client selector styles */
+.CdsSendInvitation-client-selector {
+    position: relative;
+}
+
+.CdsSendInvitation-client-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.CdsSendInvitation-client-selector-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.CdsSendInvitation-client-selector-count {
+    color: #6366f1;
+    font-weight: 500;
+}
+
+.CdsSendInvitation-client-selector-subtitle {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.CdsSendInvitation-client-selector-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.CdsSendInvitation-selector-action-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.CdsSendInvitation-selector-action-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #6366f1;
+}
+
+.CdsSendInvitation-selected-clients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.CdsSendInvitation-selected-client-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #6366f1;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.CdsSendInvitation-selected-client-tag .CdsSendInvitation-remove-btn {
+    cursor: pointer;
+    font-size: 1.125rem;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.CdsSendInvitation-selected-client-tag .CdsSendInvitation-remove-btn:hover {
+    opacity: 1;
+}
+
+.CdsSendInvitation-client-selector-box {
+    position: relative;
+}
+
+.CdsSendInvitation-client-selector-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0.25rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.CdsSendInvitation-client-selector-dropdown.CdsSendInvitation-show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.CdsSendInvitation-client-selector-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-left: 2.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.CdsSendInvitation-client-selector-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.CdsSendInvitation-client-selector-input-wrapper {
+    position: relative;
+}
+
+.CdsSendInvitation-client-selector-input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+}
+
+.CdsSendInvitation-client-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.CdsSendInvitation-client-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.CdsSendInvitation-client-option:last-child {
+    border-bottom: none;
+}
+
+.CdsSendInvitation-client-option:hover {
+    background-color: #f8f9fa;
+}
+
+.CdsSendInvitation-client-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.CdsSendInvitation-client-option.CdsSendInvitation-selected .CdsSendInvitation-client-checkbox {
+    background-color: #6366f1;
+    border-color: #6366f1;
+}
+
+.CdsSendInvitation-client-checkbox-icon {
+    color: white;
+    font-size: 14px;
+    display: none;
+}
+
+.CdsSendInvitation-client-option.CdsSendInvitation-selected .CdsSendInvitation-client-checkbox-icon {
+    display: block;
+}
+
+.CdsSendInvitation-client-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.CdsSendInvitation-client-details {
+    flex: 1;
+}
+
+.CdsSendInvitation-client-name {
+    font-weight: 500;
+    color: #212529;
+}
+
+.CdsSendInvitation-client-email {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.CdsSendInvitation-client-code {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.CdsSendInvitation-add-new-client-option {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6366f1;
+    font-weight: 500;
+    cursor: pointer;
+    border-top: 2px solid #e9ecef;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+
+.CdsSendInvitation-add-new-client-option:hover {
+    background-color: #ede9fe;
+}
+
+/* Form row styles */
+.CdsSendInvitation-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Platform selector */
+.CdsSendInvitation-platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.CdsSendInvitation-platform-option {
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.CdsSendInvitation-platform-option:hover {
+    border-color: #6366f1;
+    background-color: #f8f9fa;
+}
+
+.CdsSendInvitation-platform-option.CdsSendInvitation-selected {
+    border-color: #6366f1;
+    background-color: #ede9fe;
+}
+
+.CdsSendInvitation-platform-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.CdsSendInvitation-platform-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Rating preview */
+.CdsSendInvitation-rating-preview {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.CdsSendInvitation-star {
+    font-size: 1.25rem;
+    color: #e9ecef;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.CdsSendInvitation-star.CdsSendInvitation-filled {
+    color: #ffc107;
+}
+
+/* Tags input */
+.CdsSendInvitation-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    min-height: 45px;
+}
+
+.CdsSendInvitation-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #ede9fe;
+    border: 1px solid #c7d2fe;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.CdsSendInvitation-tag-remove {
+    cursor: pointer;
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.CdsSendInvitation-tag-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    min-width: 120px;
+    padding: 0.25rem;
+}
+.CdsSendInvitation-card {
+    display: none;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 767px) {
+
+}
+@media (max-width: 639px) {
+    .CdsSendInvitation-form-row {display: block;}
+}

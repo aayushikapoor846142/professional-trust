@@ -1,0 +1,1943 @@
+
+/* Header */
+.CDSFeed-header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.CDSFeed-main-content-body{
+   
+display: flex;
+   
+flex-direction: column;
+}
+.CDSFeed-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 1rem 2rem; */
+    /* max-width: 1400px; */
+    /* margin: 0 auto; */
+}
+
+.CDSFeed-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.CDSFeed-header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.CDSFeed-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.CDSFeed-btn-primary {
+    background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(85, 89, 188, 0.25);
+    outline: none;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.CDSFeed-btn-primary:hover {
+   background: linear-gradient(135deg,#9857CD  0%, #5559BC 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.CDSFeed-btn-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.CDSFeed-btn-secondary:hover {
+    background: #d1d5db;
+}
+
+/* Hamburger Menu */
+.CDSFeed-mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.CDSFeed-hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #2c3e50;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.CDSFeed-hamburger::before,
+.CDSFeed-hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.CDSFeed-hamburger::before {
+    top: -8px;
+}
+
+.CDSFeed-hamburger::after {
+    bottom: -8px;
+}
+
+.CDSFeed-mobile-menu-btn.active .CDSFeed-hamburger {
+    background: transparent;
+}
+
+.CDSFeed-mobile-menu-btn.active .CDSFeed-hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.CDSFeed-mobile-menu-btn.active .CDSFeed-hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Main Layout */
+.CDSFeed-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* Sidebar */
+.CDSFeed-sidebar {
+    /* width: 280px; */
+    /* background: white; */
+    /* border-radius: 12px; */
+    padding: 1.5rem;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); */
+    height: fit-content;
+    /* position: sticky; */
+    /* top: 100px; */
+    transition: transform 0.3s ease;
+}
+
+.CDSFeed-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.CDSFeed-profile-card {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.CDSFeed-profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+}
+
+.CDSFeed-profile-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.CDSFeed-profile-role {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.CDSFeed-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1.5rem 0;
+}
+
+.CDSFeed-stat-card {
+    text-align: center;
+    padding: 0.5rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.CDSFeed-stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.CDSFeed-stat-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.CDSFeed-nav-menu {
+    margin-top: 1.5rem;
+}
+
+.CDSFeed-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-nav-item:hover {
+    background: #f3f4f6;
+}
+
+.CDSFeed-nav-item.active {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+/* Main Content */
+.CDSFeed-main-content {
+    flex: 1;
+    min-width: 0;
+    margin-top: 0px !important;
+}
+.CDSFeed-comment-edited {
+    font-size: 12px;
+    color: #747474;
+    font-style: italic;
+    font-weight: 600;
+}
+.CDSFeed-comment-text p {
+    margin: 0px;
+}
+.CDSFeed-profile-card .avatar {
+    margin: auto;
+}
+.CDSFeed-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.CDSFeed-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.CDSFeed-filter-bar {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.CDSFeed-search-box {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.CDSFeed-search-input {
+    width: 100%;
+    padding: 15px;
+    padding-left: 45px;
+    border: 1px solid #e5e7eb;
+    border-radius: 0px;
+    font-size: 0.875rem;
+}
+
+.CDSFeed-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    height: 24px;
+    display: flex;
+    transform: translateY(-50%);
+    color: #6b7280;
+    align-items: center;
+}
+
+.CDSFeed-filter-chips {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.CDSFeed-chip {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.CDSFeed-chip:hover {
+    background: #f9fafb;
+}
+
+.CDSFeed-chip.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+/* Feed Cards */
+.CDSFeed-feeds-grid {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    height: 100%;
+    /* border-bottom: 1px solid var(--cds-border01); */
+    padding: 3rem 0px;
+    /* padding-bottom: 0; */
+    flex-direction: column;
+}
+
+.CDSFeed-feed-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex: 1;
+    border: 1px solid var(--cds-border01);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.CDSFeed-feed-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.CDSFeed-feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.CDSFeed-feed-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.CDSFeed-feed-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    flex-shrink: 0;
+}
+
+.CDSFeed-feed-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.CDSFeed-feed-name {
+    font-weight: 600;
+}
+
+.CDSFeed-feed-time {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.CDSFeed-feed-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.CDSFeed-status-published {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.CDSFeed-status-draft {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.CDSFeed-status-scheduled {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.CDSFeed-feed-content {
+    margin-bottom: 1rem;
+}
+
+.CDSFeed-feed-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.CDSFeed-feed-text {
+    color: #212529;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.CDSFeed-feed-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.CDSFeed-feed-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-feed-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+.CDSFeed-feed-detail-header {
+    padding: 1rem;
+    padding-top: 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+.CDSFeed-feed-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-action-btn {
+    padding: 0.5rem 1rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-action-btn:hover {
+    background: #f3f4f6;
+}
+
+/* Create Feed Modal */
+.CDSFeed-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.CDSFeed-modal.active {
+    display: flex;
+}
+
+.CDSFeed-form-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.CDSFeed-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.CDSFeed-form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.CDSFeed-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.CDSFeed-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.CDSFeed-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.CDSFeed-form-input, .CDSFeed-form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.CDSFeed-form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.CDSFeed-form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+/* Schedule Checkbox Styles */
+.CDSFeed-schedule-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.CDSFeed-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.CDSFeed-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border: 2px solid #e5e7eb;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-checkbox:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.CDSFeed-checkbox-text {
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.CDSFeed-schedule-input {
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-schedule-input:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Custom checkbox styling (optional) */
+.CDSFeed-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+.CDSFeed-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+/* Additional CDSFeed Styles for Integration */
+
+/* Avatar Initial Style */
+.CDSFeed-avatar-initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Header Actions */
+.CDSFeed-feed-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Follow Button */
+.CDSFeed-btn-follow {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.813rem;
+    border-radius: 20px;
+}
+
+/* Dropdown Styles */
+.CDSFeed-dropdown {
+    position: relative;
+}
+
+.CDSFeed-dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-dropdown-toggle:hover {
+    background: #f3f4f6;
+}
+
+.CDSFeed-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 10;
+    margin-top: 0.5rem;
+}
+
+.CDSFeed-dropdown-menu.show {
+    display: block;
+}
+
+.CDSFeed-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding:0.5rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.CDSFeed-dropdown-item:hover {
+    background: #f9fafb;
+}
+
+.CDSFeed-dropdown-item i {
+    width: 16px;
+}
+
+.CDSFeed-text-danger {
+    color: #dc2626 !important;
+}
+
+.CDSFeed-dropdown-disabled .CDSFeed-dropdown-item {
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Media Gallery */
+.CDSFeed-feed-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0;
+}
+
+.CDSFeed-media-item {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--cds-border01);
+}
+
+.CDSFeed-media-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.CDSFeed-media-image:hover {
+    transform: scale(1.05);
+}
+
+/* Like Button Active State */
+.CDSFeed-like-btn.liked {
+    color: #3b82f6;
+}
+
+/* Share Options */
+.CDSFeed-share-options {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+.CDSFeed-feed-detail-card .CDSFeed-share-options{
+    justify-content: end;
+}
+.CDSFeed-share-option {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    color: #6b7280;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-share-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Comment Section */
+.CDSFeed-comment-section {
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+.CDSFeed-comment-form {
+    margin-bottom: 1rem;
+}
+
+.CDSFeed-comment-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.CDSFeed-comment-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.CDSFeed-comment-input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.CDSFeed-comment-input:focus {
+    border-color: #3b82f6;
+}
+
+.CDSFeed-comment-file-btn {
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s ease;
+}
+
+.CDSFeed-comment-file-btn:hover {
+    color: #3b82f6;
+}
+
+.CDSFeed-submit-comment {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-submit-comment:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.CDSFeed-file-preview {
+    margin-top: 0.5rem;
+    margin-left: 48px;
+}
+
+.CDSFeed-file-preview img {
+    max-width: 150px;
+    border-radius: 8px;
+}
+.CDSFeed-edit{
+    margin-top: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+.CDSFeed-edit:empty{
+    display: none;
+}
+/* Loader */
+.CDSFeed-loader {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* View More */
+.CDSFeed-view-more {
+    text-align: center;
+    margin: 3rem 0;
+    margin-top: 0;
+}
+/* Updated Navigation with Counters */
+.CDSFeed-nav-item {
+    margin-bottom: 0.25rem;
+}
+
+.CDSFeed-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.CDSFeed-nav-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.CDSFeed-nav-icon {
+    font-size: 1.125rem;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CDSFeed-nav-counter {
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 0.125rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+    display: inline-block;
+}
+
+.CDSFeed-nav-item:hover .CDSFeed-nav-link {
+    background: #f3f4f6;
+}
+
+.CDSFeed-nav-item:hover .CDSFeed-nav-counter {
+    background: #e5e7eb;
+}
+
+.CDSFeed-nav-item.active .CDSFeed-nav-link {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.CDSFeed-nav-item.active .CDSFeed-nav-counter {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Make sure profile image fits properly */
+.CDSFeed-profile-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* Comments Section */
+.CDSFeed-comments-section {
+    margin-top: 2rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); */
+    padding: 2rem;
+}
+
+.CDSFeed-comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.CDSFeed-comments-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.CDSFeed-comments-count {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.CDSFeed-comment-form {
+    margin-bottom: 2rem;
+}
+
+.CDSFeed-comment-input-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.CDSFeed-comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    flex-shrink: 0;
+}
+
+.CDSFeed-comment-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.CDSFeed-comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.CDSFeed-comment {
+    display: flex;
+    gap: 1rem;
+}
+
+.CDSFeed-comment-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.CDSFeed-comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.CDSFeed-comment-author {
+    font-weight: 600;
+}
+
+.CDSFeed-comment-time {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.CDSFeed-comment-text {
+    color: #374151;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+}
+
+.CDSFeed-comment-footer {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CDSFeed-comment-action {
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.CDSFeed-comment-action:hover {
+    color: #3b82f6;
+}
+/* Feed Detail Card */
+.CDSFeed-feed-detail-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+.CDSFeed-feed-header {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.CDSFeed-feed-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.CDSFeed-author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.CDSFeed-author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.CDSFeed-author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.CDSFeed-author-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.CDSFeed-publish-info {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.CDSFeed-feed-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.CDSFeed-action-btn {
+    padding: 0.5rem 1rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.CDSFeed-action-btn:hover {
+    background: #f3f4f6;
+}
+
+.CDSFeed-feed-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.CDSFeed-feed-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-tag {
+    padding: 0.375rem 0.75rem;
+    background: #eff6ff;
+    color: #3b82f6;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+/* Feed Content */
+.CDSFeed-feed-content {
+    padding: 2rem;
+    line-height: 1.8;
+    margin: 0;
+    font-size: 1.0625rem;
+    color: #374151;
+}
+
+.CDSFeed-feed-content p {
+    margin-bottom: 1.5rem;
+}
+
+.CDSFeed-feed-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Engagement Bar */
+.CDSFeed-engagement-bar {
+    padding: 1.5rem 2rem;
+    background: #f9fafb;
+    border-top: 1px solid #f3f4f6;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.CDSFeed-engagement-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.CDSFeed-stat-icon {
+    font-size: 1.125rem;
+}
+
+.CDSFeed-engagement-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-engagement-btn {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.CDSFeed-engagement-btn:hover {
+    background: #f9fafb;
+}
+
+.CDSFeed-engagement-btn.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+/* Share Section */
+.CDSFeed-share-section {
+    padding: 1.5rem 2rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.CDSFeed-share-label {
+    font-weight: 500;
+}
+
+.CDSFeed-social-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.CDSFeed-social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.CDSFeed-social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CDSFeed-social-fb {
+    background: #1877f2;
+    color: white;
+    border-color: #1877f2;
+}
+
+.CDSFeed-social-twitter {
+    background: #1da1f2;
+    color: white;
+    border-color: #1da1f2;
+}
+
+.CDSFeed-social-linkedin {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+.CDSFeed-social-instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    color: white;
+    border: none;
+}
+
+/* Comment Input with Emoji Button */
+.CDSFeed-comment-input-container {
+    flex: 1;
+    position: relative;
+}
+
+.CDSFeed-comment-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem;
+    padding-bottom: 2.5rem; /* Space for toolbar */
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.CDSFeed-comment-toolbar {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.CDSFeed-emoji-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 1.125rem;
+}
+
+.CDSFeed-emoji-btn:hover {
+    background: #f3f4f6;
+    color: #3b82f6;
+}
+
+.CDSFeed-emoji-btn-small {
+    font-size: 1rem;
+    padding: 0.375rem;
+}
+
+/* Threaded Comments Layout */
+.CDSFeed-comment {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.CDSFeed-comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.CDSFeed-comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.CDSFeed-comment-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Reply Thread Styling */
+.CDSFeed-replies {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    border-left: 2px solid #e5e7eb;
+}
+
+.CDSFeed-reply {
+    margin-bottom: 1rem;
+}
+
+.CDSFeed-reply:last-child {
+    margin-bottom: 0;
+}
+
+.CDSFeed-reply .CDSFeed-comment-avatar {
+    width: 32px;
+    height: 32px;
+}
+
+/* Reply Form */
+.CDSFeed-reply-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.CDSFeed-reply-input-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.CDSFeed-reply-avatar {
+    width: 32px;
+    height: 32px;
+}
+
+.CDSFeed-reply-input-container {
+    flex: 1;
+    position: relative;
+}
+
+.CDSFeed-reply-input {
+    width: 100%;
+    min-height: 60px;
+    padding: 0.5rem;
+    padding-right: 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.CDSFeed-reply-input-container .CDSFeed-emoji-btn {
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.CDSFeed-reply-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+/* Comment Actions */
+.CDSFeed-comment-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-comment-action:hover {
+    background: #f3f4f6;
+    color: #3b82f6;
+}
+
+.CDSFeed-comment-action i {
+    font-size: 0.875rem;
+}
+
+.CDSFeed-like-action.CDSFeed-liked {
+    color: #3b82f6;
+}
+
+.CDSFeed-like-action.CDSFeed-liked i {
+    font-weight: 600;
+}
+
+/* Mention Styling */
+.CDSFeed-mention {
+    color: #3b82f6;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.CDSFeed-mention:hover {
+    text-decoration: underline;
+}
+
+/* Show More Replies */
+.CDSFeed-show-more-replies {
+    margin-top: 0.75rem;
+    padding-left: 3rem;
+}
+
+.CDSFeed-show-replies-link {
+    color: #3b82f6;
+    font-size: 0.875rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.CDSFeed-show-replies-link:hover {
+    background: #eff6ff;
+}
+
+/* Small Buttons */
+.CDSFeed-btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.813rem;
+}
+#CDSFeed-comment-uploader {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#CDSFeed-comment-uploader.show {
+    max-height: 600px; /* Adjust based on your content */
+    opacity: 1;
+}
+
+/* Optional: Add padding animation */
+#CDSFeed-comment-uploader .CDSFeed-upload-container {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+#CDSFeed-comment-uploader.show .CDSFeed-upload-container {
+    transform: translateY(0);
+    padding: 15px 0;
+}
+.CDSFeed-comment-reply-wrapper {
+    padding: 10px 20px;
+    margin-bottom: 13px;
+}
+.CDSFeed-comment-reply-wrapper:empty {
+    display: none;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .CDSFeed-replies {
+        padding-left: 1rem;
+        margin-left: 0.5rem;
+    }
+    
+    .CDSFeed-comment {
+        gap: 0.75rem;
+    }
+    
+    .CDSFeed-comment-avatar {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .CDSFeed-reply .CDSFeed-comment-avatar {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .CDSFeed-show-more-replies {
+        padding-left: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .CDSFeed-comment-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .CDSFeed-comment-action {
+        font-size: 0.813rem;
+    }
+    
+    .CDSFeed-reply-form {
+        padding: 0.75rem;
+    }
+}
+
+/* Animation for showing/hiding reply forms */
+.CDSFeed-reply-form {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .CDSFeed-nav-link {
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .CDSFeed-nav-counter {
+        font-size: 0.688rem;
+        padding: 0.125rem 0.375rem;
+        min-width: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ensure counters remain visible on mobile */
+    .CDSFeed-sidebar.active .CDSFeed-nav-counter {
+        display: inline-block;
+    }
+    
+    .CDSFeed-nav-link {
+        padding: 0.625rem 0.75rem;
+    }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .CDSFeed-feed-header-actions {
+        flex-wrap: wrap;
+    }
+    
+    .CDSFeed-feed-media {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .CDSFeed-share-options {
+        flex-wrap: wrap;
+    }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .CDSFeed-schedule-wrapper {
+        gap: 0.5rem;
+    }
+    
+    .CDSFeed-schedule-input-wrapper {
+        margin-left: 0;
+    }
+}
+
+/* Tablet - Large (1024px and below) */
+@media (max-width: 1024px) {
+    .CDSFeed-container {
+        padding: 0 1.5rem;
+    }
+    
+    .CDSFeed-sidebar {
+        width: 240px;
+    }
+    
+    .CDSFeed-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .CDSFeed-feed-stats {
+        gap: 1rem;
+    }
+}
+
+/* Tablet - Medium (768px and below) */
+@media (max-width: 768px) {
+    .CDSFeed-header-content {
+        padding: 1rem;
+    }
+    
+    .CDSFeed-mobile-menu-btn {
+        display: block;
+    }
+    
+    .CDSFeed-header-actions .CDSFeed-btn-secondary {
+        display: none;
+    }
+    
+    .CDSFeed-container {
+        padding: 0 1rem;
+        margin: 1rem auto;
+    }
+    
+    .CDSFeed-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        transform: translateX(-100%);
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    .CDSFeed-sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .CDSFeed-sidebar-overlay.active {
+        display: block;
+    }
+    
+    .CDSFeed-content-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .CDSFeed-page-title {
+        font-size: 1.5rem;
+    }
+    
+    .CDSFeed-filter-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .CDSFeed-search-box {
+        width: 100%;
+    }
+    
+    .CDSFeed-filter-chips {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .CDSFeed-filter-chips::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .CDSFeed-filter-chips::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    .CDSFeed-filter-chips::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 2px;
+    }
+    
+    .CDSFeed-feed-actions {
+        width: 100%;
+    }
+    
+    .CDSFeed-action-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+/* Mobile - Large (640px and below) */
+@media (max-width: 640px) {
+    .CDSFeed-logo {
+        font-size: 1.25rem;
+    }
+    
+    .CDSFeed-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.813rem;
+    }
+    
+    .CDSFeed-feed-card {
+        padding: 1rem;
+    }
+    
+    .CDSFeed-feed-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .CDSFeed-feed-status {
+        align-self: flex-start;
+    }
+    
+    .CDSFeed-feed-title {
+        font-size: 1rem;
+    }
+    
+    .CDSFeed-feed-text {
+        font-size: 0.875rem;
+    }
+    
+    .CDSFeed-feed-stats {
+        gap: 1rem;
+        font-size: 0.813rem;
+    }
+    
+    .CDSFeed-form-content {
+        padding: 1.5rem;
+    }
+    
+    .CDSFeed-form-title {
+        font-size: 1.25rem;
+    }
+    
+    .CDSFeed-form-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .CDSFeed-form-actions .CDSFeed-btn {
+        width: 100%;
+    }
+}
+
+/* Mobile - Small (480px and below) */
+@media (max-width: 480px) {
+    .CDSFeed-container {
+        gap: 1rem;
+    }
+    
+    .CDSFeed-feeds-grid {
+        gap: 1rem;
+    }
+    
+    .CDSFeed-feed-image {
+        height: 150px;
+    }
+    
+    .CDSFeed-stats-grid {
+        gap: 0.5rem;
+    }
+    
+    .CDSFeed-stat-card {
+        padding: 0.75rem;
+    }
+    
+    .CDSFeed-stat-value {
+        font-size: 1.25rem;
+    }
+    
+    .CDSFeed-nav-item {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile - Extra Small (360px and below) */
+@media (max-width: 360px) {
+    .CDSFeed-header-content {
+        padding: 0.75rem;
+    }
+    
+    .CDSFeed-logo span:first-child {
+        display: none;
+    }
+    
+    .CDSFeed-page-title {
+        font-size: 1.25rem;
+    }
+    
+    .CDSFeed-feed-card {
+        padding: 0.75rem;
+    }
+    
+    .CDSFeed-feed-avatar {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .CDSFeed-feed-name {
+        font-size: 0.875rem;
+    }
+    
+    .CDSFeed-feed-time {
+        font-size: 0.688rem;
+    }
+    
+    .CDSFeed-action-btn {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+.CDSFeed-feed-card-details {
+    background: white;
+    /* border-radius: 8px; */
+    padding: 1.5rem;
+    display: flex
+;
+    flex: 1;
+    /* border: 1px solid var(--cds-border01); */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-direction: column;
+}.CDSFeed-feeds-details-inner-wrap {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    height: 100%;
+    /* border-bottom: 1px solid var(--cds-border01); */
+    padding:3rem 0;
+
+    flex-direction: column;
+}
+/* Print Styles */
+@media print {
+    .CDSFeed-header,
+    .CDSFeed-sidebar,
+    .CDSFeed-filter-bar,
+    .CDSFeed-feed-actions,
+    .CDSFeed-modal {
+        display: none !important;
+    }
+    
+    .CDSFeed-container {
+        display: block;
+        max-width: 100%;
+    }
+    
+    .CDSFeed-feed-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+}.CDSFeed-main-content-header{
+    /* padding: 3rem 25px; */
+    display: flex;
+    border-bottom: 1px solid var(--cds-border01);
+    background: var(
+    --cds-sidebar-bg);
+}

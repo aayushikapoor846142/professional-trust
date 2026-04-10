@@ -1,0 +1,1633 @@
+.CDSPostCaseNotifications-list-view-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glassmorphic header */
+        .CDSPostCaseNotifications-list-view-header {
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .CDSPostCaseNotifications-list-view-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .CDSPostCaseNotifications-list-view-logo {
+            font-size: 32px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .CDSPostCaseNotifications-list-view-stats-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .CDSPostCaseNotifications-list-view-stat-card {
+            padding: 15px 25px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .CDSPostCaseNotifications-list-view-stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .CDSPostCaseNotifications-list-view-stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Floating action button */
+        .CDSPostCaseNotifications-list-view-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .CDSPostCaseNotifications-list-view-fab:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        /* View Toggle */
+        .CDSPostCaseNotifications-list-view-view-toggle {
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 12px;
+        }
+
+        .CDSPostCaseNotifications-list-view-view-btn {
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .CDSPostCaseNotifications-list-view-view-btn.CDSPostCaseNotifications-list-view-active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Filter Bar */
+        .CDSPostCaseNotifications-list-view-filter-bar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+        .CDSPostCaseNotifications-list-view-filter-bar .cds-form-container.select-dropdown.mb-4 {margin-bottom: 0 !important;}
+        .CDSPostCaseNotifications-list-view-filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            /* flex: 1; */
+            min-width: 200px;
+        }
+
+        .CDSPostCaseNotifications-list-view-filter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+            white-space: nowrap;
+        }
+
+        .CDSPostCaseNotifications-list-view-filter-select {
+            padding: 8px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .CDSPostCaseNotifications-list-view-filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .CDSPostCaseNotifications-list-view-search-box {
+            flex: 2;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .CDSPostCaseNotifications-list-view-search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        /* List Header */
+        .CDSPostCaseNotifications-list-view-list-header {
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 15px 15px 0 0;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1.5fr 1.5fr 1fr;
+            gap: 20px;
+            align-items: center;
+            font-weight: 600;
+            color: #667eea;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        /* Cases List */
+        .CDSPostCaseNotifications-list-view-cases-list {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 15px 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Updated Case Row Container for expandable content */
+        .CDSPostCaseNotifications-list-view-case-container {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-container.expanded {
+            background: rgba(102, 126, 234, 0.03);
+        }
+
+        .CDSPostCaseNotifications-list-view-case-row {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1.5fr 1.5fr 1fr;
+            gap: 20px;
+            padding: 20px 30px;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-row::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-row:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateX(5px);
+        }
+
+        .CDSPostCaseNotifications-list-view-case-row:hover::before {
+            transform: scaleY(1);
+        }
+
+        .CDSPostCaseNotifications-list-view-case-row.CDSPostCaseNotifications-list-view-new-case {
+            animation: CDSPostCaseNotifications-list-view-slideInLeft 0.5s ease;
+        }
+
+        @keyframes CDSPostCaseNotifications-list-view-slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Case Info Column */
+        .CDSPostCaseNotifications-list-view-case-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-description {
+            font-size: 13px;
+            color: #7f8c8d;
+            line-height: 1.4;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .CDSPostCaseNotifications-list-view-tag {
+            padding: 3px 8px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Status Column */
+        .CDSPostCaseNotifications-list-view-status-cell {
+            display: flex;
+            justify-content: center;
+        }
+
+        .CDSPostCaseNotifications-list-view-status-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .CDSPostCaseNotifications-list-view-status-open {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .CDSPostCaseNotifications-list-view-status-review {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .CDSPostCaseNotifications-list-view-status-awarded {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .CDSPostCaseNotifications-list-view-pulse-dot {
+            width: 6px;
+            height: 6px;
+            background: currentColor;
+            border-radius: 50%;
+            animation: CDSPostCaseNotifications-list-view-pulse 2s infinite;
+        }
+
+        @keyframes CDSPostCaseNotifications-list-view-pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Client Column */
+        .CDSPostCaseNotifications-list-view-client-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .CDSPostCaseNotifications-list-view-client-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .CDSPostCaseNotifications-list-view-client-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        /* Proposals Column */
+        .CDSPostCaseNotifications-list-view-proposals-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-count {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        /* Actions Column */
+        .CDSPostCaseNotifications-list-view-actions-cell {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-action {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-view {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-view:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-apply {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-apply:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Expandable Details Section */
+        .CDSPostCaseNotifications-list-view-details-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .CDSPostCaseNotifications-list-view-details-content {
+            padding: 0 30px 20px 30px;
+        }
+
+        .CDSPostCaseNotifications-list-view-case-container.expanded .CDSPostCaseNotifications-list-view-details-section {
+            max-height: 800px;
+        }
+
+        /* Budget and Proposal Info */
+        .CDSPostCaseNotifications-list-view-budget-info {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .CDSPostCaseNotifications-list-view-budget-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: #27ae60;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* Proposals Section */
+        .CDSPostCaseNotifications-list-view-proposals-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-card:hover {
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-professional {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .CDSPostCaseNotifications-list-view-professional-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .CDSPostCaseNotifications-list-view-professional-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .CDSPostCaseNotifications-list-view-verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseNotifications-list-view-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #f39c12;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-description {
+            margin-bottom: 12px;
+            color: #5a6c7d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseNotifications-list-view-proposal-meta strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-award {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-award:hover {
+            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+        }
+
+        /* Live indicator */
+        .CDSPostCaseNotifications-list-view-live-badge {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e74c3c;
+            z-index: 100;
+        }
+
+        .CDSPostCaseNotifications-list-view-live-dot-indicator {
+            width: 8px;
+            height: 8px;
+            background: #e74c3c;
+            border-radius: 50%;
+            animation: CDSPostCaseNotifications-list-view-blink 1s infinite;
+        }
+
+        @keyframes CDSPostCaseNotifications-list-view-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Modal Styles */
+        .CDSPostCaseNotifications-list-view-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal.CDSPostCaseNotifications-list-view-active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 25px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .CDSPostCaseNotifications-list-view-modal.CDSPostCaseNotifications-list-view-active .CDSPostCaseNotifications-list-view-modal-content {
+            transform: scale(1);
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-header {
+            display: flex;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CDSPostCaseNotifications-list-view-modal-subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-group {
+            margin-bottom: 25px;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-input,
+        .CDSPostCaseNotifications-list-view-form-textarea,
+        .CDSPostCaseNotifications-list-view-form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .CDSPostCaseNotifications-list-view-form-input:focus,
+        .CDSPostCaseNotifications-list-view-form-textarea:focus,
+        .CDSPostCaseNotifications-list-view-form-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .CDSPostCaseNotifications-list-view-form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .CDSPostCaseNotifications-list-view-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Success animation */
+        .CDSPostCaseNotifications-list-view-success-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0;
+            pointer-events: none;
+            animation: CDSPostCaseNotifications-list-view-successPop 1s ease;
+        }
+
+        @keyframes CDSPostCaseNotifications-list-view-successPop {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+
+        /* Notification */
+        .CDSPostCaseNotifications-list-view-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 2000;
+            max-width: 90%;
+        }
+
+        .CDSPostCaseNotifications-list-view-notification.CDSPostCaseNotifications-list-view-show {
+            transform: translateX(0);
+        }
+
+        /* Mobile Case Card */
+        .CDSPostCaseNotifications-list-view-mobile-case-card {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-meta {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-description {
+            font-size: 14px;
+            color: #5a6c7d;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Mobile expandable details */
+        .CDSPostCaseNotifications-list-view-mobile-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-card.expanded .CDSPostCaseNotifications-list-view-mobile-details {
+            display: block;
+        }
+
+        /* Responsive Breakpoints */
+        
+        /* Large Desktop */
+        @media (max-width: 1400px) {
+            .CDSPostCaseNotifications-list-view-container {
+                max-width: 1200px;
+            }
+        }
+
+        /* Desktop */
+        @media (max-width: 1200px) {
+            .CDSPostCaseNotifications-list-view-list-header,
+            .CDSPostCaseNotifications-list-view-case-row {
+                grid-template-columns: 2.5fr 1fr 1.5fr 1fr;
+            }
+            
+            .CDSPostCaseNotifications-list-view-client-cell {
+                display: none;
+            }
+            
+            .CDSPostCaseNotifications-list-view-list-header > div:nth-child(3) {
+                display: none;
+            }
+
+            .CDSPostCaseNotifications-list-view-header-content {
+                gap: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stats-container {
+                gap: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-card {
+                padding: 12px 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-number {
+                font-size: 24px;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1024px) {
+            .CDSPostCaseNotifications-list-view-container {
+                padding: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-header {
+                padding: 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-logo {
+                font-size: 28px;
+            }
+
+            .CDSPostCaseNotifications-list-view-filter-bar {
+                padding: 15px 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-list-header {
+                display: none;
+            }
+
+            .CDSPostCaseNotifications-list-view-cases-list {
+                background: transparent;
+                box-shadow: none;
+            }
+
+            .CDSPostCaseNotifications-list-view-case-container {
+                display: none;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-card {
+                display: block;
+            }
+
+            .CDSPostCaseNotifications-list-view-fab {
+                width: 56px;
+                height: 56px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 768px) {
+            .CDSPostCaseNotifications-list-view-live-badge {
+                font-size: 12px;
+                padding: 6px 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .CDSPostCaseNotifications-list-view-view-toggle {
+                order: 2;
+                justify-content: center;
+            }
+
+            .CDSPostCaseNotifications-list-view-stats-container {
+                order: 3;
+                justify-content: space-around;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-card {
+                flex: 1;
+                padding: 10px 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-number {
+                font-size: 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-label {
+                font-size: 10px;
+            }
+
+            .CDSPostCaseNotifications-list-view-filter-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-filter-group {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .CDSPostCaseNotifications-list-view-filter-label {
+                margin-bottom: 5px;
+            }
+
+            .CDSPostCaseNotifications-list-view-search-box {
+                width: 100%;
+            }
+
+            .CDSPostCaseNotifications-list-view-modal-content {
+                padding: 30px 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-modal-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .CDSPostCaseNotifications-list-view-filter-bar .cds-form-container.select-dropdown.mb-4 {margin-bottom: 1rem !important;}
+        }
+        /* Mobile Landscape */
+        @media (max-width: 640px) {
+            .CDSPostCaseNotifications-list-view-header {
+                border-radius: 16px;
+                padding: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-logo {
+                font-size: 24px;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-view-toggle {
+                width: 100%;
+            }
+
+            .CDSPostCaseNotifications-list-view-view-btn {
+                flex: 1;
+                justify-content: center;
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .CDSPostCaseNotifications-list-view-view-btn span:first-child {
+                display: none;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-card {
+                padding: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-title {
+                font-size: 16px;
+            }
+
+            .CDSPostCaseNotifications-list-view-btn-action {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .CDSPostCaseNotifications-list-view-notification {
+                top: auto;
+                bottom: 20px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                text-align: center;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 480px) {
+            body {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%);
+            }
+
+            .CDSPostCaseNotifications-list-view-container {
+                padding: 10px;
+            }
+
+            .CDSPostCaseNotifications-list-view-header {
+                margin-bottom: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stats-container {
+                gap: 10px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-card {
+                padding: 8px 10px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-number {
+                font-size: 18px;
+            }
+
+            .CDSPostCaseNotifications-list-view-stat-label {
+                font-size: 9px;
+                letter-spacing: 0.5px;
+            }
+
+            .CDSPostCaseNotifications-list-view-filter-bar {
+                border-radius: 12px;
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-card {
+                border-radius: 12px;
+                margin-bottom: 12px;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-meta {
+                font-size: 12px;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-description {
+                font-size: 13px;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .CDSPostCaseNotifications-list-view-mobile-case-footer > div {
+                width: 100%;
+            }
+
+            .CDSPostCaseNotifications-list-view-btn-action {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .CDSPostCaseNotifications-list-view-fab {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-modal {
+                padding: 10px;
+            }
+
+            .CDSPostCaseNotifications-list-view-modal-content {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .CDSPostCaseNotifications-list-view-modal-title {
+                font-size: 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-modal-subtitle {
+                font-size: 14px;
+            }
+
+            .CDSPostCaseNotifications-list-view-form-group {
+                margin-bottom: 20px;
+            }
+
+            .CDSPostCaseNotifications-list-view-form-input,
+            .CDSPostCaseNotifications-list-view-form-textarea,
+            .CDSPostCaseNotifications-list-view-form-select {
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+            .CDSPostCaseNotifications-list-view-btn-submit {
+                padding: 12px;
+                font-size: 15px;
+            }
+
+            .CDSPostCaseNotifications-list-view-live-badge {
+                top: 10px;
+                font-size: 11px;
+                padding: 5px 12px;
+            }
+
+            .CDSPostCaseNotifications-list-view-live-dot-indicator {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        .CDSPostCaseNotifications-list-view-mobile-case-card.expanded .CDSPostCaseNotifications-list-view-mobile-details {
+            display: block;
+        }
+        .close-modal-btn {
+                background: transparent;
+                border: none;
+                font-size: 28px;
+                cursor: pointer;
+                line-height: 1;
+                padding: 0 10px;
+            }
+ /* ============= START: TABS NAVIGATION AND LIVE UPDATES SECTION CSS ============= */
+        /* Tabs Section Container */
+        .CDSPostCaseNotifications-list-view-tabs-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Tabs Container */
+        .CDSPostCaseNotifications-list-view-tabs-container {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        /* Individual Tab Button */
+        .CDSPostCaseNotifications-list-view-tab {
+            background: transparent;
+            border: none;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #7f8c8d;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .CDSPostCaseNotifications-list-view-tab:hover {
+            background: rgba(102, 126, 234, 0.05);
+            color: #667eea;
+        }
+
+        /* Active Tab State */
+        .CDSPostCaseNotifications-list-view-tab.CDSPostCaseNotifications-list-view-tab-active {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .CDSPostCaseNotifications-list-view-tab.CDSPostCaseNotifications-list-view-tab-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 10px;
+            right: 10px;
+            height: 3px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+
+        /* Tab Count Badge */
+        .CDSPostCaseNotifications-list-view-tab-count {
+            font-size: 12px;
+            font-weight: 600;
+            color: inherit;
+            opacity: 0.8;
+        }
+
+        /* Live Updates Toggle Container */
+        .CDSPostCaseNotifications-list-view-live-updates-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Toggle Label */
+        .CDSPostCaseNotifications-list-view-toggle-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        /* Toggle Switch */
+        .CDSPostCaseNotifications-list-view-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+        }
+
+        .CDSPostCaseNotifications-list-view-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Toggle Slider */
+        .CDSPostCaseNotifications-list-view-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 26px;
+        }
+
+        .CDSPostCaseNotifications-list-view-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Toggle Switch - Checked State */
+        .CDSPostCaseNotifications-list-view-toggle-switch input:checked + .CDSPostCaseNotifications-list-view-toggle-slider {
+            background-color: #667eea;
+        }
+
+        .CDSPostCaseNotifications-list-view-toggle-switch input:checked + .CDSPostCaseNotifications-list-view-toggle-slider:before {
+            transform: translateX(22px);
+        }
+
+        /* Toggle Switch - Focus State */
+        .CDSPostCaseNotifications-list-view-toggle-switch input:focus + .CDSPostCaseNotifications-list-view-toggle-slider {
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+		.CDSPostCaseNotifications-list-view-modal-header-title{
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+/* ================= New Design Cases List CSS =================   */
+
+.CDSPostCaseNotifications-list-view02-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.CDSPostCaseNotifications-list-view02-header {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CDSPostCaseNotifications-list-view02-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a202c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.CDSPostCaseNotifications-list-view02-live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #10b981;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+.CDSPostCaseNotifications-list-view02-live-dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.CDSPostCaseNotifications-list-view02-feed-list {
+    list-style: none;
+}
+
+.CDSPostCaseNotifications-list-view02-feed-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+    border-left: 4px solid transparent;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.CDSPostCaseNotifications-list-view02-feed-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateX(5px);
+    border-left-color: #6366f1;
+}
+
+.CDSPostCaseNotifications-list-view02-feed-item.CDSPostCaseNotifications-list-view02-new {
+    border-left-color: #10b981;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.05) 0%, white 10%);
+}
+
+.CDSPostCaseNotifications-list-view02-feed-item.CDSPostCaseNotifications-list-view02-new::before {
+    content: 'NEW';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #10b981;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.CDSPostCaseNotifications-list-view02-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.CDSPostCaseNotifications-list-view02-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.CDSPostCaseNotifications-list-view02-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.CDSPostCaseNotifications-list-view02-meta-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.CDSPostCaseNotifications-list-view02-meta-info svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+.CDSPostCaseNotifications-list-view02-item-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.CDSPostCaseNotifications-list-view02-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.CDSPostCaseNotifications-list-view02-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.CDSPostCaseNotifications-list-view02-tag {
+    padding: 4px 10px;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.CDSPostCaseNotifications-list-view02-tag:hover {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.CDSPostCaseNotifications-list-view02-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.CDSPostCaseNotifications-list-view02-action-btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.CDSPostCaseNotifications-list-view02-action-btn:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.CDSPostCaseNotifications-list-view02-action-btn.CDSPostCaseNotifications-list-view02-primary {
+    background: #6366f1;
+    color: white;
+}
+
+.CDSPostCaseNotifications-list-view02-action-btn.CDSPostCaseNotifications-list-view02-primary:hover {
+    background: #4f46e5;
+}
+
+.CDSPostCaseNotifications-list-view02-status-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.CDSPostCaseNotifications-list-view02-status-posted {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.CDSPostCaseNotifications-list-view02-status-urgent {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.CDSPostCaseNotifications-list-view02-status-featured {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.CDSPostCaseNotifications-list-view02-proposals-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: #fef3c7;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #92400e;
+}
+
+.CDSPostCaseNotifications-list-view02-timestamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 12px;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.CDSPostCaseNotifications-list-view02-timestamp::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+}
+
+/* Auto-refresh animation */
+.CDSPostCaseNotifications-list-view02-refresh-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #e2e8f0;
+    z-index: 1000;
+}
+
+.CDSPostCaseNotifications-list-view02-refresh-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    width: 0;
+    animation: refresh 30s linear infinite;
+}
+
+@keyframes refresh {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+/* Loading skeleton for new items */
+.CDSPostCaseNotifications-list-view02-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}

@@ -1,0 +1,152 @@
+.cdsTYDashboard-modal-standard {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal content (Fullscreen mode) */
+.cdsTYDashboard-modal-dialog {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Side Panel Mode */
+.cdsTYDashboard-modal-standard.cdsTYDashboard-standard-side-panel .cdsTYDashboard-modal-dialog {
+    width: 480px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+}
+
+/* Show modal (with animations) */
+.cdsTYDashboard-modal-standard.show {
+    display: flex;
+    opacity: 1;
+}
+
+.cdsTYDashboard-modal-standard.show .cdsTYDashboard-modal-dialog {
+    transform: translateY(0);
+}
+
+/* When in Side Panel mode */
+.cdsTYDashboard-modal-standard.cdsTYDashboard-standard-side-panel.show .cdsTYDashboard-modal-dialog {
+    transform: translateX(0);
+}
+
+/* Hide modal properly with fade-out animation */
+.cdsTYDashboard-modal-standard.hide {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal header */
+.modal-header {
+    padding: 15px;
+    background: linear-gradient(135deg, #5559BC 0%, #9857CD 100%);
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header Buttons */
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.header-buttons .btn-close {
+    background-image: none;
+    opacity: 1;
+    height: auto;
+    width: auto;
+}
+.header-buttons .btn-close i {
+    color: #fff;
+    font-size: 22px;
+}
+
+/* Close and Collapse buttons */
+.cdsTYDashboard-modal-close-btn, .cdsTYDashboard-modal-collapse-btn {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #555;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    transition: background 0.2s ease-in-out;
+}
+
+.cdsTYDashboard-modal-close-btn:hover, .cdsTYDashboard-modal-collapse-btn:hover {
+    background: #777;
+}
+
+/* Modal body (Scrollable) */
+.modal-body {
+    flex: 1;
+    padding: 15px;
+    /* overflow-y: auto; */
+}
+
+/* Modal footer */
+.modal-footer {
+    padding: 15px;
+    background: #f1f1f1;
+    text-align: center;
+}
+
+/* Open Modal Button */
+.btn-open {
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-open:hover {
+    background: #0056b3;
+}
+
+.cdsTYDashboard-modal-cancel-btn {
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.cdsTYDashboard-modal-cancel-btn:hover {
+    background: darkred;
+}
+.cdsTYDashboard-modal-standard #popup-form{
+    max-height: 90vh;
+    overflow-y: scroll;
+    padding: 20px 0px;
+}
+
+.modal .btn-close {
+    background-color: #fff !important;
+    border-radius: 100%;
+    opacity: 1;
+    font-size: 14px;
+}

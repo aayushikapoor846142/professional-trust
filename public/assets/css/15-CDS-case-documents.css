@@ -1,0 +1,1175 @@
+/* Header */
+.CdsDashboardCaseDocuments-list-view-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e1e8ed;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.CdsDashboardCaseDocuments-list-view-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+.CdsDashboardCaseDocuments-list-view-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.CdsDashboardCaseDocuments-list-view-notification-bell {
+    position: relative;
+    cursor: pointer;
+}
+
+.CdsDashboardCaseDocuments-list-view-notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Main Container */
+.CdsDashboardCaseDocuments-list-view-main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+/* Page Navigation */
+.CdsDashboardCaseDocuments-list-view-page-nav {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid #e1e8ed;
+    padding-bottom: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.CdsDashboardCaseDocuments-list-view-nav-tab {
+    padding: 12px 0;
+    border-bottom: 3px solid transparent;
+    color: #7f8c8d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-bottom: -2px;
+    white-space: nowrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-nav-tab:hover {
+    color: #3498db;
+}
+
+.CdsDashboardCaseDocuments-list-view-nav-tab.active {
+    color: #5b5fde;
+    border-bottom-color: #5b5fde;
+}
+
+/* Document Header */
+
+
+.CdsDashboardCaseDocuments-list-view-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.CdsDashboardCaseDocuments-list-view-page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.CdsDashboardCaseDocuments-list-view-page-subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.CdsDashboardCaseDocuments-list-view-header-actions-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.CdsDashboardCaseDocuments-list-view-document-header {
+    padding: 15px 0px;
+    margin-bottom: 15px;
+}
+.CdsDashboardCaseDocuments-list-view-search-container {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+}
+
+.CdsDashboardCaseDocuments-list-view-search-input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-search-input:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.CdsDashboardCaseDocuments-list-view-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+    font-size: 20px;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-btn {
+    padding: 14px 28px;
+    background-color: #fff;
+    color: #667eea;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Stats Bar */
+.CdsDashboardCaseDocuments-list-view-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.CdsDashboardCaseDocuments-list-view-stat-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.CdsDashboardCaseDocuments-list-view-stat-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.CdsDashboardCaseDocuments-list-view-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.CdsDashboardCaseDocuments-list-view-stat-label {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Toolbar */
+.CdsDashboardCaseDocuments-list-view-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #7f8c8d;
+    flex-wrap: wrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-breadcrumb a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-breadcrumb a:hover {
+    color: #5b5fde;
+}
+
+.CdsDashboardCaseDocuments-list-view-toolbar-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-filter-dropdown {
+    padding: 10px 16px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-filter-dropdown:hover {
+    border-color: #667eea;
+}
+
+.CdsDashboardCaseDocuments-list-view-view-toggle {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.CdsDashboardCaseDocuments-list-view-view-btn {
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.CdsDashboardCaseDocuments-list-view-view-btn:hover {
+    background-color: #f8f9fa;
+}
+
+.CdsDashboardCaseDocuments-list-view-view-btn.active {
+    background-color: #667eea;
+    color: white;
+}
+
+/* Document List */
+.dsfsdf {
+    border-radius: 12px;
+}
+.CdsDashboardCaseDocuments-list-view-document-list {
+    background-color: #fff;
+    
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    /* overflow: hidden; */
+}
+
+.CdsDashboardCaseDocuments-list-view-list-header {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 120px 140px 100px 80px;
+    gap: 20px;
+    padding: 20px 24px;
+    background-color: #f8f9fa;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #7f8c8d;
+    border-bottom: 1px solid #e1e8ed;
+    align-items: center;
+}
+
+.CdsDashboardCaseDocuments-list-view-document-item {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 120px 140px 100px 80px;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f3f7;
+    align-items: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.CdsDashboardCaseDocuments-list-view-document-item:hover {
+    background-color: #f8f9fa;
+}
+
+.CdsDashboardCaseDocuments-list-view-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon.folder {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon.pdf {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon.doc {
+    background-color: #d1ecf1;
+    color: #004085;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon.image {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-name {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-path {
+    font-size: 13px;
+    color: #7f8c8d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.CdsDashboardCaseDocuments-list-view-owner-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.CdsDashboardCaseDocuments-list-view-owner-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #667eea;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-owner-name {
+    font-size: 14px;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-size {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-tag {
+    padding: 4px 10px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-tag.encrypted {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-icon {
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7f8c8d;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-icon:hover {
+    background-color: #f0f3f7;
+    color: #2c3e50;
+}
+
+/* Grid View */
+.CdsDashboardCaseDocuments-list-view-document-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.CdsDashboardCaseDocuments-list-view-document-card {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.CdsDashboardCaseDocuments-list-view-document-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: #667eea;
+}
+
+.CdsDashboardCaseDocuments-list-view-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.CdsDashboardCaseDocuments-list-view-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.CdsDashboardCaseDocuments-list-view-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.CdsDashboardCaseDocuments-list-view-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f3f7;
+}
+
+.CdsDashboardCaseDocuments-list-view-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+/* Upload Area */
+.CdsDashboardCaseDocuments-list-view-upload-area {
+    border: 2px dashed #e1e8ed;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 32px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-upload-area:hover {
+    border-color: #667eea;
+    background-color: #f0f2ff;
+}
+
+.CdsDashboardCaseDocuments-list-view-upload-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #667eea;
+}
+
+.CdsDashboardCaseDocuments-list-view-upload-text {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.CdsDashboardCaseDocuments-list-view-upload-subtext {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Folder Expansion Styles */
+.CdsDashboardCaseDocuments-list-view-folder-section {
+    margin-bottom: 8px;
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-header {
+    cursor: pointer;
+}
+
+.CdsDashboardCaseDocuments-list-view-expand-icon {
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-section.expanded .CdsDashboardCaseDocuments-list-view-expand-icon {
+    transform: rotate(0deg);
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-contents {
+    background-color: #f8f9fa;
+    border-left: 3px solid #667eea;
+    border-bottom: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+    margin-top: -1px;
+}
+
+.CdsDashboardCaseDocuments-list-view-selection-bar {
+    background-color: #1e2329;
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CdsDashboardCaseDocuments-list-view-selection-count {
+    font-weight: 500;
+}
+
+.CdsDashboardCaseDocuments-list-view-selection-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.CdsDashboardCaseDocuments-list-view-delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-delete-btn:hover {
+    background-color: #c82333;
+}
+
+.CdsDashboardCaseDocuments-list-view-upload-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-upload-btn:hover {
+    background-color: #0056b3;
+}
+
+.CdsDashboardCaseDocuments-list-view-check-all-row {
+    padding: 16px 24px;
+    background-color: #fff;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.CdsDashboardCaseDocuments-list-view-check-all-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f3f7;
+    transition: all 0.2s ease;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-item:hover {
+    background-color: #f8f9fa;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-checkbox {
+    margin-right: 16px;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-icon-small.image {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-content .CdsDashboardCaseDocuments-list-view-file-name {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.CdsDashboardCaseDocuments-list-view-file-meta {
+    font-size: 13px;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.CdsDashboardCaseDocuments-list-view-more-btn {
+    padding: 6px 16px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.CdsDashboardCaseDocuments-list-view-more-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #667eea;
+}
+
+/* Dropdown menu for More button */
+.CdsDashboardCaseDocuments-list-view-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 160px;
+    z-index: 100;
+    display: none;
+}
+
+.CdsDashboardCaseDocuments-list-view-more-btn.active + .CdsDashboardCaseDocuments-list-view-dropdown {
+    display: block;
+}
+
+.CdsDashboardCaseDocuments-list-view-dropdown-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.CdsDashboardCaseDocuments-list-view-dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.CdsDashboardCaseDocuments-list-view-dropdown-divider {
+    height: 1px;
+    background-color: #e1e8ed;
+    margin: 4px 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-btn-small {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-btn-small.CdsDashboardCaseDocuments-list-view-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.CdsDashboardCaseDocuments-list-view-action-btn-small.CdsDashboardCaseDocuments-list-view-primary:hover {
+    background-color: #0056b3;
+}
+
+.CdsDashboardCaseDocuments-list-view-empty-folder {
+    padding: 40px;
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+
+
+
+
+/* Drag and drop visual feedback */
+body.dragging-files {
+    position: relative;
+}
+
+body.dragging-files::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(59, 130, 246, 0.05);
+    pointer-events: none;
+    z-index: 999;
+}
+
+body.dragging-files::after {
+    content: 'Drop files on a folder to upload';
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e40af;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    pointer-events: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Folder hover state when dragging */
+.CdsDashboardCaseDocuments-list-view-folder-section.drag-hover {
+    background-color: rgba(59, 130, 246, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-section.drag-hover::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 2px dashed #3b82f6;
+    border-radius: 10px;
+    pointer-events: none;
+    animation: dashOffset 10s linear infinite;
+}
+
+@keyframes dashOffset {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-section.drag-hover .CdsDashboardCaseDocuments-list-view-folder-header {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+}
+
+/* Highlight upload area in auto-expanded folders */
+.folder-expanded-by-drag .CDSFeed-upload-container {
+    position: relative;
+}
+
+.folder-expanded-by-drag .CDSFeed-upload-area {
+    border: 2px dashed #3b82f6;
+    background-color: rgba(59, 130, 246, 0.05);
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+    }
+}
+
+/* Smooth folder expansion animation */
+.CdsDashboardCaseDocuments-list-view-folder-contents {
+    /* overflow: hidden; */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-contents:not(.show) {
+    max-height: 0 !important;
+    opacity: 0;
+}
+
+.CdsDashboardCaseDocuments-list-view-folder-contents.show {
+    max-height: 2000px !important;
+    opacity: 1;
+}
+
+/* Ensure drop areas are clearly visible during drag */
+body.dragging-files .CDSFeed-upload-area {
+    border-color: #94a3b8;
+    transition: all 0.3s ease;
+}
+
+body.dragging-files .CDSFeed-upload-area:hover {
+    border-color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.CDSCaseDocument-uploader {
+    padding: 14px;
+}
+
+
+
+
+/* Responsive Design */
+
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+    .CdsDashboardCaseDocuments-list-view-main-container {
+        padding: 20px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-page-title {
+        font-size: 28px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .CdsDashboardCaseDocuments-list-view-list-header,
+    .CdsDashboardCaseDocuments-list-view-document-item {
+        grid-template-columns: 40px 2fr 120px 100px 80px;
+        gap: 15px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-list-header > div:nth-child(3),
+    .CdsDashboardCaseDocuments-list-view-document-item > div:nth-child(3),
+    .CdsDashboardCaseDocuments-list-view-list-header > div:nth-child(5),
+    .CdsDashboardCaseDocuments-list-view-document-item > div:nth-child(5) {
+        display: none;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-document-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    /* Tablet folder view adjustments */
+    .CdsDashboardCaseDocuments-list-view-file-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-action-btn-small {
+        font-size: 12px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .CdsDashboardCaseDocuments-list-view-header {
+        padding: 12px 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-logo {
+        font-size: 20px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-header-actions {
+        gap: 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-main-container {
+        padding: 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-page-nav {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-nav-tab {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+
+    .CdsDashboardCaseDocuments-list-view-page-title {
+        font-size: 24px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-page-subtitle {
+        font-size: 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-header-actions-row {
+        width: 100%;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-search-container {
+        min-width: 100%;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-action-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-stats-bar {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-stat-card {
+        padding: 20px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-toolbar-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Mobile list view */
+    .CdsDashboardCaseDocuments-list-view-list-header {
+        display: none;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-document-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-document-item > div:first-child {
+        display: none;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-owner-info,
+    .CdsDashboardCaseDocuments-list-view-file-size,
+    .CdsDashboardCaseDocuments-list-view-file-date {
+        font-size: 13px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-actions {
+        justify-content: flex-end;
+        margin-top: 12px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-document-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-upload-area {
+        padding: 24px 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-upload-icon {
+        font-size: 36px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-upload-text {
+        font-size: 14px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-upload-subtext {
+        font-size: 12px;
+    }
+
+    /* Mobile folder view adjustments */
+    .CdsDashboardCaseDocuments-list-view-folder-contents {
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-selection-bar {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-selection-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-item {
+        padding: 12px 16px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-content {
+        margin-right: 12px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-action-btn-small {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-more-btn {
+        padding: 4px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .CdsDashboardCaseDocuments-list-view-filter-dropdown {
+        width: 100%;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-view-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-breadcrumb {
+        font-size: 12px;
+    }
+
+    /* Compact file items on small screens */
+    .CdsDashboardCaseDocuments-list-view-file-item {
+        flex-wrap: wrap;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-content {
+        flex: 1 1 100%;
+        margin-bottom: 8px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-icon-small {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-file-meta {
+        font-size: 12px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    .CdsDashboardCaseDocuments-list-view-main-container {
+        max-width: 1600px;
+    }
+
+    .CdsDashboardCaseDocuments-list-view-document-grid {
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+}

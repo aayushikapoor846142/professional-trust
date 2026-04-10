@@ -1,0 +1,430 @@
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --accent-light: #e0e7ff;
+    --accent-lighter: #f0f4ff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-tertiary: #94a3b8;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Animated background */
+.CdsCaseRequest-bg-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.CdsCaseRequest-bg-animation::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    animation: CdsCaseRequest-rotate 30s linear infinite;
+}
+
+@keyframes CdsCaseRequest-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Floating shapes */
+.CdsCaseRequest-floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-lighter) 0%, var(--accent-light) 100%);
+    animation: CdsCaseRequest-float 20s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.CdsCaseRequest-shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.CdsCaseRequest-shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    right: -100px;
+    animation-delay: 7s;
+}
+
+@keyframes CdsCaseRequest-float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(100px, -100px) rotate(120deg); }
+    66% { transform: translate(-100px, 100px) rotate(240deg); }
+}
+
+@keyframes CdsCaseRequest-slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Main content */
+.CdsCaseRequest-main-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    animation: CdsCaseRequest-fadeIn 0.8s ease-out 0.3s both;
+}
+
+@keyframes CdsCaseRequest-fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb */
+.CdsCaseRequest-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.CdsCaseRequest-breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: color 0.2s;
+}
+
+.CdsCaseRequest-breadcrumb-item:hover {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.CdsCaseRequest-breadcrumb-separator {
+    color: var(--text-tertiary);
+}
+
+/* Case header */
+.CdsCaseRequest-case-header {
+    background: var(--bg-primary);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.CdsCaseRequest-case-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    animation: CdsCaseRequest-pulse 4s ease-in-out infinite;
+}
+
+@keyframes CdsCaseRequest-pulse {
+    0%, 100% { transform: scale(0.8); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+.CdsCaseRequest-case-header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.CdsCaseRequest-case-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.CdsCaseRequest-case-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.CdsCaseRequest-case-id {
+    font-family: 'Courier New', monospace;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.CdsCaseRequest-case-meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.CdsCaseRequest-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.CdsCaseRequest-meta-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--accent);
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Status badge */
+.CdsCaseRequest-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--warning);
+    color: white;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    animation: CdsCaseRequest-statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes CdsCaseRequest-statusPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+}
+
+.CdsCaseRequest-status-indicator {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: CdsCaseRequest-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes CdsCaseRequest-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* User avatar */
+.CdsCaseRequest-user-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.CdsCaseRequest-user-avatar:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Action buttons in case header */
+.CdsCaseRequest-case-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.CdsCaseRequest-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.CdsCaseRequest-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.CdsCaseRequest-action-btn:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.CdsCaseRequest-action-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+}
+
+/* View button */
+.CdsCaseRequest-action-btn.CdsCaseRequest-btn-view {
+    background: var(--info);
+    color: white;
+}
+
+.CdsCaseRequest-action-btn.CdsCaseRequest-btn-view:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Edit button */
+.CdsCaseRequest-action-btn.CdsCaseRequest-btn-edit {
+    background: var(--accent);
+    color: white;
+}
+
+.CdsCaseRequest-action-btn.CdsCaseRequest-btn-edit:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Delete button */
+.CdsCaseRequest-action-btn.CdsCaseRequest-btn-delete {
+    background: var(--danger);
+    color: white;
+}
+
+.CdsCaseRequest-action-btn.CdsCaseRequest-btn-delete:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Action buttons (FAB) */
+.CdsCaseRequest-action-buttons {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.CdsCaseRequest-fab {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.CdsCaseRequest-fab::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.CdsCaseRequest-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(99, 102, 241, 0.5);
+    background: var(--accent-hover);
+}
+
+.CdsCaseRequest-fab:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.CdsCaseRequest-fab svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .CdsCaseRequest-main-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .CdsCaseRequest-case-title {
+        font-size: 1.5rem;
+    }
+
+    .CdsCaseRequest-case-meta {
+        gap: 1rem;
+    }
+
+    .CdsCaseRequest-case-header-top {
+        text-align: center;
+        display: block;
+    }
+}
+
+@keyframes CdsCaseRequest-ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

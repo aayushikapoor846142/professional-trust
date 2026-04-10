@@ -1,0 +1,322 @@
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #8b5cf6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+    --dark: #1f2937;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.CdsCaseOverview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Header */
+.CdsCaseOverview-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+}
+
+.CdsCaseOverview-header-title {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Stats Grid */
+.CdsCaseOverview-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.CdsCaseOverview-stat-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    /* opacity: 0; */
+    animation: slideIn 0.5s ease forwards;
+}
+
+.CdsCaseOverview-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.CdsCaseOverview-stat-card:nth-child(1)::before { background: linear-gradient(90deg, var(--warning) 0%, var(--danger) 100%); }
+.CdsCaseOverview-stat-card:nth-child(2)::before { background: linear-gradient(90deg, var(--success) 0%, #22c55e 100%); }
+.CdsCaseOverview-stat-card:nth-child(3)::before { background: linear-gradient(90deg, var(--info) 0%, var(--primary) 100%); }
+.CdsCaseOverview-stat-card:nth-child(4)::before { background: linear-gradient(90deg, var(--danger) 0%, var(--warning) 100%); }
+.CdsCaseOverview-stat-card:nth-child(5)::before { background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); }
+.CdsCaseOverview-stat-card:nth-child(6)::before { background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%); }
+
+.CdsCaseOverview-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.CdsCaseOverview-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.CdsCaseOverview-stat-card:nth-child(1) .CdsCaseOverview-stat-icon { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+.CdsCaseOverview-stat-card:nth-child(2) .CdsCaseOverview-stat-icon { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+.CdsCaseOverview-stat-card:nth-child(3) .CdsCaseOverview-stat-icon { background: rgba(59, 130, 246, 0.1); color: var(--info); }
+.CdsCaseOverview-stat-card:nth-child(4) .CdsCaseOverview-stat-icon { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+.CdsCaseOverview-stat-card:nth-child(5) .CdsCaseOverview-stat-icon { background: rgba(99, 102, 241, 0.1); color: var(--primary); }
+.CdsCaseOverview-stat-card:nth-child(6) .CdsCaseOverview-stat-icon { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+
+.CdsCaseOverview-stat-value {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.CdsCaseOverview-stat-label {
+    font-size: 14px;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+/* Tables Section */
+.CdsCaseOverview-table-section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.CdsCaseOverview-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.CdsCaseOverview-section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.CdsCaseOverview-section-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.CdsCaseOverview-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.CdsCaseOverview-btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.CdsCaseOverview-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Table Styles */
+.CdsCaseOverview-modern-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.CdsCaseOverview-modern-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--light-gray);
+    background: var(--light-gray);
+}
+
+.CdsCaseOverview-modern-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 14px;
+}
+
+.CdsCaseOverview-modern-table tr {
+    transition: all 0.3s ease;
+}
+
+.CdsCaseOverview-modern-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+    transform: translateX(4px);
+}
+
+.CdsCaseOverview-case-title {
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.CdsCaseOverview-case-title:hover {
+    color: var(--primary);
+}
+
+.CdsCaseOverview-client-name {
+    color: var(--gray);
+}
+
+.CdsCaseOverview-proposal-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.CdsCaseOverview-status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.CdsCaseOverview-status-active {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.CdsCaseOverview-status-pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.CdsCaseOverview-last-updated {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.CdsCaseOverview-professional-name {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.CdsCaseOverview-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.CdsCaseOverview-stat-card:nth-child(2) { animation-delay: 0.2s; }
+.CdsCaseOverview-stat-card:nth-child(3) { animation-delay: 0.3s; }
+.CdsCaseOverview-stat-card:nth-child(4) { animation-delay: 0.4s; }
+.CdsCaseOverview-stat-card:nth-child(5) { animation-delay: 0.5s; }
+.CdsCaseOverview-stat-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ======== Responsive ============ */
+@media (max-width: 1200px) {
+    .CdsCaseOverview-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .CdsCaseOverview-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .CdsCaseOverview-header {
+        padding: 20px;
+    }
+
+    .CdsCaseOverview-header-title {
+        font-size: 24px;
+    }
+
+    .CdsCaseOverview-modern-table {
+        font-size: 12px;
+    }
+
+    .CdsCaseOverview-modern-table th,
+    .CdsCaseOverview-modern-table td {
+        padding: 12px 8px;
+    }
+
+    .CdsCaseOverview-section-header {
+        flex-direction: column;
+        gap: 16px;
+        justify-content: center;
+    }
+    .CdsCaseOverview-container {padding-inline: 0;padding-top: 0;}
+}
+
+@media (max-width: 480px) {
+    .CdsCaseOverview-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
