@@ -1,54 +1,26 @@
-# Build stage for Node.js assets
-FROM node:18-alpine AS node-builder
+FROM php:8.2-apache
 
-WORKDIR /app
+RUN apt-get update && apt-get install -y \
+    git curl zip unzip \
+    libpng-dev libonig-dev libxml2-dev libzip-dev
 
-COPY package*.json ./
-RUN npm ci
+RUN docker-php-ext-install pdo_mysql mbstring bcmath gd zip
+
+RUN a2enmod rewrite
+
+WORKDIR /var/www/html
 
 COPY . .
-RUN npm run build
 
-# PHP application stage
-FROM php:8.1-fpm-alpine
-
-# Install system dependencies
-RUN apk add --no-cache \
-    git \
-    curl \
-    libpng-dev \
-    libzip-dev \
-    zip \
-    unzip \
-    nginx \
-    supervisor \
-    postgresql-dev \
-    oniguruma-dev
-
-# Install PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip exif pcntl bcmath gd
-
-# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
-WORKDIR /var/www
+ENV COMPOSER_MEMORY_LIMIT=-1
 
-# Copy application files
-COPY . .
-COPY --from=node-builder /app/public/build ./public/build
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www/storage \
-    && chmod -R 755 /var/www/bootstrap/cache
-
-# Copy nginx configuration
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-
-# Copy supervisor configuration
-COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 80
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["apache2-foreground"]
